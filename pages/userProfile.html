@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Boutique</title>
+    <link rel="stylesheet" href="../styles/userProfile.css">
+    <title>Sign Up | Boutique</title>
 </head>
 <body>
     <div class="preloader__wrapper">
@@ -33,11 +33,11 @@
     </div>
     <header>
         <div class="header__container">
-            <div class="header__container-title">Boutique</div>
+            <div class="header__container-title"><a href="">Boutique</a></div>
             <nav class="header__container-nav--items">
                 <ul class="nav__container-items">
-                    <li class="ul__container-items"><a href="./pages/news.html" class="a__container-links">Новини</a></li>
-                    <li class="ul__container-items"><a href="./pages/sale.html" class="a__container-links-red">SALE</a></li>
+                    <li class="ul__container-items"><a href="./news.html" class="a__container-links">Новини</a></li>
+                    <li class="ul__container-items"><a href="./sale.html" class="a__container-links-red">SALE</a></li>
                     
                     <li class="ul__container-items">
                         <a href="#" class="li__container-links">Одяг</a>
@@ -219,21 +219,21 @@
                 <div class="header__container-user--block">
                     <div class="container__user-search">
                         <div class="user-search-img">
-                            <img class="search-image" src="./assets/images/searchImg/free-icon-magnifier-9638122.png" alt="Oops, something went wrong :(">
+                            <img class="search-image" src="../assets/images/searchImg/free-icon-magnifier-9638122.png" alt="Oops, something went wrong :(">
                         </div>
                         <input class="search" type="text" placeholder="Пошук">
                     </div>
                     <div class="container__user-bag">
                         <div class="user-bag-container">
-                            <a href="./pages/shoppingCart.html">
+                            <a href="./shoppingCart.html">
                                 <img class="user-bag" src="../assets/images/headerBag/free-icon-shopping-bag-3661173.png" alt="Oops, something went wrong :(">
                             </a>
                         </div>
                     </div>
                     <div class="container__user-profile">
                         <div class="user-profile-container">
-                            <a href="./pages/userProfile.html">
-                                <img class="user-profile" src="./assets/images/userProfile/free-icon-user-9630178.png" alt="Oops, something went wrong :(">
+                            <a href="./userProfile.html">
+                                <img class="user-profile" src="../assets/images/userProfile/free-icon-user-9630178.png" alt="Oops, something went wrong :(">
                             </a>
                         </div>
                     </div>
@@ -241,134 +241,66 @@
         </div>
     </header>
     <main>
-        <div class="main__container">
-            <div class="main__container-discount-clothe-cards-wrapper">
-                <div class="main__container-discount-clothe-cards-title">Знижки до -15% від Under Armour</div>
-                <div class="main__container-discount-clothe-cards">
-                    <div class="main__container-discount-clothe-card">
-                    <div class="main__container-discount-clothe-card-img"><img src="./assets/images/discount15per/card1/47305c800ca005692abfe2b00774.webp" alt="Oops, something went wrong :("></div>
-                    <div class="main__container-discount-clothe-card-brand-title">Under Armour</div>
-                    <div class="main__container-discount-clothe-card-title">Чоловіча біла футболка UA Pjt Rock Brahma Bull </div>
-                    <div class="main__container-discount-clothe-card-price">1 436 грн<span>1 690 грн</span></div>
+        <!-- ! Профиль -->
+
+        <div class="profile__container" id="profileContainer">
+            <form class="profile__container--registration-form" method="get">
+                <div class="profile__container-registration">
+                    <div class="profile__container-registration--title">Увійти</div>
+                    <div class="profile__container-registration-google-or-facebook">
+                        <div class="profile__container-registration-google"><a href="#">Google</a></div>
+                        <div class="profile__container-registration-facebook"><a href="#">Facebook</a></div>
+                    </div>
+                    <div class="profile__container-registration-by-phone">
+                        <a href="#">Телефон</a>
+                    </div>
+                    <div class="profile__container-registration-or">або</div>
+                <div class="profile__container-registration--user-name">
+                    <label for="userEmailRegistration">Пошта</label>
+                    <input type="text" id="userEmailRegistration">
+                    <span class="profile__container-registration--user-name-correct-email">* Пошта повинна буди - example@gmail.com</span>
                 </div>
-                <div class="main__container-discount-clothe-card">
-                    <div class="main__container-discount-clothe-card-img"><img src="./assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp" alt="Oops, something went wrong :("></div>
-                    <div class="main__container-discount-clothe-card-brand-title">Under Armour</div>
-                    <div class="main__container-discount-clothe-card-title">Чоловіча чорна футболка UA TAC HG COMP T </div>
-                    <div class="main__container-discount-clothe-card-price">1 790 грн</div>
+                <div class="profile__container-registration--password">
+                    <label for="">Пароль</label>
+                    <input type="password" id="userPassRegistration">
+                    <div class="pass_cont">
+                        <img onclick="passShow()" class="showPass" src="../assets/images/pass/show.png" alt="show/hidePass">
+                        <img onclick="passHide()" class="hidePass" src="../assets/images/pass/hide.png" alt="show/hidePass">
+                    </div>
+                    <span class="profile__container-registration--user-password-correct-pass">* Пароль повинен буди більше 8 букв</span>
                 </div>
-                <div class="main__container-discount-clothe-card">
-                    <div class="main__container-discount-clothe-card-img"><img src="./assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp" alt="Oops, something went wrong :("></div>
-                    <div class="main__container-discount-clothe-card-brand-title">Under Armour</div>
-                    <div class="main__container-discount-clothe-card-title">Чоловіча кепка Project Rock Trucker </div>
-                    <div class="main__container-discount-clothe-card-price">1 990 грн</div>
+                <div class="profile__container-registration--reset-password">
+                    Забули пароль?
                 </div>
-                <div class="main__container-discount-clothe-card">
-                    <div class="main__container-discount-clothe-card-img"><img src="./assets/images/discount15per/card4/cb789991a70c026dd37360efd042.webp" alt="Oops, something went wrong :("></div>
-                    <div class="main__container-discount-clothe-card-brand-title">Under Armour</div>
-                    <div class="main__container-discount-clothe-card-title">Чоловіча зелена пуховая парка UA CGI Down 3-in-1 </div>
-                    <div class="main__container-discount-clothe-card-price">16 311 грн<span>19 190 грн</span></div>
+                <div class="profile__container-registration--button-submit">
+                    <input type="submit" id="enter" value="Увійти">
                 </div>
+                </div>
+            </form>
+        <div class="aside__container--registration">
+            <div class="aside__container--registration-title">Що я отримаю якщо зареєструюсь?</div>
+            <div class="aside__container--registration-content-text">
+                <ul>
+                    <li>Зники до 5% при оплаті карткою</li>
+                    <li>Доступ до особистого кабінету</li>
+                    <li>Можливість користуватися бонусами</li>
+                    <li>Отримуйте % від вартості замовлення на бонусний рахунок</li>
+                    <li>Замовляти зручніше зі збереженою адресою та способом доставки</li>
+                    <li>Підписка на новини та акції від Boutique</li>
+                    <li>500 бонусів за реєстрацію нараховуються протягом 20 хвилин після реєстрації.</li>
+                </ul>
             </div>
         </div>
-        <div class="main__container-clothe-btn-more"><a href="#"><button>Показати весь одяг</button></a></div>
+        </div>
 
-            
-            <div class="main__container-trends">
-                <div class="trends__container-title">Зараз у тренді</div>
-                <div class="trends__container-wrapper--blocks">
-                    <div class="trends__container-block">
-                        <div class="trends__container-block--img"><img src="./assets/images/trends/cap/15cf95285117fd50034cd322f362.webp" alt="Oops, something went wrong :("></div>
-                        <div class="trends__container-block--title"><a href="#">Кепки</a></div>
-                    </div>
-                    <div class="trends__container-block">
-                        <div class="trends__container-block--img"><img src="./assets/images/trends/tShirt/ae0f8af5d93766560407566613d3.webp" alt="Oops, something went wrong :("></div>
-                        <div class="trends__container-block--title"><a href="#">Футболки</a></div>
-                    </div>
-                    <div class="trends__container-block">
-                        <div class="trends__container-block--img"><img src="./assets/images/trends/shorts/cd413a060d102b003cd752585119.webp" alt="Oops, something went wrong :("></div>
-                        <div class="trends__container-block--title"><a href="#">Шорти</a></div>
-                    </div>
-                    <div class="trends__container-block">
-                        <div class="trends__container-block--img"><img src="./assets/images/trends/shoe/3c3a79027102bf7e10c5cf777bf5.webp" alt="Oops, something went wrong :("></div>
-                        <div class="trends__container-block--title"><a href="#">Взуття</a></div>
-                    </div>
+        <div class="main__container-bonuses">
+            <div class="main__container-bonuses-wrapper">
+                <div class="main__container-bonuses-wrapper-bonus">
+                    <div class="main__container-bonuses-title">Купуйте вигідно</div>
+                    <div class="main__container-bonuses-subtitle">При оплаті карткою онлайн ви отримаєте до 5% на наступну купівлю</div>
                 </div>
-            </div>
-            <div class="main__container-ads">
-                <div class="container__ads-img"><img src="./assets/images/ads/photo-1441986300917-64674bd600d8.jpg" alt="Oops, something went wrong :("></div>
-                <div class="container__ads-wrapper">
-                    <div class="container__ads-title">Літній одяг до - 20% при оплаті <br> карткою</div>
-                    <div class="container__ads-btn"><a href="#"><button>Детальніше</button></a></div>
-                </div>
-            </div>
-            <div class="main__container-ads-wrapper-clothe">
-                <div class="main__container-ads-wrapper-clothe-cards">
-                    <div class="main__container-ads-wrapper-clothe-card">
-                        <div class="main__container-ads-wrapper-clothe-img"><img src="./assets/images/adsClothe/clothe1/9f3db00d358ce9d02b6803a6a1ef.webp" alt=""></div>
-                        <div class="main__container-ads-wrapper-clothe-brand-title">Under Armour</div>
-                        <div class="main__container-ads-wrapper-clothe-title">Чоловічі чорні шорти UA Vanish Woven 8in Shorts</div>
-                        <div class="main__container-ads-wrapper-clothe-price">2 290 грн</div>
-                    </div>    
-                    <div class="main__container-ads-wrapper-clothe-card">
-                        <div class="main__container-ads-wrapper-clothe-img"><img src="./assets/images/adsClothe/clothe3/d02b7a4b50d6637e34d2ea87ea5d.webp" alt=""></div>
-                        <div class="main__container-ads-wrapper-clothe-brand-title">Tommy Jeans</div>
-                        <div class="main__container-ads-wrapper-clothe-title">Жіноча бордова футболка TJW RLXD TOMMY SIGNATURE</div>
-                        <div class="main__container-ads-wrapper-clothe-price">685 грн <span>1 990 грн</span></div>
-                    </div>    
-                    <div class="main__container-ads-wrapper-clothe-card">
-                        <div class="main__container-ads-wrapper-clothe-img"><img src="./assets/images/adsClothe/clothe2/b3bb52b16c8da897080cbe2742c5.jpg" alt=""></div>
-                        <div class="main__container-ads-wrapper-clothe-brand-title">Preach</div>
-                        <div class="main__container-ads-wrapper-clothe-title">Жовті шорти Essential Sweat Shorts</div>
-                        <div class="main__container-ads-wrapper-clothe-price">1 695 грн <span>3 390 грн</span></div>
-                    </div>    
-                    <div class="main__container-ads-wrapper-clothe-card">
-                        <div class="main__container-ads-wrapper-clothe-img"><img src="./assets/images/adsClothe/clothe4/a2287d543137579cdea2daaf6ffb.webp" alt=""></div>
-                        <div class="main__container-ads-wrapper-clothe-brand-title">Under Armour</div>
-                        <div class="main__container-ads-wrapper-clothe-title">Дитячі чорні шорти UA Prototype 2.0 Wdmk</div>
-                        <div class="main__container-ads-wrapper-clothe-price">476 грн <span>1 190 грн</span></div>
-                    </div>    
-                </div>
-                <div class="main__container-ads-wrapper-clothe-btn-more"><a href="#"><button>Показати весь одяг</button></a></div>
-            </div>
-            <div class="main__container-bonuses">
                 <div class="main__container-bonuses-wrapper">
-                    <div class="main__container-bonuses-wrapper-bonus">
-                        <div class="main__container-bonuses-title">Купуйте вигідно</div>
-                        <div class="main__container-bonuses-subtitle">При оплаті карткою онлайн ви отримаєте до 5% на наступну купівлю</div>
-                    </div>
-                    <div class="main__container-bonuses-wrapper">
-                        <div class="main__container-bonuses-wrapper-current-bonus-title">На вашому бонусному рахунку:<span class="main__container-bonuses-wrapper-current-bonus">100 балів</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="main__container-call--back-container" onclick="openCallBackContainer()">
-                <div class="call-back--img"><img src="./assets/images/callBackImages/callBack/icons8-phone-50.png" alt=""></div>
-                <div class="call-back--hover">
-                    <div class="call-back---hover">Call back</div>
-                </div>
-                <div class="call-back--hover-block">
-                    <div class="call-back---hover-title">Сталися складнощі?</div>
-                    <div class="call-back---hover-title-arrow"></div>
-                </div>
-            </div>
-            <div class="call-back__container" id="callBackContainer">
-                <div class="call-back-img-close"><img onclick="closeCallBackContainer()" src="./assets/images/callBackImages/callBackClose/close.png" alt="Oops, something went wrong :("></div>
-                <div class="call-back-wrapper">
-                <div class="call-back-wrapper-buttons">
-                    <div class="call-back--container-title">Сталися скаладнощі?</div>
-                    <div class="call-back--container-subtitle">Ми передзвонимо вам протягом 1 хвилини.</div>
-                </div>
-                    <div class="call-back--inputs-wrapper">
-                        <div class="call-back-input-number">
-                            <form method="get">
-                                <label for="callBackUserNumber">Введіть номер телефону</label>
-                                <input type="text" id="callBackUserNumber" name="callBackUserNumber">
-                                <label class="call-back-label" for="callBackUserNumber">Формат телефону : +390 (99) 000 00 00</label>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="call-back-button-wrapper"><button id="callBackSendUserNum">Відправити</button></div>
+                    <div class="main__container-bonuses-wrapper-current-bonus-title">На вашому бонусному рахунку:<span class="main__container-bonuses-wrapper-current-bonus">100 балів</span></div>
                 </div>
             </div>
         </div>
@@ -383,8 +315,8 @@
                         <li class="footer__container-block-contact">Пн-Пт 9:00 - 21:00</li>
                         <li class="footer__container-block-contact">Сб-Нд 9:00 - 18:00</li>
                         <li class="footer__container-block-contact-social">
-                            <div class="footer__container-block-contact-social-facebook"><img src="./assets/images/foorterImg/facebook/icons8-facebook-f.svg" alt="Oops, something went wrong :("></div>
-                            <div class="footer__container-block-contact-social-instagram"><img src="./assets/images/foorterImg/instagram/icons8-instagram.svg" alt="Oops, something went wrong :("></div>
+                            <div class="footer__container-block-contact-social-facebook"><img src="../assets/images/foorterImg/facebook/icons8-facebook-f.svg" alt="Oops, something went wrong :("></div>
+                            <div class="footer__container-block-contact-social-instagram"><img src="../assets/images/foorterImg/instagram/icons8-instagram.svg" alt="Oops, something went wrong :("></div>
                         </li>
                     </ul>
                     <ul class="footer__container-block-contacts">
@@ -405,15 +337,14 @@
                         <li class="footer__container-block-contact"><a href="#">Про нас</a></li>
                         <li class="footer__container-block-contact"><a href="#">Угода користувача</a></li>
                         <li class="footer__container-block-contact-apps">
-                            <div class="footer__container-block-contact-app-appStore"><img src="./assets/images/foorterImg/appStore/Download_on_the_App_Store_Badge.svg.png" alt=""></div>
-                            <div class="footer__container-block-contact-app-playMarket"><img src="./assets/images/foorterImg/googlePlay/Google_Play_Store_badge_EN.svg.png" alt=""></div>
+                            <div class="footer__container-block-contact-app-appStore"><img src="../assets/images/foorterImg/appStore/Download_on_the_App_Store_Badge.svg.png" alt=""></div>
+                            <div class="footer__container-block-contact-app-playMarket"><img src="../assets/images/foorterImg/googlePlay/Google_Play_Store_badge_EN.svg.png" alt=""></div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-
-    <script src="./js/main.js"></script>
+    <script src="../js/userProfile.js"></script>
 </body>
 </html>

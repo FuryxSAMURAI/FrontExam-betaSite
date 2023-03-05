@@ -1,0 +1,1372 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500;600;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+ul, li{
+    list-style: none;
+}
+.preloader__wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: preloaderHide 1s;
+}
+.preloader{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloader-site-name{
+    font-size: 32px;
+    color: #1d1d1d;
+    font-weight: bolder;
+    margin-bottom: 120px;
+    position: absolute;
+    text-align: center;
+}
+.blobs {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 70px;
+    transform-style: preserve-3d;
+  }
+  
+  .blobs .blob-center {
+    transform-style: preserve-3d;
+    position: absolute;
+    background: #1d1d1d;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform-origin: left top;
+    transform: scale(0.9) translate(-50%, -50%);
+    animation: blob-grow_2 linear 3.4s infinite;
+    border-radius: 50%;
+    box-shadow: 0 -10px 40px -5px #1d1d1d;
+  }
+  
+  .blob {
+    position: absolute;
+    background: #1d1d1d;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: blobs_2 ease-out 3.4s infinite;
+    transform: scale(0.9) translate(-50%, -50%);
+    transform-origin: center top;
+    opacity: 0;
+  }
+  
+  .blob:nth-child(1) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  
+  .blob:nth-child(2) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  
+  .blob:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  .blob:nth-child(4) {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  
+  .blob:nth-child(5) {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  @keyframes preloaderHide {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+  }
+  @keyframes blobs_2 {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate(calc(-330px - 50%), -50%);
+    }
+  
+    1% {
+      opacity: 1;
+    }
+  
+    35%, 65% {
+      opacity: 1;
+      transform: scale(0.9) translate(-50%, -50%);
+    }
+  
+    99% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: scale(0) translate(calc(330px - 50%), -50%);
+    }
+  }
+  
+  @keyframes blob-grow_2 {
+    0%, 39% {
+      transform: scale(0) translate(-50%, -50%);
+    }
+  
+    40%, 42% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+  
+    43%, 44% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+  
+    45%, 46% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+  
+    47%, 48% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+  
+    52% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+  
+    54% {
+      transform: scale(1.7, 1.6) translate(-50%, -50%);
+    }
+  
+    58% {
+      transform: scale(1.8, 1.7) translate(-50%, -50%);
+    }
+  
+    68%, 70% {
+      transform: scale(1.7, 1.5) translate(-50%, -50%);
+    }
+  
+    78% {
+      transform: scale(1.6, 1.4) translate(-50%, -50%);
+    }
+  
+    80%, 81% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+  
+    82%, 83% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+  
+    84%, 85% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+  
+    86%, 87% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+  
+    90%, 91% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+  
+    92%, 100% {
+      transform: scale(0) translate(-50%, -50%);
+    }
+  }
+header{
+    height: 70px;
+    max-width: 100vw;
+    background-color: white;
+    box-shadow:  0 0 20px #dbdbdb;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header__container{
+    height: 100px;
+}
+.header__container-title{
+    margin: 0 0 0 20px;
+    position: absolute;
+    font-size: 22px;
+    font-weight: bolder;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header__container-nav--items{
+    height: 100%;
+}
+.nav__container-items{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.li__container-links, .a__container-links, .a__container-links-red{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding: 25px 30px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+.li__container-links:hover, .a__container-links:hover{
+    cursor: pointer;
+    color: #656565;
+}
+.a__container-links-red{
+    color: red;
+    transition: all .2s ease-in-out;
+}
+.a__container-links-red:hover{
+    color: red;
+    font-weight: 700;
+}
+.li__container-block--clothe{
+    z-index: 10;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    height: auto;
+    min-width: 100vw;
+    background-color: rgb(255, 255, 255);
+    display: none;
+}
+.ul__container-block--link .a__container-block{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.ul__container-block{
+    position: relative;
+    width: 110%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+.ul__container-block--links{
+    margin-top: 40px;
+    width: 300px;
+}
+.ul__container-block--link{
+    margin: 10px 0 0 0;
+}
+.ul__container-block--link a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+}
+.ul__container-block--link a:hover{
+    cursor: pointer;
+    color: #656565;
+}
+.ul__container-items:hover .li__container-block--clothe{
+    display: block;
+}
+.header__container-user--block{
+    margin: 0 20px 0 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+}
+/* ! HEADER SEARCH */
+.container__user-search{
+    position: relative;
+    display: flex;
+}
+.search{
+    z-index: 1;
+    width: 200px;
+    height: 30px;
+    padding: 0 0 0 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+}
+.search:focus, .search:active, .search:hover{
+    outline: none;
+    border: 1px solid black;
+}
+.user-search-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7px 6px;
+}
+.user-search-img:hover{
+    cursor: pointer;
+}
+.search-image{
+    height: 15px;
+    width: auto;
+}
+/* ! HEADER USER PROFILE */
+.container__user-profile{
+    margin: 0 40px 0 20px;
+}
+.container__user-bag{
+    margin: 0 0 0 20px;
+}
+.user-profile-container, .user-bag-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+.user-profile-container:hover, .user-bag-container:hover{
+    cursor: pointer;
+    background-color: rgb(205, 205, 205);
+
+}
+.user-profile, .user-bag{
+    height: 30px;
+    width: auto;
+}
+
+/* ! MAIN */
+/* .main__container-discount-clothe-cards-wrapper{
+} */
+.main__container-discount-clothe-cards-title{
+    width: 600px;
+    position: relative;
+    left: 180px;
+    margin: 40px 0 20px 0;
+    font-size: 28px;
+}
+.main__container-discount-clothe-card:not(:first-child){
+    margin: 0 0 0 20px;
+}
+.main__container-discount-clothe-cards{
+    display: flex;
+    justify-content: center;
+}
+.main__container-discount-clothe-card-img img{
+    height: 500px;
+    width: auto;
+}
+.main__container-discount-clothe-card-brand-title{
+    margin: 10px 0 0 0;
+}
+.main__container-discount-clothe-card-title{
+    margin: 5px 0 0 0;
+    height: 40px;
+}
+.main__container-discount-clothe-card-price{
+    color: red;
+    font-size: 18px;
+}
+.main__container-discount-clothe-card-price span{
+    text-decoration:line-through;
+    margin: 0 0 0 10px;
+    font-size: 16px;
+    color: #a3a3a3;
+}
+.main__container-clothe-btn-more{
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.main__container-clothe-btn-more button{
+    height: 70px;
+    width: 220px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #353535;
+    transition: all .3s ease-in-out;
+}
+.main__container-clothe-btn-more button:hover{
+    cursor: pointer;
+    color: #9e9e9e;
+}
+
+.main__container-trends{
+    user-select: none;
+}
+.trends__container-title{
+    width: 200px;
+    position: relative;
+    left: 180px;
+    margin: 80px 0 20px 0;
+    font-size: 28px;
+}
+.trends__container-wrapper--blocks{
+    display: flex;
+    justify-content: center;
+}
+.trends__container-block:not(:first-child){
+    margin: 0 0 0 20px;
+    transition: all .3s ease-in-out;
+}
+.trends__container-block:hover:hover{
+    cursor: pointer;
+}
+.trends__container-block:hover .trends__container-block--title a{
+    cursor: pointer;
+    color:#656565;
+}
+.trends__container-block--img img{
+    height: 550px;
+    width: auto;
+}
+.trends__container-block--title{
+    margin: 15px 0 0 10px;
+}
+.trends__container-block--title a{
+    transition: all .3s ease-in-out;
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 15px 0 0 10px;
+}
+
+.main__container-ads{
+    position: relative;
+    top: 30px;
+    height: 700px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container__ads-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: auto;
+    background-color: #f0f0f0;
+}
+.container__ads-img img{
+    height: 100%;
+    width: auto;
+}
+.container__ads-wrapper{
+    position: relative;
+    left: 40px;
+}
+.container__ads-title{
+    font-size: 28px;
+    margin: 0 0 30px 0;
+}
+.container__ads-btn button{
+    height: 60px;
+    width: 200px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #353535;
+    transition: all .3s ease-in-out;
+}
+.container__ads-btn button:hover{
+    cursor: pointer;
+    color: #9e9e9e;
+}
+
+.main__container-ads-wrapper-clothe{
+    height: 900px;
+    position: relative;
+    top: 20px;
+    /* display: flex;
+    justify-content: center; */
+}
+.main__container-ads-wrapper-clothe-cards{
+    display: flex;
+    justify-content: center;
+}
+.main__container-ads-wrapper-clothe-card:not(:first-child){
+    margin: 0 0 0 40px;
+}
+.main__container-ads-wrapper-clothe-img img{
+    height: 500px;
+    width: auto;
+}
+.main__container-ads-wrapper-clothe-brand-title{
+    font-size: 18px;
+    margin: 10px 0 0 0;
+}
+.main__container-ads-wrapper-clothe-title{
+    margin: 10px 0 0 0;
+    font-size: 18px;
+    height: 50px;
+    width: 380px;
+}
+.main__container-ads-wrapper-clothe-price{
+    font-size: 18px;
+    color: red;
+}
+.main__container-ads-wrapper-clothe-price span{
+    margin: 0 0 0 10px;
+    color: #a3a3a3;
+    font-size: 16px;
+    text-decoration: line-through;
+}
+.main__container-ads-wrapper-clothe-btn-more{
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.main__container-ads-wrapper-clothe-btn-more button{
+    height: 70px;
+    width: 220px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #353535;
+    transition: all .3s ease-in-out;
+}
+.main__container-ads-wrapper-clothe-btn-more button:hover{
+    cursor: pointer;
+    color: #9e9e9e;
+}
+
+
+.main__container-bonuses{
+    height: 150px;
+    max-width: 100vw;
+    background-color: #353535;
+    margin-bottom: 50px;
+}
+.main__container-bonuses-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.main__container-bonuses-title{
+    font-size: 22px;
+    color: white;
+}
+.main__container-bonuses-subtitle{
+    margin: 10px 0;
+    font-size: 18px;
+    color: rgb(207, 207, 207);
+}
+.main__container-bonuses-wrapper{
+    display: flex;
+}
+.main__container-bonuses-wrapper-current-bonus-title{
+    font-size: 22px;
+    color: white;
+}
+.main__container-bonuses-wrapper-current-bonus{
+    display: flex;
+    justify-content: end;
+    color: red;
+    font-size: 34px;
+}
+.main__container-bonuses-wrapper-current-bonus span{
+    font-size: 34px;
+}
+
+
+.main__container-call--back-container{
+    position: fixed;
+    left: 50px;
+    bottom: 20px;
+}
+.call-back--img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #353535;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+}
+/* .call-back--img img{
+
+} */
+.call-back--hover{
+    display: none;
+}
+.call-back---hover{
+    user-select: none;
+    position: absolute;
+    top: 32px;
+    left: 9px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    /* display: none; */
+    color: white;
+}
+.call-back--hover-block{
+    display: none;
+}
+.call-back---hover-title{
+    position: absolute;
+    top: -60px;
+    left: 0;
+    color: white;
+    white-space: nowrap;
+    padding: 15px 20px;
+    border-radius: 5px;
+    background-color: #353535;
+}
+.call-back---hover-title-arrow{
+    position: absolute;
+    top: -17px;
+    left: 35px;
+    background-color: #353535;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+}
+.main__container-call--back-container:hover img{
+    display: none;
+}
+.main__container-call--back-container:hover .call-back--hover{
+    display: block;
+    cursor: pointer;
+}
+.main__container-call--back-container:hover .call-back--hover-block{
+    display: block;
+}
+.call-back__container:not(:first-child){
+    /* display: none; */
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    bottom: -200px;
+    /* border: 1px solid black; */
+    height: 200px;
+    width: 100vw;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+.call-back-wrapper{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.call-back--container-title{
+    font-size: 22px;
+}
+.call-back--container-subtitle{
+    margin: 20px 0 0 0;
+    font-size: 14px;
+}
+.call-back-img-close{
+    display: flex;
+    justify-content: end;
+    margin: 20px 40px 0 0;
+}
+.call-back-img-close img{
+    height: 20px;
+    width: auto;
+}
+.call-back-img-close img:hover{
+    cursor: pointer;
+}
+.call-back-input-number{
+    position: relative;
+}
+.call-back-input-number label{
+    font-size: 12px;
+    position: relative;
+    top: -40px;
+    left: 150px;
+    color: #4e4e4e;
+    background-color: white;
+}
+.call-back-input-number .call-back-label{
+    font-size: 12px;
+    position: absolute;
+    top: 60px;
+    left: 150px;
+    color: #4e4e4e;
+    background-color: white;
+}
+.call-back-input-number input{
+    padding: 0 0 0 10px;
+    font-size: 20px;
+    height: 50px;
+    width: 300px;
+    border: 1px solid #ccc;
+    transition: all .3s ease-in-out;
+}
+.call-back-input-number input:hover{
+    border: 1px solid black;
+}
+.call-back-input-number input:focus, .call-back-input-number input:active{
+    outline: none;
+    border: 1px solid black;
+}
+.call-back-button-wrapper button{
+    margin: 0 0 0 40px;
+    height: 50px;
+    width: 160px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    background-color: #353535;
+    transition: all .3s ease-in-out;
+}
+.call-back-button-wrapper button:hover{
+    cursor: pointer;
+    color: #9e9e9e;
+}
+/* ! FOOTER */
+.footer__container{
+    max-width: 100vw;
+}
+.footer__container-blocks-contacts{
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer__container-block-contact:first-child{
+    text-transform: uppercase;
+}
+.footer__container-block-contact{
+    margin: 20px 0 0 0;
+}
+.footer__container-block-contact a{
+    color: black;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+.footer__container-block-contact a:hover{
+    color:#656565;
+}
+.footer__container-block-contact-social{
+    display: flex;
+    margin: 15px 0 30px 5px;
+}
+.footer__container-block-contact-social-facebook{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    transition: all .3s ease-in-out;
+
+}
+.footer__container-block-contact-social-facebook:hover{
+    cursor: pointer;
+    background-color: #ccc;
+
+}
+.footer__container-block-contact-social-facebook img{
+    height: 30px;
+    width: auto;
+
+}
+.footer__container-block-contact-social-instagram{
+    height: 50px;
+    width: 50px;
+    margin: 0 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    transition: all .3s ease-in-out;
+
+}
+.footer__container-block-contact-social-instagram:hover{
+    cursor: pointer;
+    background-color: #ccc;
+
+}
+.footer__container-block-contact-social-instagram img{
+    height: 30px;
+    width: auto;
+
+}
+
+
+.footer__container-block-contact-apps{
+    display: flex;
+    margin: 15px 0 0 0
+}
+/* .footer__container-block-contact-app-appStore{
+
+} */
+.footer__container-block-contact-app-appStore img{
+    height:40px;
+    width: auto;
+
+}
+.footer__container-block-contact-app-appStore img:hover{
+    cursor: pointer;
+}
+/* .footer__container-block-contact-app-playMarket{
+
+} */
+.footer__container-block-contact-app-playMarket img{
+    height: 40px;
+    margin: 0 0 0 10px;
+    width: auto;
+
+}
+.footer__container-block-contact-app-playMarket img:hover{
+    cursor: pointer;
+}
+
+/* ! MEDIA */
+@media screen and (max-width: 1600px) {
+    .nav__container-items{
+        /* width: 90%; */
+    }
+    .li__container-links, .a__container-links, .a__container-links-red{
+        font-size: 14px;
+        padding: 30px 10px;
+    }
+    .search{
+        width: 150px;
+    }
+    .ul__container-block--link .a__container-block{
+        font-size: 16px;
+    }
+    .ul__container-block--link a{
+        font-size: 14px;
+    }
+    .main__container-discount-clothe-cards{
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-discount-clothe-cards-title{
+        position: relative;
+        font-size: 18px;
+        left: 250px;
+    }
+    .main__container-discount-clothe-card-img img{
+        height: 400px;
+    }
+    .main__container-discount-clothe-card-brand-title{
+        font-size: 16px;
+    }
+    .main__container-discount-clothe-card-title{
+        width: 200px;
+        font-size: 14px;
+        height: 50px;
+    }
+    .main__container-discount-clothe-card-price{
+        font-size: 14px;
+    }
+    .main__container-clothe-btn-more button{
+        height: 60px;
+        width: 170px;
+    }
+    .trends__container-title{
+        position: relative;
+        font-size: 18px;
+        left: 250px;
+    }
+    .trends__container-block--img img{
+        height: 400px;
+    }
+    .trends__container-block--title a{
+        font-size: 18px;
+    }
+    .main__container-ads{
+        height: 500px;
+    }
+    .container__ads-img{
+        height: 300px;
+        background-color: transparent;
+    }
+    .container__ads-img img{
+        height: 300px;
+    }
+    .container__ads-title{
+        font-size: 22px;
+    }
+    .container__ads-btn button{
+        border: none;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 400px;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        font-size: 16px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        height: 60px;
+        font-size: 14px;
+        width: 200px;
+    }
+    .main__container-ads-wrapper-clothe-card:not(:first-child){
+        margin: 0 0 0 20px;
+    }
+    .main__container-ads-wrapper-clothe{
+        height: 650px;
+    }
+    .main__container-ads-wrapper-clothe-btn-more{
+        padding-bottom: 40px;
+    }
+    .main__container-ads-wrapper-clothe-btn-more button{
+        height: 60px;
+        width: 170px;
+    }
+    .main__container-bonuses{
+        margin-top: 40px;
+    }
+    .main__container-bonuses-title{
+        font-size: 18px;
+    }
+    .main__container-bonuses-subtitle{
+        font-size: 16px;
+    }
+    .main__container-bonuses-wrapper-current-bonus-title{
+        font-size: 14px;
+    }
+    .call-back--img{
+        height: 60px;
+        width:60px;
+    }
+    .call-back---hover-title{
+        font-size: 14px;
+    }
+    .call-back---hover{
+        position: absolute;
+        top: 26px;
+        font-size: 10px;
+    }
+    .call-back---hover-title-arrow{
+        position: absolute;
+        top: -19px;
+        left: 25px;
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 12px;
+    }
+    .footer__container-block-contact-social-facebook{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-social-instagram{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-app-appStore img{
+        height: 30px;
+    }
+    .footer__container-block-contact-app-playMarket img{
+        height: 30px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .nav__container-items{
+        width: 90%;
+    }
+    .li__container-links, .a__container-links, .a__container-links-red{
+        font-size: 14px;
+        padding: 30px 10px;
+    }
+    .search{
+        width: 100px;
+    }
+    .ul__container-block--link .a__container-block{
+        font-size: 16px;
+    }
+    .ul__container-block--link a{
+        font-size: 14px;
+    }
+    .main__container-discount-clothe-cards{
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-discount-clothe-cards-title{
+        position: relative;
+        font-size: 18px;
+        left: 66px;
+    }
+    .main__container-discount-clothe-card-img img{
+        height: 300px;
+    }
+    .main__container-discount-clothe-card-brand-title{
+        font-size: 16px;
+    }
+    .main__container-discount-clothe-card-title{
+        width: 200px;
+        font-size: 14px;
+        height: 50px;
+    }
+    .main__container-discount-clothe-card-price{
+        font-size: 14px;
+    }
+    .main__container-clothe-btn-more button{
+        height: 60px;
+        width: 170px;
+    }
+    .trends__container-title{
+        position: relative;
+        font-size: 18px;
+        left: 66px;
+    }
+    .trends__container-block--img img{
+        height: 300px;
+    }
+    .trends__container-block--title a{
+        font-size: 18px;
+    }
+    .main__container-ads{
+        height: 500px;
+    }
+    .container__ads-img{
+        height: 300px;
+        background-color: transparent;
+    }
+    .container__ads-img img{
+        height: 300px;
+    }
+    .container__ads-title{
+        font-size: 22px;
+    }
+    .container__ads-btn button{
+        border: none;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 300px;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        font-size: 16px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        height: 60px;
+        font-size: 14px;
+        width: 200px;
+    }
+    .main__container-ads-wrapper-clothe-card:not(:first-child){
+        margin: 0 0 0 20px;
+    }
+    .main__container-ads-wrapper-clothe{
+        height: 650px;
+    }
+    .main__container-ads-wrapper-clothe-btn-more button{
+        height: 60px;
+        width: 170px;
+    }
+    .main__container-bonuses-title{
+        font-size: 18px;
+    }
+    .main__container-bonuses-subtitle{
+        font-size: 16px;
+    }
+    .main__container-bonuses-wrapper-current-bonus-title{
+        font-size: 14px;
+    }
+    .call-back--img{
+        height: 60px;
+        width:60px;
+    }
+    .call-back---hover-title{
+        font-size: 14px;
+    }
+    .call-back---hover{
+        position: absolute;
+        top: 26px;
+        font-size: 10px;
+    }
+    .call-back---hover-title-arrow{
+        position: absolute;
+        top: -19px;
+        left: 25px;
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 12px;
+    }
+    .footer__container-block-contact-social-facebook{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-social-instagram{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-app-appStore img{
+        height: 30px;
+    }
+    .footer__container-block-contact-app-playMarket img{
+        height: 30px;
+    }
+}
+@media screen and (max-width: 998px) {
+    /* ! HEADER SEARCH */
+.container__user-search{
+    position: relative;
+    display: flex;
+}
+/* .search{
+    font-size: 10px;
+    z-index: 1;
+    width: 20px;
+    height: 30px;
+    padding: 0 0 0 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+} */
+.search:focus, .search:active, .search:hover{
+    outline: none;
+    border: 1px solid black;
+}
+.user-search-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7px 6px;
+}
+.user-search-img:hover{
+    cursor: pointer;
+}
+.search-image{
+    height: 10px;
+    width: auto;
+}
+/* ! HEADER USER PROFILE */
+.container__user-profile{
+    margin: 0 0 0 20px;
+}
+.container__user-bag{
+    margin: 0 0 0 10px;
+}
+.user-profile-container, .user-bag-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+.user-profile-container:hover, .user-bag-container:hover{
+    cursor: pointer;
+    background-color: rgb(205, 205, 205);
+
+}
+.user-profile, .user-bag{
+    height: 20px;
+    width: auto;
+}
+    .nav__container-items{
+        width: 90%;
+    }
+    .li__container-links, .a__container-links, .a__container-links-red{
+        font-size: 12px;
+        padding: 30px 10px;
+    }
+    .search{
+        width: 100px;
+    }
+    .ul__container-block--link .a__container-block{
+        font-size: 16px;
+    }
+    .ul__container-block--link a{
+        font-size: 14px;
+    }
+    .main__container-discount-clothe-cards{
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-discount-clothe-cards-title{
+        position: relative;
+        font-size: 16px;
+        left: 66px;
+    }
+    .main__container-discount-clothe-card-img img{
+        height: 200px;
+    }
+    .main__container-discount-clothe-card-brand-title{
+        font-size: 10px;
+    }
+    .main__container-discount-clothe-card-title{
+        width: 150px;
+        font-size: 10px;
+        height: 50px;
+    }
+    .main__container-discount-clothe-card-price{
+        font-size: 12px;
+    }
+    .main__container-discount-clothe-card-price span{
+        font-size: 12px;
+    }
+    .main__container-clothe-btn-more button{
+        font-size: 12px;
+        height: 50px;
+        width: 150px;
+    }
+    .trends__container-title{
+        position: relative;
+        font-size: 18px;
+        left: 66px;
+    }
+    .trends__container-block--img img{
+        height: 220px;
+    }
+    .trends__container-block--title a{
+        font-size: 14px;
+    }
+    .main__container-ads{
+        height: 400px;
+    }
+    .container__ads-img{
+        height: 300px;
+        background-color: transparent;
+    }
+    .container__ads-img img{
+        height: 200px;
+    }
+    .container__ads-title{
+        font-size: 16px;
+    }
+    .container__ads-btn button{
+        height: 50px;
+        width: 150px;
+        font-size: 12px;
+        border: none;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 200px;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        font-size: 10px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        height: 60px;
+        font-size: 10px;
+        width: 150px;
+    }
+    .main__container-ads-wrapper-clothe-card:not(:first-child){
+        margin: 0 0 0 20px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe{
+        height: 450px;
+    }
+    .main__container-ads-wrapper-clothe-btn-more button{
+        font-size: 12px;
+        height: 50px;
+        width: 150px;
+    }
+    .main__container-bonuses-title{
+        font-size: 14px;
+    }
+    .main__container-bonuses-subtitle{
+        font-size: 12px;
+    }
+    .main__container-bonuses-wrapper-current-bonus-title{
+        font-size: 12px;
+    }
+    .call-back--img{
+        height: 60px;
+        width:60px;
+    }
+    .call-back-label{
+        font-size: 6px;
+    }
+    .call-back---hover-title{
+        font-size: 12px;
+    }
+    .call-back---hover{
+        position: absolute;
+        top: 26px;
+        font-size: 10px;
+    }
+    .call-back---hover-title-arrow{
+        position: absolute;
+        top: -19px;
+        left: 25px;
+    }
+    .call-back--container-title{
+        display: none;
+        font-size: 12px;
+    }
+    .call-back--container-subtitle{
+        display: none;
+        font-size: 12px;
+    }
+    .call-back-input-number input{
+        font-size: 12px;
+        height: 40px;
+        width: 200px;
+    }
+    .call-back-input-number label{
+        font-size: 12px;
+    }
+    .call-back-input-number label:last-child{
+        font-size: 10px;
+    }
+    .call-back-label{
+        font-size: 1px;
+    }
+    .call-back-button-wrapper button{
+        font-size: 10px;
+        height: 40px;
+        width: 100px;
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 12px;
+    }
+    .footer__container-block-contact-social-facebook{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-social-instagram{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-app-appStore img{
+        height: 30px;
+    }
+    .footer__container-block-contact-app-playMarket img{
+        height: 30px;
+    }
+}
+/* @media screen and (min-width: 768px) {
+
+}
+@media screen and (min-width: 576px) {
+
+} */
