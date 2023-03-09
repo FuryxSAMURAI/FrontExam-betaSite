@@ -867,8 +867,12 @@ header{
     .ul__container-block--link .a__container-block{
         font-size: 16px;
     }
+    .ul__container-block--links{
+        margin-top: 40px;
+        width: 250px;
+    }
     .ul__container-block--link a{
-        font-size: 14px;
+        font-size: 12px;
     }
     .main__container-discount-clothe-cards{
         display: flex;
@@ -1007,10 +1011,10 @@ header{
         width: 100px;
     }
     .ul__container-block--link .a__container-block{
-        font-size: 16px;
+        font-size: 14px;
     }
     .ul__container-block--link a{
-        font-size: 14px;
+        font-size: 12px;
     }
     .main__container-discount-clothe-cards{
         display: flex;
@@ -1202,11 +1206,16 @@ header{
         width: 100px;
     }
     .ul__container-block--link .a__container-block{
-        font-size: 16px;
-    }
-    .ul__container-block--link a{
         font-size: 14px;
     }
+}
+.ul__container-block--links{
+    margin-top: 40px;
+    width: 200px;
+}
+.ul__container-block--link a{
+    font-size: 10px;
+}
     .main__container-discount-clothe-cards{
         display: flex;
         justify-content: center;
