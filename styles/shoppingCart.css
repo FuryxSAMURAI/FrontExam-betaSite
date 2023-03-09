@@ -207,7 +207,9 @@ ul, li{
 .header__container{
     height: 100px;
 }
-.header__container-title{
+.header__container-title a{
+    text-decoration: none;
+    color: black;
     margin: 0 0 0 20px;
     position: absolute;
     font-size: 22px;
@@ -263,6 +265,7 @@ ul, li{
 }
 .ul__container-block{
     position: relative;
+    width: 110%;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -429,7 +432,7 @@ ul, li{
 
 .main__container-check{
     width: 25vw;
-    height: 500px;
+    height: auto;
     border-radius: 5px;
     box-shadow: 0 0 10px #ccc;
     background-color: white;
@@ -478,7 +481,22 @@ ul, li{
     font-size: 16px;
     padding-left: 10px;
     height: 40px;
+    border-radius: 5px;
     width: 100%;
+}
+.main__container-check-promocode-input input[type='submit']{
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+.main__container-check-promocode-input input[type='submit']:hover{
+    cursor: pointer;
+    border: none;
+    background-color: #000000;
+    color: white;
 }
 .main__container-check-promocode-input input:focus{
     outline: none;

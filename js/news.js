@@ -71,35 +71,38 @@ window.onload = ()=>{
     }
 
     let userQuestions = document.querySelectorAll('.main__container-chat-question');
-    // userQuestions.forEach(()=> {
-    //   console.log(userQuestions);
-    // });
-    let newDivQuestion = document.createElement('div');
-    let newDivAnswered = document.createElement('div');
+    let newDiv = document.createElement('div');
+    let p = document.createElement('p');
+    let firstP = document.createElement('p');
+    firstP.classList.add('main__container-chat-main-screen');
+    let secondP = document.createElement('p');
+    secondP.classList.add('main__container-chat-main-screen');
     for (userQuestion of userQuestions) {
       userQuestion.onclick = (e)=>{
-        console.log(userQuestion.textContent);
-        console.log(e.target);
         switch (e.target.textContent) {
           case 'Чи можу я оглянути товар?':
-            outScreen.appendChild(newDivQuestion)
-            outScreen.appendChild(newDivAnswered)
-                newDivQuestion.className = 'main__container-chat-main-screen';
-                newDivAnswered.className = 'main__container-chat-main-screen';
-                newDivQuestion.innerHTML = 'Чи можу я оглянути товар?';
-                newDivAnswered.innerHTML = 'Так, послуга огляду товару до сплати працює у відділеннях “Нова Пошта” , Justin та "Укрпошта".';
-                // outScreen.innerHTML += 'Так, послуга огляду товару до сплати працює у відділеннях “Нова Пошта” , Justin та "Укрпошта".';
-                break;
-                case 'Як повернути товар?':
-                  outScreen.appendChild(newDivQuestion)
-            outScreen.appendChild(newDivAnswered)
-                newDivQuestion.className = 'main__container-chat-main-screen';
-                newDivAnswered.className = 'main__container-chat-main-screen';
-                newDivQuestion.innerHTML += 'Як повернути товар?';
-                  newDivAnswered.innerHTML += 'Ви можете повернути товар належної якості протягом 14 днів з моменту покупки. Товар належної якості - це товар без ознак експлуатації, у якого збережений товарний вигляд, етикетки, пакування та додаткові аксесуари. Дані умови не стосуються повернення товарів із браком. Щоб повернути товар, відправте його разом з оригінальним пакуванням, товарною накладною та заповненою заявою про повернення.';
-                  break;
-                  case 'Хто сплачує відправку товару при поверненні?':
-                    outScreen.innerHTML += '';
+              outScreen.append(newDiv);
+              newDiv.append(firstP)
+              firstP.innerHTML += 'Чи можу я оглянути товар?'
+              console.log('Чи можу я оглянути товар?');
+              setTimeout(function() {
+              newDiv.append(secondP)
+              secondP.innerHTML += 'Так, послуга огляду товару до сплати працює у відділеннях “Нова Пошта” , Justin та "Укрпошта".'
+                }, 2000)
+            break;
+            case 'Як повернути товар?':
+              outScreen.append(newDiv);
+              newDiv.append(firstP)
+              firstP.innerHTML += 'Як повернути товар?'
+              setTimeout(function() {
+              newDiv.append(secondP)
+              secondP.innerHTML += 'Ви можете повернути товар належної якості протягом 14 днів з моменту покупки. Товар належної якості - це товар без ознак експлуатації, у якого збережений товарний вигляд, етикетки, пакування та додаткові аксесуари. Дані умови не стосуються повернення товарів із браком. Щоб повернути товар, відправте його разом з оригінальним пакуванням, товарною накладною та заповненою заявою про повернення.'
+              }, 2000)
+
+            console.log('Як повернути товар?');
+            break;
+            case 'Хто сплачує відправку товару при поверненні?':
+                    outScreen.innerHTML += 'Вартість відправки товару при поверненні оплачуємо ми. При відправці посилки службами "Нова пошта" просто оберіть оплату отримувачем.';
                     break;
                     case 'В який термін я можу повернути товар?':
                       outScreen.innerHTML += 'Послуга примірки недоступна при доставці замовлень кур’єром або до відділень "Нова пошта" та "Justin".';
@@ -107,7 +110,7 @@ window.onload = ()=>{
                       case 'Чи можу я зберегти товари до Обраного, щоб замовити їх пізніше? ':
                         outScreen.innerHTML += 'Поки-що ця функція не дступна.';
                         break;
-                      case 'Чи можу я приміряти товар? ':
+                      case 'Чи можу я приміряти товар?':
                         outScreen.innerHTML += 'Послуга примірки недоступна при доставці замовлень кур’єром або до відділень "Нова пошта" та "Justin".';
                         break;
                         default:
@@ -118,41 +121,41 @@ window.onload = ()=>{
     }
 
     // ! MENU
-    function openMenu(e) {
-      let menuListsContainers = document.querySelectorAll('.main__container-aside-menu-section-lists');
-      let menuListContainers = document.querySelectorAll('.main__container-aside-menu-section-list');
-      for (menuListContainer of menuListContainers) {
-        menuListContainer.style.display = 'block';
-        for (menuListsContainer of menuListsContainers) {
-          menuListsContainer.style.position = 'relative';
-          menuListsContainer.style.top = '10px';
-          
-        }
-      }
-        // menuContainer.style.display = 'none';
+    var acc = document.querySelectorAll("#according");
+    var menus = document.querySelectorAll(".main__container-aside-menu-section-lists");
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+      });
     }
 
     // ! API
 
-    let request;
+    let requestToRandomUser;
     if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest();
+        requestToRandomUser = new XMLHttpRequest();
     }else{
-        request = ActiveXObject("Microsoft.XMLHTTP");
+        requestToRandomUser = ActiveXObject("Microsoft.XMLHTTP");
     }
-    request.open("GET", "https://randomuser.me/api/");
+    requestToRandomUser.open("GET", "https://randomuser.me/api/");
     
-    request.onload = () => {
-        let user = JSON.parse(request.response);
+    requestToRandomUser.onload = () => {
+        let user = JSON.parse(requestToRandomUser.response);
         console.log(user);
-        if(request.status == 200){
+        if(requestToRandomUser.status == 200){
           let name = user.results[0].name.first;
+          let nameToCHAT = document.getElementById('outConsultantName');
           let picture = user.results[0].picture.thumbnail;
           let chatName = document.querySelector('.main__container-chat-header-consultant-name');
           let pictureChat = document.querySelector('.main__container-chat-header-consultant-img img');
+          nameToCHAT.innerHTML = name;
           chatName.innerHTML = name;
           pictureChat.src = picture;
-        }else if(request.status == 404){
+        }else if(requestToRandomUser.status == 404){
+          console.log('Вибачте, але чат зараз не працює');
         }
     }
-    request.send();
+    requestToRandomUser.send();
+
+    // ! JSON
+    

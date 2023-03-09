@@ -207,7 +207,9 @@ ul, li{
 .header__container{
     height: 100px;
 }
-.header__container-title{
+.header__container-title a{
+    text-decoration: none;
+    color: black;
     margin: 0 0 0 20px;
     position: absolute;
     font-size: 22px;
@@ -263,6 +265,7 @@ ul, li{
 }
 .ul__container-block{
     position: relative;
+    width: 110%;
     height: 400px;
     display: flex;
     justify-content: center;

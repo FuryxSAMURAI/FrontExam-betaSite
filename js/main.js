@@ -5,6 +5,16 @@ window.onload = ()=>{
     preloader.style.display = 'none';
   }, 950);
 }
+function openMenu() {
+    let open = document.querySelector('.header__menu-container-wrapper')
+    open.style.left = '0px'
+    console.log(2);
+  }
+  function closeMenu() {
+    let open = document.querySelector('.header__menu-container-wrapper')
+  open.style.left = '-3000px'
+    console.log(2);
+}
 function closeCallBackContainer() {
     document.querySelector('.call-back__container').style.position = 'fixed';
     document.querySelector('.call-back__container').style.bottom = '-200px';

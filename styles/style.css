@@ -356,6 +356,12 @@ header{
     height: 30px;
     width: auto;
 }
+.header__menu-container{
+    display: none;
+}
+.header__menu-container-wrapper{
+    display: none;
+}
 
 /* ! MAIN */
 /* .main__container-discount-clothe-cards-wrapper{
@@ -1364,9 +1370,361 @@ header{
         height: 30px;
     }
 }
-/* @media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+    .header__container-nav--items{
+        display:none;
+    }
+    .header__container-user--block{
+        display: none;
+    }
+     /* ! HEADER SEARCH */
+.container__user-search{
+    position: relative;
+    display: none;
+}
+/* .search{
+    font-size: 10px;
+    z-index: 1;
+    width: 20px;
+    height: 30px;
+    padding: 0 0 0 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+} */
+.search:focus, .search:active, .search:hover{
+    outline: none;
+    border: 1px solid black;
+}
+.user-search-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 7px 6px;
+}
+.user-search-img:hover{
+    cursor: pointer;
+}
+.search-image{
+    height: 10px;
+    width: auto;
+}
+/* ! HEADER USER PROFILE */
+.container__user-profile{
+    margin: 0 0 0 20px;
+}
+.container__user-bag{
+    margin: 0 0 0 10px;
+}
+.user-profile-container, .user-bag-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+}
+.user-profile-container:hover, .user-bag-container:hover{
+    cursor: pointer;
+    background-color: rgb(205, 205, 205);
 
+}
+.user-profile, .user-bag{
+    height: 20px;
+    width: auto;
+}
+.header__menu-container{
+    height: 70%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+/* .header__menu-wrapper{
+    display: none;
+} */
+.header__menu-container-open{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    /* background-color: red; */
+}
+.header__menu-container-open span{
+    border-radius: 5px;
+    display: block;
+    margin: 8px auto;
+    height: 3px;
+    width: 30px;
+    background-color: black;
+}
+.header__menu-container-open span:first-child{
+    /* transform: translateY(-5px); */
+}
+.header__menu-container-open span:nth-child(2){
+    transform: translateY(0);
+}
+.header__menu-container-open span:nth-child(3){
+    /* transform: translateY(5px); */
+}
+.header__menu-container-wrapper{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: -3000px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transition: all .3s ease-in-out;
+}
+.header__menu-container-close{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    /* background-color: red; */
+}
+.header__menu-container-close span{
+    border-radius: 5px;
+    display: block;
+    margin: 8px auto;
+    height: 3px;
+    width: 30px;
+    background-color: black;
+}
+.header__menu-container-close span:nth-child(1){
+    transform: rotate(-45deg);
+    position: relative;
+    top: 21px;
+}
+.header__menu-container-close span:nth-child(2){
+    position: relative;
+    top: 10px;
+    transform: rotate(45deg);
+}
+.header__menu-container-lists{
+    position: relative;
+    top: 40px;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.header__menu-container-list a{
+    font-size: 18px;
+    line-height: 40px;
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease;
+}
+.header__menu-container-list-SALE a{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    text-decoration: none;
+    color: red;
+    transition: all .3s ease;
+}
+.header__menu-container-list-SALE a:hover{
+    line-height: 60px;
+    text-decoration: none;
+    color: rgb(203, 8, 8);
+    transition: all .3s ease;
+}
+
+.header__menu-container-list a:hover{
+    color: #a3a3a3;
+}
+.header__menu-container-item-user{
+    position: relative;
+    top: 80px;
+    font-size: 18px;
+    margin-left: 20px;
+}
+.header__menu-container-item-user a{
+    text-decoration: none;
+    color: black;
+}
+    .nav__container-items{
+        width: 90%;
+    }
+    .li__container-links, .a__container-links, .a__container-links-red{
+        font-size: 12px;
+        padding: 30px 10px;
+    }
+    .search{
+        width: 100px;
+    }
+    .ul__container-block--link .a__container-block{
+        font-size: 16px;
+    }
+    .ul__container-block--link a{
+        font-size: 14px;
+    }
+    .main__container-discount-clothe-cards{
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-discount-clothe-cards-title{
+        position: relative;
+        font-size: 16px;
+        left: 66px;
+    }
+    .main__container-discount-clothe-card-img img{
+        height: 200px;
+    }
+    .main__container-discount-clothe-card-brand-title{
+        font-size: 10px;
+    }
+    .main__container-discount-clothe-card-title{
+        width: 150px;
+        font-size: 10px;
+        height: 50px;
+    }
+    .main__container-discount-clothe-card-price{
+        font-size: 12px;
+    }
+    .main__container-discount-clothe-card-price span{
+        font-size: 12px;
+    }
+    .main__container-clothe-btn-more button{
+        font-size: 12px;
+        height: 50px;
+        width: 150px;
+    }
+    .trends__container-title{
+        position: relative;
+        font-size: 18px;
+        left: 66px;
+    }
+    .trends__container-block--img img{
+        height: 220px;
+    }
+    .trends__container-block--title a{
+        font-size: 14px;
+    }
+    .main__container-ads{
+        height: 400px;
+    }
+    .container__ads-img{
+        height: 300px;
+        background-color: transparent;
+    }
+    .container__ads-img img{
+        height: 200px;
+    }
+    .container__ads-title{
+        font-size: 16px;
+    }
+    .container__ads-btn button{
+        height: 50px;
+        width: 150px;
+        font-size: 12px;
+        border: none;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 200px;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        font-size: 10px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        height: 60px;
+        font-size: 10px;
+        width: 150px;
+    }
+    .main__container-ads-wrapper-clothe-card:not(:first-child){
+        margin: 0 0 0 20px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe{
+        height: 450px;
+    }
+    .main__container-ads-wrapper-clothe-btn-more button{
+        font-size: 12px;
+        height: 50px;
+        width: 150px;
+    }
+    .main__container-bonuses-title{
+        font-size: 14px;
+    }
+    .main__container-bonuses-subtitle{
+        font-size: 12px;
+    }
+    .main__container-bonuses-wrapper-current-bonus-title{
+        font-size: 12px;
+    }
+    .call-back--img{
+        height: 60px;
+        width:60px;
+    }
+    .call-back-label{
+        font-size: 6px;
+    }
+    .call-back---hover-title{
+        font-size: 12px;
+    }
+    .call-back---hover{
+        position: absolute;
+        top: 26px;
+        font-size: 10px;
+    }
+    .call-back---hover-title-arrow{
+        position: absolute;
+        top: -19px;
+        left: 25px;
+    }
+    .call-back--container-title{
+        display: none;
+        font-size: 12px;
+    }
+    .call-back--container-subtitle{
+        display: none;
+        font-size: 12px;
+    }
+    .call-back-input-number input{
+        font-size: 12px;
+        height: 40px;
+        width: 200px;
+    }
+    .call-back-input-number label{
+        font-size: 12px;
+    }
+    .call-back-input-number label:last-child{
+        font-size: 10px;
+    }
+    .call-back-label{
+        font-size: 1px;
+    }
+    .call-back-button-wrapper button{
+        font-size: 10px;
+        height: 40px;
+        width: 100px;
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 12px;
+    }
+    .footer__container-block-contact-social-facebook{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-social-instagram{
+        height: 40px;
+        width: 40px;
+    }
+    .footer__container-block-contact-app-appStore img{
+        height: 30px;
+    }
+    .footer__container-block-contact-app-playMarket img{
+        height: 30px;
+    }
 }
 @media screen and (min-width: 576px) {
 
-} */
+}

@@ -207,7 +207,9 @@ ul, li{
 .header__container{
     height: 100px;
 }
-.header__container-title{
+.header__container-title a{
+    text-decoration: none;
+    color: black;
     margin: 0 0 0 20px;
     position: absolute;
     font-size: 22px;
@@ -263,6 +265,7 @@ ul, li{
 }
 .ul__container-block{
     position: relative;
+    width: 110%;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -371,23 +374,74 @@ ul, li{
     justify-content: center;
 }
 .main__container-aside-menu-section-wrapper{
-    border: 1px solid #ccc;
     text-align: center;
     padding: 10px 0;
     width: 200px;
     position: relative;
 }
 .main__container-aside-menu-section-title{
+    height: 20px;
+    display: flex;
+    justify-content: left;
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
     background-color: white;
     transition: all .3s ease-in-out;
     position: relative;
+    animation: closeMenu 1s forwards;
 }
 .main__container-aside-menu-section-lists{
-    background-color: white;
     transition: all .3s ease-in-out;
+    background-color: white;
     display: none;
 }
+#accordion:after {
+    content: '\002B';
+    color: #fff;
+	font-size: 18px;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+/* .active:after { */
+    /* content: "\2212"; */
+    /* content: '\002B'; */
+/* } */
+.active{
+    animation: openMenu 1s forwards;
+    /* height: 100px; */
+}
+@keyframes openMenu {
+    0%{
+        height: 20px;
+    }
+    100%{
+        height: 300px;
+    }
+}
+@keyframes closeMenu {
+    0%{
+        height: 300px;
+    }
+    100%{
+        height: 20px;
+    }
+}
+@keyframes openMenu {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100px;
+    }
+}
 .main__container-aside-menu-section-list{
+    padding: 0 18px;
+	color: #212121;
+    background-color: #fff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 .main__container-aside-menu-section-list li{
 }
@@ -550,7 +604,7 @@ ul, li{
     bottom: -600px;
     border-radius: 5px;
     background-color: white;
-    height: 500px;
+    height: 600px;
     width: 500px;
     transition: all .4s ease-in-out;
 }
@@ -661,9 +715,12 @@ ul, li{
     border-top: 1px solid #ccc;
 }
 .main__container-chat-questions{
-    height: 100px;
+    height: 200px;
     overflow: scroll;
     padding: 10px 20px;
+}
+.main__container-chat-questions::-webkit-scrollbar, .main__container-chat-main::-webkit-scrollbar{
+    width: 0;
 }
 .main__container-chat-question{
     margin: 10px 20px;

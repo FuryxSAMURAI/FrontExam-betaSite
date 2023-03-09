@@ -256,7 +256,7 @@
                                     </div>
                                     <div class="main__container-cart-product-name">Чоловіча біла лляна сорочка </div>
                                 </div>
-                                <div class="main__container-cart-product-price">ціна: <span id="allSumForPay">3 990</span></div>
+                                <div class="main__container-cart-product-price">ціна: <span id="allSumForPay">3 990</span> ₴</div>
                             </div>
                         </div>
                     </div>
@@ -271,8 +271,11 @@
                     <div class="main__container-check-promocode-wrapper">
                         <div class="main__container-check-promocode-title">Ви маєте промокод?</div>
                         <div class="main__container-check-promocode-input">
-                            <label for="promocode">Введіть його сюди</label>
-                            <input type="text" name="promocode">
+                            <form method="get">
+                                <label for="promocode">Введіть його сюди</label>
+                                <input type="text" name="promocode">
+                                <input type="submit" value="Застосувати">
+                            </form>
                         </div>
                     </div>
                     <div class="main__container-check-all-sum-wrapper">
