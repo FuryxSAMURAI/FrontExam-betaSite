@@ -1208,7 +1208,6 @@ header{
     .ul__container-block--link .a__container-block{
         font-size: 14px;
     }
-}
 .ul__container-block--links{
     margin-top: 40px;
     width: 200px;
@@ -1734,6 +1733,6 @@ header{
         height: 30px;
     }
 }
-@media screen and (min-width: 576px) {
+/* @media screen and (min-width: 576px) {
 
-}
+} */

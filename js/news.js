@@ -158,4 +158,7 @@ window.onload = ()=>{
     requestToRandomUser.send();
 
     // ! JSON
-    
+    // var cards = JSON.parse();
+    // console.log(cards);
+    let json = require('./cards.json');
+console.log(json, 'the json obj');
