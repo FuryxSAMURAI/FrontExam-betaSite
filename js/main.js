@@ -71,28 +71,28 @@ function openCallBackContainer() {
 card = `{
   "cardDisc":{
     "1":{
-      "cardImg": "../assets/images/discount15per/card1/47305c800ca005692abfe2b00774.webp",
+      "cardImg": "assets/images/discount15per/card1/47305c800ca005692abfe2b00774.webp",
       "brand":"under armour",
       "name":"Чоловіча біла футболка UA Pjt Rock Brahma Bull",
       "priceWithDiscount":"1 436 грн",
       "price":"1 690 грн"
     },
     "2":{
-      "cardImg":"../assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp",
+      "cardImg":"assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp",
       "brand":"under armour",
       "name":"Чоловіча чорна футболка UA TAC HG COMP T",
       "priceWithDiscount":"1521 грн",
       "price":"1 790 грн"
     },
     "3":{
-      "cardImg": "../assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp",
+      "cardImg": "assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp",
       "brand":"under armour",
       "name":"Чоловіча кепка Project Rock Trucker",
       "priceWithDiscount":"1692 грн",
       "price":"1 990 грн"
     },
     "4":{
-      "cardImg": "../assets/images/discount15per/card4/cb789991a70c026dd37360efd042.webp",
+      "cardImg": "assets/images/discount15per/card4/cb789991a70c026dd37360efd042.webp",
       "brand":"under armour",
       "name":"Чоловіча зелена пуховая парка UA CGI Down 3-in-1",
       "priceWithDiscount":"16 311 грн",
@@ -100,7 +100,7 @@ card = `{
     }
   },
   "ads":{
-      "img":"../assets/images/ads/photo-1441986300917-64674bd600d8.jpg",
+      "img":"assets/images/ads/photo-1441986300917-64674bd600d8.jpg",
       "title":"До <span>-20%</span> якщо зареєструєшся <br> на нашому сайті!",
       "btnCont":"Детальніше"
   }
