@@ -467,10 +467,218 @@ justify-content: center;
     background-color:#383838;
 }
 
+.main__container-trends-container{
+    display: flex;
+    justify-content: center;
+    /* padding-top: 100px; */
+}
+.main__container-trends-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.main__container-trends-title{
+    padding-top: 100px;
+    text-align: center;
+    margin: 40px 0;
+    font-size: 32px;
+}
+.main__container-trends-container-cards-img{
+    height: 500px;
+    width: auto;
+}
+.main__container-trends-container-cards-img img{
+    height: 100%;
+    width: 350px;
+}
+.main__container-trends-container-cards-title a{
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    top: 20px;
+    transition: all .3s ease-in-out;
+}
+.main__container-trends-container-card:hover{
+    cursor: pointer;
+}
+.main__container-trends-container-cards-title a:hover{
+    cursor: pointer;
+    color: #656565;
+}
+
+
+.main__container-slider-brands-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    background-color: #f5f5f5;
+    height: 100px;
+}
+.main__container-slider-brands-wrapper{
+    display: flex;
+    position: absolute;
+    /* justify-content: center; */
+    top: 30%;
+    animation: sliderBrands 10s infinite;
+}
+.main__container-slider-brands-text{
+    font-size: 38px;
+    margin-left: 40px;
+    color: rgb(61, 61, 61);
+}
+@keyframes sliderBrands {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-150%);
+    }
+}
+
+.main__container-ads-container-clothe{
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+}
+.main__container-ads-wrapper-clothe{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+.main__container-ads-wrapper-clothe-card{
+    width: 350px;
+}
+.main__container-ads-wrapper-clothe-img{
+    height: 500px;
+}
+.main__container-ads-wrapper-clothe-img img{
+    height: 100%;
+    width: 100%;
+}
+.main__container-ads-wrapper-clothe-brand-title{
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.main__container-ads-wrapper-clothe-title{
+    font-size: 16px;
+    height: 50px;
+    margin-top: 10px;
+}
+.main__container-ads-wrapper-clothe-price{
+    height: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: red;
+}
+.main__container-ads-wrapper-clothe-price span{
+    margin-left: 20px;
+    text-decoration: line-through;
+    color: #656565;
+}
+.main__container-ads-wrapper-clothe-button{
+    position: relative;
+    top: 250px;
+    display: flex;
+    justify-content: center;
+}
+.main__container-ads-wrapper-clothe-button button{
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    background-color: #1d1d1d;
+    transition: all .3s ease-in-out;
+}
+.main__container-ads-wrapper-clothe-button button:hover{
+    cursor: pointer;
+    background-color: #3d3d3d;
+}
+
+
+/* ! FOOTER */
+.footer__container{
+    padding:40px 80px;
+    background-color: #f7f7f7;
+    position: relative;
+    top: 300px;
+    max-width: 100vw;
+}
+.footer__container-blocks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer__container-blocks-contacts{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footer__container-blocks-contacts a{
+    text-decoration: none;
+    color: black;
+    transition: all .3s ease-in-out;
+}
+.footer__container-blocks-contacts a:hover{
+    cursor: pointer;
+    color: rgb(109, 109, 109);
+}
+.footer__container-block-contacts{
+    margin-left: 150px;
+}
+.footer__container-block-contact:first-child{
+    margin-bottom: 10px;
+}
+.footer__container-block-contact{
+    margin-bottom: 5px;
+}
+.footer__container-block-contact-social{
+    margin-top: 10px;
+    display: flex;
+}
+.footer__container-block-contact-social img{
+    height: 30px;
+    width: 30px;
+}
+.footer__container-block-contact-social-instagram{
+    margin-left: 20px;
+}
+.footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+    padding: 5px;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+.footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+    cursor: pointer;
+    background-color: #dbdbdb;
+}
+.footer__container-block-contact-apps{
+    margin-top: 10px;
+    display: flex;
+}
+.footer__container-block-contact-apps img{
+    height: auto;
+    width: 120px;
+}
+.footer__container-block-contact-apps img:hover{
+    cursor: pointer;
+}
+.footer__container-block-contact-app-appStore{
+    
+}
+.footer__container-block-contact-app-playMarket{
+    margin-left: 10px;
+}
 /* ! MEDIA */
 @media screen and (max-width: 1600px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .nav__container-items{
         width: 90%;
@@ -592,10 +800,165 @@ justify-content: center;
         cursor: pointer;
         background-color:#383838;
     }
+
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 350px;
+        width: 250px;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 250px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 350px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 16px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 20px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
+
+    
+    .footer__container{
+        padding:40px 80px;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 300px;
+        max-width: 100vw;
+    }
+    .footer__container-blocks{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__container-blocks-contacts{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .footer__container-blocks-contacts a{
+        text-decoration: none;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-blocks-contacts a:hover{
+        cursor: pointer;
+        color: rgb(109, 109, 109);
+    }
+    .footer__container-block-contacts{
+        margin-left:80px;
+    }
+    .footer__container-block-contact:first-child{
+        margin-bottom: 10px;
+    }
+    .footer__container-block-contact{
+        margin-bottom: 5px;
+    }
+    .footer__container-block-contact-social{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-social img{
+        height: 30px;
+        width: 30px;
+    }
+    .footer__container-block-contact-social-instagram{
+        margin-left: 20px;
+    }
+    .footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+        padding: 5px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+        cursor: pointer;
+        background-color: #dbdbdb;
+    }
+    .footer__container-block-contact-apps{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-apps img{
+        height: auto;
+        width: 100px;
+    }
+    .footer__container-block-contact-apps img:hover{
+        cursor: pointer;
+    }
+    .footer__container-block-contact-app-appStore{
+        
+    }
+    .footer__container-block-contact-app-playMarket{
+        margin-left: 10px;
+    }
 }
 @media screen and (max-width: 1200px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .nav__container-items{
         width: 90%;
@@ -719,10 +1082,170 @@ justify-content: center;
         cursor: pointer;
         background-color:#383838;
     }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 300px;
+        width: 200px;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+    
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 200px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 300px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 14px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
+
+    
+    .footer__container{
+        padding:40px 0;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 300px;
+        max-width: 100vw;
+    }
+    .footer__container-blocks{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__container-blocks-contacts{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+    .footer__container-blocks-contacts{
+        font-size: 18px;
+    }
+    .footer__container-blocks-contacts a{
+        text-decoration: none;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-blocks-contacts a:hover{
+        cursor: pointer;
+        color: rgb(109, 109, 109);
+    }
+    .footer__container-block-contacts{
+        /* margin-left:80px; */
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .footer__container-block-contact{
+        margin-bottom: 5px;
+    }
+    .footer__container-block-contact-social{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-social img{
+        height: 30px;
+        width: 30px;
+    }
+    .footer__container-block-contact-social-instagram{
+        margin-left: 20px;
+    }
+    .footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+        padding: 5px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+        cursor: pointer;
+        background-color: #dbdbdb;
+    }
+    .footer__container-block-contact-apps{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-apps img{
+        height: auto;
+        width: 150px;
+    }
+    .footer__container-block-contact-apps img:hover{
+        cursor: pointer;
+    }
+    .footer__container-block-contact-app-appStore{
+        
+    }
+    .footer__container-block-contact-app-playMarket{
+        margin-left: 10px;
+    }
 }
 @media screen and (max-width: 1024px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .header__container-title{
         position: relative;
@@ -873,11 +1396,46 @@ justify-content: center;
         text-decoration: none;
         color: black;
     }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 300px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 22px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
 }
 
 @media screen and (max-width: 998px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .header__container-title{
         position: relative;
@@ -1099,10 +1657,170 @@ justify-content: center;
         cursor: pointer;
         background-color:#383838;
     }
+    
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 450px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 22px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+        
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 300px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 450px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 18px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
+
+
+    .footer__container{
+        padding:40px 0;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 300px;
+        max-width: 100vw;
+    }
+    .footer__container-blocks{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .footer__container-blocks-contacts{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .footer__container-blocks-contacts{
+        font-size: 18px;
+    }
+    .footer__container-blocks-contacts a{
+        text-decoration: none;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-blocks-contacts a:hover{
+        cursor: pointer;
+        color: rgb(109, 109, 109);
+    }
+    .footer__container-block-contacts{
+        /* margin-left:80px; */
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .footer__container-block-contact{
+        margin-bottom: 5px;
+    }
+    .footer__container-block-contact-social{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-social img{
+        height: 30px;
+        width: 30px;
+    }
+    .footer__container-block-contact-social-instagram{
+        margin-left: 20px;
+    }
+    .footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+        padding: 5px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+        cursor: pointer;
+        background-color: #dbdbdb;
+    }
+    .footer__container-block-contact-apps{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-apps img{
+        height: auto;
+        width: 150px;
+    }
+    .footer__container-block-contact-apps img:hover{
+        cursor: pointer;
+    }
+    .footer__container-block-contact-app-appStore{
+        
+    }
+    .footer__container-block-contact-app-playMarket{
+        margin-left: 10px;
+    }
 }
 @media screen and (max-width: 700px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .header__container-title{
         position: relative;
@@ -1265,7 +1983,7 @@ justify-content: center;
         font-size: 12px;
     }
     .main__container-discount-card-name{
-        width: 150px;
+        width: 230px;
         margin-top: 10px;
         font-size: 12px;
         height: 50px;
@@ -1280,6 +1998,10 @@ justify-content: center;
         margin-left: 20px;
         text-decoration: line-through;
         color: #656565;
+    }
+
+    .main__container-ads-container{
+        height: 400px;
     }
     .main__container-ads-img-wrapper{
         position: relative;
@@ -1324,11 +2046,125 @@ justify-content: center;
         cursor: pointer;
         background-color:#383838;
     }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 350px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 22px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 32px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 350px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+            
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 230px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 300px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 12px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
 }
 
 @media screen and (max-width: 500px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .header__container-title{
         position: relative;
@@ -1543,6 +2379,10 @@ justify-content: center;
         text-decoration: line-through;
         color: #656565;
     }
+
+    .main__container-ads-container{
+        height: 400px;
+    }
     .main__container-ads-img-wrapper{
         position: relative;
         height: 200px;
@@ -1586,11 +2426,176 @@ justify-content: center;
         cursor: pointer;
         background-color:#383838;
     }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 16px;
+    }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 16px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 230px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 8px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+                
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 150px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 230px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 12px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
+
+    .footer__container{
+        padding:40px 0;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 300px;
+        max-width: 100vw;
+    }
+    .footer__container-blocks{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .footer__container-blocks-contacts{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .footer__container-blocks-contacts{
+        font-size: 14px;
+    }
+    .footer__container-blocks-contacts a{
+        text-decoration: none;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-blocks-contacts a:hover{
+        cursor: pointer;
+        color: rgb(109, 109, 109);
+    }
+    .footer__container-block-contacts{
+        /* margin-left:80px; */
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .footer__container-block-contact{
+        margin-bottom: 5px;
+    }
+    .footer__container-block-contact-social{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-social img{
+        height: 30px;
+        width: 30px;
+    }
+    .footer__container-block-contact-social-instagram{
+        margin-left: 20px;
+    }
+    .footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+        padding: 5px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+        cursor: pointer;
+        background-color: #dbdbdb;
+    }
+    .footer__container-block-contact-apps{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-apps img{
+        height: auto;
+        width: 120px;
+    }
+    .footer__container-block-contact-apps img:hover{
+        cursor: pointer;
+    }
+    .footer__container-block-contact-app-appStore{
+        
+    }
+    .footer__container-block-contact-app-playMarket{
+        margin-left: 10px;
+    }
 }
 
 @media screen and (max-width: 300px){
     header{
-        width: 100vw;
+        max-width: 100vw;
     }
     .header__container-title{
         position: relative;
@@ -1821,6 +2826,9 @@ justify-content: center;
         text-decoration: line-through;
         color: #656565;
     }
+    .main__container-ads-container{
+        height: 300px;
+    }
     .main__container-ads-img-wrapper{
         position: relative;
         height: 150px;
@@ -1830,8 +2838,8 @@ justify-content: center;
         width: auto;
     }
     .main__container-ads-wrapper{
-       position: relative;
-       display: block;
+        position: relative;
+        display: block;
        /* align-items: center; */
     }
     .main__container-ads-info-wrapper{
@@ -1863,5 +2871,165 @@ justify-content: center;
     .main__container-ads-wrapper-subtitle-btn button:hover{
         cursor: pointer;
         background-color:#383838;
+    }
+
+    .main__container-trends-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .main__container-trends-title{
+        padding-top: 100px;
+        text-align: center;
+        margin: 40px 0;
+        font-size: 12px;
+    }
+    .main__container-trends-container-cards-img{
+        height: inherit;
+        width: auto;
+    }
+    .main__container-trends-container-cards-img img{
+        height: 140px;
+        width: auto;
+    }
+    .main__container-trends-container-cards-title a{
+        font-size: 8px;
+        color: black;
+        text-decoration: none;
+        position: relative;
+        top: 20px;
+        transition: all .3s ease-in-out;
+    }
+    .main__container-trends-container-card:hover{
+        cursor: pointer;
+    }
+    .main__container-trends-container-cards-title a:hover{
+        cursor: pointer;
+        color: #656565;
+    }
+                 
+
+    .main__container-ads-container-clothe{
+        position: relative;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    .main__container-ads-wrapper-clothe{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    .main__container-ads-wrapper-clothe-card{
+        width: 100px;
+    }
+    .main__container-ads-wrapper-clothe-img{
+        height: 150px;
+    }
+    .main__container-ads-wrapper-clothe-img img{
+        height: 100%;
+        width: 100%;
+    }
+    .main__container-ads-wrapper-clothe-brand-title{
+        margin-top: 5px;
+        text-transform: uppercase;
+        font-size: 8px;
+    }
+    .main__container-ads-wrapper-clothe-title{
+        font-size: 8px;
+        height: 50px;
+        margin-top: 10px;
+    }
+    .main__container-ads-wrapper-clothe-price{
+        height: 20px;
+        font-size: 8px;
+        font-weight: 600;
+        color: red;
+    }
+    .main__container-ads-wrapper-clothe-price span{
+        margin-left: 20px;
+        text-decoration: line-through;
+        color: #656565;
+    }
+
+    .footer__container{
+        padding:40px 0;
+        background-color: #f7f7f7;
+        position: relative;
+        top: 300px;
+        max-width: 100vw;
+    }
+    .footer__container-blocks{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .footer__container-blocks-contacts{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .footer__container-blocks-contacts{
+        text-align: center;
+        font-size: 8px;
+    }
+    .footer__container-blocks-contacts a{
+        text-decoration: none;
+        color: black;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-blocks-contacts a:hover{
+        cursor: pointer;
+        color: rgb(109, 109, 109);
+    }
+    .footer__container-block-contacts{
+        /* margin-left:80px; */
+    }
+    .footer__container-block-contact:first-child{
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .footer__container-block-contact{
+        margin-bottom: 5px;
+    }
+    .footer__container-block-contact-social{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .footer__container-block-contact-social img{
+        height: 15px;
+        width: 15px;
+    }
+    .footer__container-block-contact-social-instagram{
+        margin-left: 20px;
+    }
+    .footer__container-block-contact-social-instagram, .footer__container-block-contact-social-facebook{
+        padding: 5px;
+        border-radius: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-instagram:hover, .footer__container-block-contact-social-facebook:hover{
+        cursor: pointer;
+        background-color: #dbdbdb;
+    }
+    .footer__container-block-contact-apps{
+        margin-top: 10px;
+        display: flex;
+    }
+    .footer__container-block-contact-apps img{
+        height: auto;
+        width: 60px;
+    }
+    .footer__container-block-contact-apps img:hover{
+        cursor: pointer;
+    }
+    .footer__container-block-contact-app-appStore{
+        
+    }
+    .footer__container-block-contact-app-playMarket{
+        margin-left: 10px;
     }
 }
