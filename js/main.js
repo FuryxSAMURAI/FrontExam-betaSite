@@ -301,21 +301,22 @@ for (let i = 1; i <= 4; i++) {
     }
     
     // ! BRANDS
-    // let brandsCont = document.createElement('div')
-    // brandsCont.classList.add('main__container-slider-brands-container')
-    // let brandsWrapper = document.createElement('div')
-    // brandsWrapper.classList.add('main__container-slider-brands-wrapper')
-
-    // for (let i = 1; i <= 6; i++) {
-    //   let brandsText = document.createElement('div');
-    //   brandsText.classList.add('main__container-slider-brands-text')
-    //   brandsText.innerHTML = jsParsed.brands[i].text;
-    //   brandsWrapper.appendChild(brandsText);
-      
-    // }
     
-    // outMainContainer.appendChild(brandsCont);
-    // brandsCont.appendChild(brandsWrapper);
+    let brandsCont = document.createElement('div')
+    brandsCont.classList.add('main__container-slider-brands-container')
+    let brandsWrapper = document.createElement('div')
+    brandsWrapper.classList.add('main__container-slider-brands-wrapper')
+
+    for (let i = 1; i <= 6; i++) {
+      let brandsText = document.createElement('div');
+      brandsText.classList.add('main__container-slider-brands-text')
+      brandsText.innerHTML = jsParsed.brands[i].text;
+      brandsWrapper.appendChild(brandsText);
+      
+    }
+    
+    outMainContainer.appendChild(brandsCont);
+    brandsCont.appendChild(brandsWrapper);
     
     // ! POPULAR CLOTHES
     let popularClotheTitle = jsParsed.popularCLotheTitle;
