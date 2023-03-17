@@ -1,11 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 ul, li{
     list-style: none;
@@ -407,7 +407,7 @@ justify-content: center;
 .main__container-discount-card-price-withDiscount{
     height: 20px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     color: red;
 }
 .main__container-discount-card-price{
@@ -446,7 +446,7 @@ justify-content: center;
 }
 .main__container-ads-wrapper-title span{
     color: red;
-    font-weight: 700;
+    font-weight: 300;
 }
 .main__container-ads-wrapper-subtitle-btn{
     margin-top: 40px;
@@ -571,7 +571,7 @@ justify-content: center;
 .main__container-ads-wrapper-clothe-price{
     height: 20px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     color: red;
 }
 .main__container-ads-wrapper-clothe-price span{
@@ -602,6 +602,7 @@ justify-content: center;
 
 /* ! FOOTER */
 .footer__container{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding:40px 80px;
     background-color: #f7f7f7;
     position: relative;
@@ -741,7 +742,7 @@ justify-content: center;
     }
     .main__container-discount-card-price-withDiscount{
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -871,7 +872,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{
@@ -1030,7 +1031,7 @@ justify-content: center;
     .main__container-discount-card-price-withDiscount{
         font-size: 16px;
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -1062,7 +1063,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -1153,7 +1154,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{
@@ -1172,13 +1173,13 @@ justify-content: center;
     }
     .footer__container-blocks{
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
     }
     .footer__container-blocks-contacts{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        gap: 40px;
     }
     .footer__container-blocks-contacts{
         font-size: 18px;
@@ -1606,7 +1607,7 @@ justify-content: center;
     .main__container-discount-card-price-withDiscount{
         font-size: 18px;
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -1637,7 +1638,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -1728,7 +1729,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{
@@ -1991,7 +1992,7 @@ justify-content: center;
     .main__container-discount-card-price-withDiscount{
         font-size: 14px;
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -2026,7 +2027,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -2101,6 +2102,10 @@ justify-content: center;
         height: 350px;
         width: auto;
     }
+    .main__container-trends-container-cards-title{
+        position: relative;
+        bottom: 15px;
+    }
     .main__container-trends-container-cards-title a{
         font-size: 18px;
         color: black;
@@ -2152,7 +2157,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{
@@ -2172,6 +2177,7 @@ justify-content: center;
         font-size: 22px;
         padding-top: 20px;
         text-align: center;
+        width: 85%;
     }
     .nav__container-items{
         display: none;
@@ -2371,7 +2377,7 @@ justify-content: center;
     .main__container-discount-card-price-withDiscount{
         font-size: 14px;
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -2406,7 +2412,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -2433,6 +2439,9 @@ justify-content: center;
         font-size: 16px;
     }
 
+    .main__container-trends-container{
+        position: relative;
+    }
     .main__container-trends-wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2452,12 +2461,15 @@ justify-content: center;
         height: 230px;
         width: auto;
     }
+    .main__container-trends-container-cards-title{
+        position: relative;
+        bottom: 20px;
+        /* left: 0; */
+    }
     .main__container-trends-container-cards-title a{
-        font-size: 8px;
+        font-size: 12px;
         color: black;
         text-decoration: none;
-        position: relative;
-        top: 20px;
         transition: all .3s ease-in-out;
     }
     .main__container-trends-container-card:hover{
@@ -2503,7 +2515,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{
@@ -2521,10 +2533,12 @@ justify-content: center;
     }
     .footer__container-blocks{
         display: flex;
-        justify-content: left;
+        /* justify-content: left; */
         align-items: center;
     }
     .footer__container-blocks-contacts{
+        position: relative;
+        right: 50px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2818,7 +2832,7 @@ justify-content: center;
     .main__container-discount-card-price-withDiscount{
         font-size: 8px;
         height: 20px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-discount-card-price{
@@ -2852,7 +2866,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -2943,7 +2957,7 @@ justify-content: center;
     .main__container-ads-wrapper-clothe-price{
         height: 20px;
         font-size: 8px;
-        font-weight: 600;
+        font-weight: 400;
         color: red;
     }
     .main__container-ads-wrapper-clothe-price span{

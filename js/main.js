@@ -121,7 +121,7 @@ card = `{
     },
     "4":{
       "cardImg":"assets/images/trends/shoe/3c3a79027102bf7e10c5cf777bf5.webp",
-      "cardText":"<a href='#'>Обувь</a>"
+      "cardText":"<a href='#'>Взуття</a>"
     }
   },
   "brands":{
