@@ -415,6 +415,25 @@ justify-content: center;
     text-decoration: line-through;
     color: #656565;
 }
+.main__container-discount-wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 60px;
+}
+.main__container-discount-wrapper button{
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    width: 200px;
+    color: white;
+    background-color: #1d1d1d;
+    transition: all .3s ease-in-out;
+}
+.main__container-discount-wrapper-subtitle-btn button:hover{
+    cursor: pointer;
+    background-color:#383838;
+}
 
 .main__container-ads-container{
     position: relative;
@@ -530,7 +549,7 @@ justify-content: center;
 }
 @keyframes sliderBrands {
     0%{
-        transform: translateX(100%);
+        transform: translateX(0);
     }
     100%{
         transform: translateX(-150%);

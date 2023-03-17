@@ -99,7 +99,7 @@ card = `{
       "price":"19 190 грн"
     }
   },
-  "btnAdsText":"Показати увесь товар",
+  "btnDisсText":"Показати весь одяг",
   "ads":{
       "img":"assets/images/ads/photo-1441986300917-64674bd600d8.jpg",
       "title":"До <span>-20%</span> якщо зареєструєшся <br> на нашому сайті!",
@@ -227,6 +227,12 @@ for (let i = 1; i <= 4; i++) {
       cardsPriceWithDis.appendChild(cardsPrice)
       
     }
+    let discountCardBtnCont = document.createElement('div');
+    discountCardBtnCont.classList.add('main__container-discount-wrapper')
+    let discountCardBtn = document.createElement('button');
+    discountCardBtn.innerHTML = jsParsed.btnDisсText;
+    outMainContainer.appendChild(discountCardBtnCont);
+    discountCardBtnCont.appendChild(discountCardBtn)
 
     // ! ADS
     let adsImg = jsParsed.ads.img;
