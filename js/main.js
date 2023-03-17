@@ -1,3 +1,120 @@
+// ! JSON
+card = `{
+"cardDisc":{
+  "1":{
+    "cardImg": "assets/images/discount15per/card1/47305c800ca005692abfe2b00774.webp",
+    "brand":"under armour",
+    "name":"Чоловіча біла футболка UA Pjt Rock Brahma Bull",
+    "priceWithDiscount":"1 436 грн",
+    "price":"1 690 грн"
+  },
+  "2":{
+    "cardImg":"assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp",
+    "brand":"under armour",
+    "name":"Чоловіча чорна футболка UA TAC HG COMP T",
+    "priceWithDiscount":"1521 грн",
+    "price":"1 790 грн"
+  },
+  "3":{
+    "cardImg": "assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp",
+    "brand":"under armour",
+    "name":"Чоловіча кепка Project Rock Trucker",
+    "priceWithDiscount":"1692 грн",
+    "price":"1 990 грн"
+  },
+  "4":{
+    "cardImg": "assets/images/discount15per/card4/cb789991a70c026dd37360efd042.webp",
+    "brand":"under armour",
+    "name":"Чоловіча зелена пуховая парка UA CGI Down 3-in-1",
+    "priceWithDiscount":"16 311 грн",
+    "price":"19 190 грн"
+  }
+},
+"btnDisсText":"Показати весь одяг",
+"adsFirst":{
+    "img":"assets/images/ads/artem-beliaikin-49mCO5ZRQDk-unsplash.jpg",
+    "title":"До <span>-20%</span> якщо зареєструєшся <br> на нашому сайті!",
+    "btnCont":"Детальніше"
+},
+"adsSecond":{
+    "img":"assets/images/ads/tamanna-rumee-Wt33T42JNCM-unsplash.jpg",
+    "title":"Літній розпродаж! Знижки до <span>-30%</span>",
+    "btnCont":"Детальніше"
+},
+"trendsTitle":"Зараз у тренді",
+"cardTrends":{
+  "1":{
+    "cardImg":"assets/images/trends/cap/15cf95285117fd50034cd322f362.webp",
+    "cardText":"<a href='#'>Кепки</a>"
+  },
+  "2":{
+    "cardImg":"assets/images/trends/tShirt/ae0f8af5d93766560407566613d3.webp",
+    "cardText":"<a href='#'>Футболки</a>"
+  },
+  "3":{
+    "cardImg":"assets/images/trends/shorts/cd413a060d102b003cd752585119.webp",
+    "cardText":"<a href='#'>Шорти</a>"
+  },
+  "4":{
+    "cardImg":"assets/images/trends/shoe/3c3a79027102bf7e10c5cf777bf5.webp",
+    "cardText":"<a href='#'>Взуття</a>"
+  }
+},
+"brands":{
+  "1":{
+    "text":"MEXX"
+  },
+  "2":{
+    "text":"UNDER ARMOUR"
+  },
+  "3":{
+    "text":"TOMMY HILFIGER"
+  },
+  "4":{
+    "text":"DIESEL"
+  },
+  "5":{
+    "text":"CALVIN KLEIN"
+  },
+  "6":{
+    "text":"HELEN MARLEN"
+  }
+},
+"popularCLotheTitle":"Зараз популярне",
+"popularCLothe":{
+  "1":{
+    "cardImg":"assets/images/adsClothe/clothe1/9f3db00d358ce9d02b6803a6a1ef.webp",
+    "cardBrand":"under armour",
+    "cardName":"Чоловічі чорні шорти UA Vanish Woven 8in Shorts",
+    "cardPriceWithDiscount":"1 695 грн",
+    "cardPrice":"2 290 грн"
+  },
+  "2":{
+    "cardImg":"assets/images/adsClothe/clothe2/b3bb52b16c8da897080cbe2742c5.jpg",
+    "cardBrand":"Preach",
+    "cardName":"Жовті шорти Essential Sweat Shorts",
+    "cardPriceWithDiscount":"1 695 грн",
+    "cardPrice":"3 390 грн"
+  },
+  "3":{
+    "cardImg":"assets/images/adsClothe/clothe3/d02b7a4b50d6637e34d2ea87ea5d.webp",
+    "cardBrand":"Tommy Jeans",
+    "cardName":"Жіноча бордова футболка TJW RLXD TOMMY SIGNATURE",
+    "cardPriceWithDiscount":"685 грн",
+    "cardPrice":"1 990 грн"
+  },
+  "4":{
+    "cardImg":"assets/images/adsClothe/clothe4/a2287d543137579cdea2daaf6ffb.webp",
+    "cardBrand":"Under Armour",
+    "cardName":"Дитячі чорні шорти UA Prototype 2.0 Wdmk",
+    "cardPriceWithDiscount":"476 грн",
+    "cardPrice":"1 190 грн"
+  }
+},
+"btnPopularText":"Показати весь одяг"
+}`
+
+// ! PRELOADER
 let preloader = document.querySelector('.preloader__wrapper');
 let body = document.querySelector('body');
 window.onload = ()=>{
@@ -5,31 +122,7 @@ window.onload = ()=>{
     preloader.style.display = 'none';
   }, 950);
 }
-  let cardBrandNameHTML = document.querySelectorAll(".main__container-discount-card-brand-name");
-  let cardNameHTML = document.querySelectorAll(".main__container-discount-card-name");
-  let cardPriceWithDiscountHTML = document.querySelectorAll(".main__container-discount-card-price-withDiscount");
-  let cardPriceHTML = document.querySelectorAll(".main__container-discount-card-price");
-  for (const brand of cardBrandNameHTML) {
-      brand.innerHTML = cardObj.card[i].brand;
-      // console.log(brand);
-    }
-    for (const name of cardBrandNameHTML) {
-      // name.innerHTML = '12'
-      // console.log(name);
-    }
-    for (const discount of cardBrandNameHTML) {
-      // discount.innerHTML = '12'
-      // console.log(discount);
-    }
-    for (const price of cardBrandNameHTML) {
-      // price.innerHTML = '12'
-      // console.log(price);
-    }
-  // console.log(cardBrandNameHTML);
-    let cardImgHTML = document.querySelector(".main__container-discount-card-img img");
-    // cardImgHTML.src = cardObj.card1.cardImg;
-    
-    // }
+
     function openMenu() {
       let open = document.querySelector('.header__menu-container-wrapper')
     open.style.left = '0px'
@@ -67,116 +160,6 @@ function openCallBackContainer() {
   //  return true;
   //  }
   
-  // ! JSON
-card = `{
-  "cardDisc":{
-    "1":{
-      "cardImg": "assets/images/discount15per/card1/47305c800ca005692abfe2b00774.webp",
-      "brand":"under armour",
-      "name":"Чоловіча біла футболка UA Pjt Rock Brahma Bull",
-      "priceWithDiscount":"1 436 грн",
-      "price":"1 690 грн"
-    },
-    "2":{
-      "cardImg":"assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp",
-      "brand":"under armour",
-      "name":"Чоловіча чорна футболка UA TAC HG COMP T",
-      "priceWithDiscount":"1521 грн",
-      "price":"1 790 грн"
-    },
-    "3":{
-      "cardImg": "assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp",
-      "brand":"under armour",
-      "name":"Чоловіча кепка Project Rock Trucker",
-      "priceWithDiscount":"1692 грн",
-      "price":"1 990 грн"
-    },
-    "4":{
-      "cardImg": "assets/images/discount15per/card4/cb789991a70c026dd37360efd042.webp",
-      "brand":"under armour",
-      "name":"Чоловіча зелена пуховая парка UA CGI Down 3-in-1",
-      "priceWithDiscount":"16 311 грн",
-      "price":"19 190 грн"
-    }
-  },
-  "btnDisсText":"Показати весь одяг",
-  "ads":{
-      "img":"assets/images/ads/photo-1441986300917-64674bd600d8.jpg",
-      "title":"До <span>-20%</span> якщо зареєструєшся <br> на нашому сайті!",
-      "btnCont":"Детальніше"
-  },
-  "trendsTitle":"Зараз у тренді",
-  "cardTrends":{
-    "1":{
-      "cardImg":"assets/images/trends/cap/15cf95285117fd50034cd322f362.webp",
-      "cardText":"<a href='#'>Кепки</a>"
-    },
-    "2":{
-      "cardImg":"assets/images/trends/tShirt/ae0f8af5d93766560407566613d3.webp",
-      "cardText":"<a href='#'>Футболки</a>"
-    },
-    "3":{
-      "cardImg":"assets/images/trends/shorts/cd413a060d102b003cd752585119.webp",
-      "cardText":"<a href='#'>Шорти</a>"
-    },
-    "4":{
-      "cardImg":"assets/images/trends/shoe/3c3a79027102bf7e10c5cf777bf5.webp",
-      "cardText":"<a href='#'>Взуття</a>"
-    }
-  },
-  "brands":{
-    "1":{
-      "text":"MEXX"
-    },
-    "2":{
-      "text":"UNDER ARMOUR"
-    },
-    "3":{
-      "text":"TOMMY HILFIGER"
-    },
-    "4":{
-      "text":"DIESEL"
-    },
-    "5":{
-      "text":"CALVIN KLEIN"
-    },
-    "6":{
-      "text":"HELEN MARLEN"
-    }
-  },
-  "popularCLotheTitle":"Зараз популярне",
-  "popularCLothe":{
-    "1":{
-      "cardImg":"assets/images/adsClothe/clothe1/9f3db00d358ce9d02b6803a6a1ef.webp",
-      "cardBrand":"under armour",
-      "cardName":"Чоловічі чорні шорти UA Vanish Woven 8in Shorts",
-      "cardPriceWithDiscount":"1 695 грн",
-      "cardPrice":"2 290 грн"
-    },
-    "2":{
-      "cardImg":"assets/images/adsClothe/clothe2/b3bb52b16c8da897080cbe2742c5.jpg",
-      "cardBrand":"Preach",
-      "cardName":"Жовті шорти Essential Sweat Shorts",
-      "cardPriceWithDiscount":"1 695 грн",
-      "cardPrice":"3 390 грн"
-    },
-    "3":{
-      "cardImg":"assets/images/adsClothe/clothe3/d02b7a4b50d6637e34d2ea87ea5d.webp",
-      "cardBrand":"Tommy Jeans",
-      "cardName":"Жіноча бордова футболка TJW RLXD TOMMY SIGNATURE",
-      "cardPriceWithDiscount":"685 грн",
-      "cardPrice":"1 990 грн"
-    },
-    "4":{
-      "cardImg":"assets/images/adsClothe/clothe4/a2287d543137579cdea2daaf6ffb.webp",
-      "cardBrand":"Under Armour",
-      "cardName":"Дитячі чорні шорти UA Prototype 2.0 Wdmk",
-      "cardPriceWithDiscount":"476 грн",
-      "cardPrice":"1 190 грн"
-    }
-  },
-  "btnPopularText":"Показати весь одяг"
-}`
 let jsParsed = JSON.parse(card)
 
 //  ! ADD CARDS
@@ -235,44 +218,44 @@ for (let i = 1; i <= 4; i++) {
     discountCardBtnCont.appendChild(discountCardBtn)
 
     // ! ADS
-    let adsImg = jsParsed.ads.img;
-    let adsTitle = jsParsed.ads.title;
-    let adsBtn = jsParsed.ads.btnCont;
+    let adsFirstImg = jsParsed.adsFirst.img;
+    let adsFirstTitle = jsParsed.adsFirst.title;
+    let adsFirstBtn = jsParsed.adsFirst.btnCont;
     
-    let adsContainer = document.createElement('div')
-    adsContainer.classList.add('main__container-ads-container')
-    let adsWrapper = document.createElement('div')
-    adsWrapper.classList.add('main__container-ads-wrapper')
-    let adsImgWrapper = document.createElement('div')
-    adsImgWrapper.classList.add('main__container-ads-img-wrapper')
-    let adsImgWrapperCont = document.createElement('img')
-    adsImgWrapperCont.src = adsImg;
-    let adsInfoWrapper = document.createElement('div')
-    adsInfoWrapper.classList.add('main__container-ads-info-wrapper')
-    let adsInfoTitle = document.createElement('div')
-    adsInfoTitle.classList.add('main__container-ads-wrapper-title')
-    adsInfoTitle.innerHTML = adsTitle;
-    let adsInfoSubBtn = document.createElement('div')
-    adsInfoSubBtn.classList.add('main__container-ads-wrapper-subtitle-btn')
-    let adsInfoBtn = document.createElement('button')
-    adsInfoBtn.innerHTML = adsBtn;
+    let adsFirstContainer = document.createElement('div')
+    adsFirstContainer.classList.add('main__container-ads-container')
+    let adsFirstWrapper = document.createElement('div')
+    adsFirstWrapper.classList.add('main__container-ads-wrapper')
+    let adsFirstImgWrapper = document.createElement('div')
+    adsFirstImgWrapper.classList.add('main__container-ads-img-wrapper')
+    let adsFirstImgWrapperCont = document.createElement('img')
+    adsFirstImgWrapperCont.src = adsFirstImg;
+    let adsFirstInfoWrapper = document.createElement('div')
+    adsFirstInfoWrapper.classList.add('main__container-ads-info-wrapper')
+    let adsFirstInfoTitle = document.createElement('div')
+    adsFirstInfoTitle.classList.add('main__container-ads-wrapper-title')
+    adsFirstInfoTitle.innerHTML = adsFirstTitle;
+    let adsFirstInfoSubBtn = document.createElement('div')
+    adsFirstInfoSubBtn.classList.add('main__container-ads-wrapper-subtitle-btn')
+    let adsFirstInfoBtn = document.createElement('button')
+    adsFirstInfoBtn.innerHTML = adsFirstBtn;
     
     
-    outMainContainer.append(adsContainer)
-    adsContainer.appendChild(adsWrapper)
-    adsWrapper.appendChild(adsImgWrapper)
-    adsImgWrapper.appendChild(adsImgWrapperCont)
-    adsWrapper.appendChild(adsInfoTitle)
-    adsInfoTitle.appendChild(adsInfoSubBtn)
-    adsInfoSubBtn.appendChild(adsInfoBtn)
+    outMainContainer.append(adsFirstContainer)
+    adsFirstContainer.appendChild(adsFirstWrapper)
+    adsFirstWrapper.appendChild(adsFirstImgWrapper)
+    adsFirstImgWrapper.appendChild(adsFirstImgWrapperCont)
+    adsFirstWrapper.appendChild(adsFirstInfoTitle)
+    adsFirstInfoTitle.appendChild(adsFirstInfoSubBtn)
+    adsFirstInfoSubBtn.appendChild(adsFirstInfoBtn)
+   
+    // ! TRENDS 
     
     let trendsTitle = document.createElement("div");
     let trends = document.createElement("div");
     trendsTitle.classList.add('main__container-trends-title')
     trendsTitle.innerHTML = jsParsed.trendsTitle;
-    outMainContainer.appendChild(trendsTitle)
-    
-    // ! TRENDS 
+    outMainContainer.appendChild(trendsTitle) 
     
     let trendsCont = document.createElement("div");
     trendsCont.classList.add('main__container-trends-container')
@@ -300,23 +283,37 @@ for (let i = 1; i <= 4; i++) {
       trendsCard.appendChild(trendsCardTitle)
     }
     
-    // ! BRANDS
+    // ! SECOND ADS
+    let adsSecondImg = jsParsed.adsSecond.img;
+    let adsSecondTitle = jsParsed.adsSecond.title;
+    let adsSecondBtn = jsParsed.adsSecond.btnCont;
     
-    let brandsCont = document.createElement('div')
-    brandsCont.classList.add('main__container-slider-brands-container')
-    let brandsWrapper = document.createElement('div')
-    brandsWrapper.classList.add('main__container-slider-brands-wrapper')
-
-    for (let i = 1; i <= 6; i++) {
-      let brandsText = document.createElement('div');
-      brandsText.classList.add('main__container-slider-brands-text')
-      brandsText.innerHTML = jsParsed.brands[i].text;
-      brandsWrapper.appendChild(brandsText);
-      
-    }
+    let adsContainer = document.createElement('div')
+    adsContainer.classList.add('main__container-ads-container')
+    let adsWrapper = document.createElement('div')
+    adsWrapper.classList.add('main__container-ads-wrapper')
+    let adsImgWrapper = document.createElement('div')
+    adsImgWrapper.classList.add('main__container-ads-img-wrapper')
+    let adsImgWrapperCont = document.createElement('img')
+    adsImgWrapperCont.src = adsSecondImg;
+    let adsInfoWrapper = document.createElement('div')
+    adsInfoWrapper.classList.add('main__container-ads-info-wrapper')
+    let adsInfoTitle = document.createElement('div')
+    adsInfoTitle.classList.add('main__container-ads-wrapper-title')
+    adsInfoTitle.innerHTML = adsSecondTitle;
+    let adsInfoSubBtn = document.createElement('div')
+    adsInfoSubBtn.classList.add('main__container-ads-wrapper-subtitle-btn')
+    let adsInfoBtn = document.createElement('button')
+    adsInfoBtn.innerHTML = adsSecondBtn;
     
-    outMainContainer.appendChild(brandsCont);
-    brandsCont.appendChild(brandsWrapper);
+    
+    outMainContainer.append(adsContainer)
+    adsContainer.appendChild(adsWrapper)
+    adsWrapper.appendChild(adsImgWrapper)
+    adsImgWrapper.appendChild(adsImgWrapperCont)
+    adsWrapper.appendChild(adsInfoTitle)
+    adsInfoTitle.appendChild(adsInfoSubBtn)
+    adsInfoSubBtn.appendChild(adsInfoBtn)
     
     // ! POPULAR CLOTHES
     let popularClotheTitle = jsParsed.popularCLotheTitle;

@@ -791,7 +791,7 @@ justify-content: center;
     }
     .main__container-ads-wrapper-title span{
         color: red;
-        font-weight: 700;
+        font-weight: 400;
     }
     .main__container-ads-wrapper-subtitle-btn{
         margin-top: 40px;
@@ -999,7 +999,7 @@ justify-content: center;
     }
     .a__container-links,.a__container-links-red, .li__container-links{
         font-size: 12px;
-        padding: 15px 20px;
+        padding: 35px 20px;
     }
     .user-profile, .user-bag{
         height: 25px;
