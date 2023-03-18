@@ -579,6 +579,7 @@ header{
     font-size: 18px;
     height: 50px;
     width: 350px;
+    position: relative;
     transition: all .3s ease-in-out;
 }
 .main__container-form-input-phone-container input:hover{
@@ -610,6 +611,14 @@ header{
 }
 .main__container-form-btn-container{
     margin-top: 40px;
+}
+.input-error-emailLogIn, .input-error-passLogIn, .input-error-conf-passLogIn{
+    position: absolute;
+    top: 95px;
+    left: 0;
+    color: red;
+    font-size: 10px;
+    display: none;
 }
 .main__container-form-already-notHave-acc{
     padding-top: 20px;
@@ -1690,6 +1699,9 @@ header{
     }
     .main__container-form-input-pass-confirm-container input{
         width: 280px;
+    }
+    .input-error-email, .input-error-pass, .input-error-conf-pass{
+        font-size: 10px;
     }
     .main__container-form-btn-container button{
         width: 280px;

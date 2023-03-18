@@ -119,7 +119,8 @@ signInForm.onsubmit = ()=>{
     let inputPassError = document.querySelector('.input-error-pass')
     let inputPassValue = document.getElementById('userPassRegistration').value
     let inputPassValueTest = /[a-zA-Z0-9]/i;
-    if (!inputPassValueTest.test(inputPassValue) || inputPassValue.length<8) {
+    let passFromStorage = localStorage.getItem('password')
+    if (!inputPassValueTest.test(inputPassValue) || inputPassValue.length<8 || inputPassValue != localStorage.getItem('password')) {
         inputPass.style.border = '1px solid red';
         inputPass.style.color = 'red';
         inputPassError.style.display = 'block';
@@ -156,7 +157,7 @@ logInInputEmail.value = '';
 logInInputPass.value = '';
 LogInForm.onsubmit = () =>{
     let logInEmailFlag = false;
-    let logInInputEmailError = document.querySelector('.input-error-email')
+    let logInInputEmailError = document.querySelector('.input-error-emailLogIn')
     let logInInputEmailValue = document.getElementById('userEmailRegistrationLogIn').value
     let logInInputEmailValueTest = /[a-zA-Z0-9][@][g][m][a][i][l][.][c][o][m]/i;
     if (!logInInputEmailValueTest.test(logInInputEmailValue)) {
@@ -177,7 +178,7 @@ LogInForm.onsubmit = () =>{
     }
     
     let logInPassFlag = false;
-    let logInInputPassError = document.querySelector('.input-error-pass')
+    let logInInputPassError = document.querySelector('.input-error-passLogIn')
     let logInInputPassValue = document.getElementById('userPassRegistrationLogIn').value
     let logInInputPassValueTest = /[a-zA-Z0-9]/i;
     if (!logInInputPassValueTest.test(logInInputPassValue) || logInInputPassValue.length<8) {
@@ -197,7 +198,7 @@ LogInForm.onsubmit = () =>{
     }
     
     let logInConfirmPassFlag = false;
-    let logInInputConfirmPassError = document.querySelector('.input-error-conf-pass')
+    let logInInputConfirmPassError = document.querySelector('.input-error-conf-passLogIn')
     let logInInputConfirmPass = document.getElementById('userConfirmPassRegistrationLogIn')
     let logInInputConfirmPassValue = document.getElementById('userConfirmPassRegistrationLogIn').value
     if (logInInputConfirmPassValue != logInInputPassValue) {
