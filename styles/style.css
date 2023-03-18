@@ -3107,7 +3107,7 @@ justify-content: center;
     }
     .footer__container-blocks{
         display: flex;
-        justify-content: left;
+        justify-content: center;
         align-items: center;
     }
     .footer__container-blocks-contacts{

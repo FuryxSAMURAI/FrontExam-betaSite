@@ -33,7 +33,7 @@
     </div>
     <header>
         <div class="header__container">
-            <div class="header__container-title"><a href="">Boutique</a></div>
+            <div class="header__container-title"><a href="../index.html">Boutique</a></div>
             <nav class="header__container-nav--items">
                 <ul class="nav__container-items">
                     <li class="ul__container-items"><a href="./news.html" class="a__container-links">Новини</a></li>
@@ -238,73 +238,162 @@
                         </div>
                     </div>
                 </div>
-        </div>
+                <!-- ! FOR MEDIA -->
+                <div class="header__menu-container">
+                 <div class="header__menu-container-open" onclick="openMenu()">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+             </div>
+         </div>
+         
+         <div class="header__menu-container-wrapper">
+         <div class="header__container-header-menu">
+             <div class="header__menu-container-close" onclick="closeMenu()">
+                 <span></span>
+                 <span></span>
+             </div>
+             <div class="header__container-header-menu-search"><img src="./assets/images/searchImg/free-icon-magnifier-9638122.png" alt="Search img"><input type="text" placeholder="Пошук"></div>
+         </div>
+         <div class="header__menu-container-items">
+             <ul class="header__menu-container-lists">
+                 <li class="header__menu-container-list"><a href="./index.html">Boutique</a></li>
+                 <li class="header__menu-container-list"><a href="./pages/news.html">Новини</a></li>
+                 <li class="header__menu-container-list-SALE"><a href="./pages/sale.html">SALE</a></li>
+                 <li class="header__menu-container-list"><a href="#">Одяг</a></li>
+                 <li class="header__menu-container-list"><a href="#">Білизна</a></li>
+                 <li class="header__menu-container-list"><a href="#">Взуття</a></li>
+                 <li class="header__menu-container-list"><a href="#">Аксесуари</a></li>
+             </ul>
+             <div class="header__menu-container-item-user">
+                 <div class="header__menu-container-item-user-profile"><a href="./pages/userProfile.html">Увійти</a></div>
+             </div>
+             <div class="header__menu-container-footer">
+                 <div class="header__menu-container-footer-call-center"></div>
+             </div>
+         </div>
+            </div>
     </header>
     <main>
-        <!-- ! Профиль -->
+        <div class="main__container">
+            <!-- ! FORM -->
+            <div class="main__container-form-container">
+                <form method="get" class="main__container-form-wrapper">
+                    <div class="main__container-form-title">Увійти</div>
+                    <div class="main__container-form-choose">
+                        <div class="main__container-form-choose-log-googleAndFacebook">
+                            <div class="main__container-form-choose-log-google">Google</div>
+                            <div class="main__container-form-choose-log-facebook">Facebook</div>
+                        </div>
+                        <div class="main__container-form-choose-log-phone-container">
+                            <div class="main__container-form-choose-log-phone">Телефон</div>
+                        </div>
+                    </div>
+                    <div class="main__container-form-line">або</div>
+                    <div class="main__container-form-inputs-container">
+                        <div class="main__container-form-inputs-wrapper">
+                            <div class="main__container-form-input-email-container">
+                                <label for="userEmailRegistration">Пошта</label>
+                                <input type="text" placeholder="example@gmail.com" id="userEmailRegistration">
+                                <span class="input-error-email">Пошта повинна складатися : example@gmail.com</span>
+                            </div>
+                            <div class="main__container-form-input-pass-container">
+                                <label for="userPassRegistration">Пароль</label>
+                                <input type="password" id="userPassRegistration">
+                                <span class="input-error-pass">Пароль повинен складатися не иенше ніж 8 літер</span>
+                                <div class="pass_cont">
+                                    <div onclick="passShow()" class="showPass"><img src="../assets/images/pass/show.png" alt=""></div>
+                                    <div onclick="passHide()" class="hidePass"><img src="../assets/images/pass/hide.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main__container-form-forgot-pass">Забули пароль?</div>
+                    <div class="main__container-form-btn-container">
+                        <button>Увійти</button>
+                    </div>
+                    <div class="main__container-form-already-notHave-acc">Ще не зареєструвалися? <span onclick="LogIn()">Зареєструватися</span></div>
+                </form>
 
-        <div class="profile__container" id="profileContainer">
-            <form class="profile__container--registration-form" method="get">
-                <div class="profile__container-registration">
-                    <div class="profile__container-registration--title">Увійти</div>
-                    <div class="profile__container-registration-google-or-facebook">
-                        <div class="profile__container-registration-google"><a href="#">Google</a></div>
-                        <div class="profile__container-registration-facebook"><a href="#">Facebook</a></div>
+                <!-- ! Log in -->
+                <form class="main__container-form-wrapper-logIn">
+                    <div class="main__container-form-title">Реєстрація</div>
+                    <div class="main__container-form-inputs-container">
+                        <div class="main__container-form-inputs-wrapper">
+                            <div class="main__container-form-input-phone-container">
+                                <label for="userPhoneRegistration">Телефон</label>
+                                <input type="text" placeholder="+380 (00)000-00-00" id="userPhoneRegistration">
+                            </div>
+                            <div class="main__container-form-input-email-container">
+                                <label for="userEmailRegistrationLogIn">Пошта</label>
+                                <input type="text" placeholder="example@gmail.com" id="userEmailRegistrationLogIn">
+                                <span class="input-error-email">Пошта повинна складатися : example@gmail.com</span>
+                            </div>
+                            <div class="main__container-form-input-pass-container">
+                                <label for="userPassRegistrationLogIn">Пароль</label>
+                                <input type="password" id="userPassRegistrationLogIn">
+                                <span class="input-error-pass">Пароль повинен складатися не иенше ніж 8 літер</span>
+                                <div class="pass_cont">
+                                    <div onclick="passShowLogIn()" class="showPassLogIn"><img src="../assets/images/pass/show.png" alt=""></div>
+                                    <div onclick="passHideLogIn()" class="hidePassLogIn"><img src="../assets/images/pass/hide.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="main__container-form-input-pass-confirm-container">
+                                <label for="userConfirmPassRegistrationLogIn">Підтвердіть пароль</label>
+                                <input type="password" id="userConfirmPassRegistrationLogIn">
+                                <span class="input-error-conf-pass">Паролі не збігаются</span>
+                                <div class="pass_cont">
+                                    <div onclick="confirmPassShowLogIn()" class="confirmShowPass"><img src="../assets/images/pass/show.png" alt=""></div>
+                                    <div onclick="confirmPassHideLogIn()" class="confirmHidePass"><img src="../assets/images/pass/hide.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="profile__container-registration-by-phone">
-                        <a href="#">Телефон</a>
+                    <div class="main__container-form-btn-container">
+                        <button>Зареєструватися</button>
                     </div>
-                    <div class="profile__container-registration-or">або</div>
-                <div class="profile__container-registration--user-name">
-                    <label for="userEmailRegistration">Пошта</label>
-                    <input type="text" id="userEmailRegistration">
-                    <span class="profile__container-registration--user-name-correct-email">* Пошта повинна буди - example@gmail.com</span>
-                </div>
-                <div class="profile__container-registration--password">
-                    <label for="">Пароль</label>
-                    <input type="password" id="userPassRegistration">
-                    <div class="pass_cont">
-                        <img onclick="passShow()" class="showPass" src="../assets/images/pass/show.png" alt="show/hidePass">
-                        <img onclick="passHide()" class="hidePass" src="../assets/images/pass/hide.png" alt="show/hidePass">
-                    </div>
-                    <span class="profile__container-registration--user-password-correct-pass">* Пароль повинен буди більше 8 букв</span>
-                </div>
-                <div class="profile__container-registration--reset-password">
-                    Забули пароль?
-                </div>
-                <div class="profile__container-registration--button-submit">
-                    <input type="submit" id="enter" value="Увійти">
-                </div>
-                </div>
-            </form>
-        <div class="aside__container--registration">
-            <div class="aside__container--registration-title">Що я отримаю якщо зареєструюсь?</div>
-            <div class="aside__container--registration-content-text">
-                <ul>
-                    <li>Зники до 5% при оплаті карткою</li>
-                    <li>Доступ до особистого кабінету</li>
-                    <li>Можливість користуватися бонусами</li>
-                    <li>Отримуйте % від вартості замовлення на бонусний рахунок</li>
-                    <li>Замовляти зручніше зі збереженою адресою та способом доставки</li>
-                    <li>Підписка на новини та акції від Boutique</li>
-                    <li>500 бонусів за реєстрацію нараховуються протягом 20 хвилин після реєстрації.</li>
-                </ul>
+                    <div class="main__container-form-already-notHave-acc">Вже зареєструвалися? <span onclick="SignUp()">Увійти</span></div>
+                </form>
             </div>
-        </div>
-        </div>
+            <div class="main__container-aside-container">
+                <div class="main__container-aside-container-title">Що я отримаю якщо зареєструюсь?</div>
+                <div class="main__container-aside-container-lists">
+                    <ul class="main__container-aside-container-items">
+                        <li class="main__container-aside-container-item">Зники до 5% при оплаті карткою</li>
+                        <li class="main__container-aside-container-item">Доступ до особистого кабінету</li>
+                        <li class="main__container-aside-container-item">Можливість користуватися бонусами</li>
+                        <li class="main__container-aside-container-item">Отримуйте % від вартості замовлення на бонусний рахунок</li>
+                        <li class="main__container-aside-container-item">Замовляти зручніше зі збереженою адресою та способом доставки</li>
+                        <li class="main__container-aside-container-item">Підписка на новини та акції від Boutique</li>
+                        <li class="main__container-aside-container-item">-10% на першу покупку за реєстрацію нараховуються протягом 20 хвилин після реєстрації.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ! PROFILE -->
+            <!-- <div class="profile__container">
+                <div class="profile__container-wrapper">
+                    <div class="profile__container-menu-container">
+                        <div class="profile__container-menu-wrapper">
+                            <div class="profile__container-menu-lists">
+                                <ul class="profile__container-menu-items">
+                                    <li class="profile__container-menu-list">Мої данні</li>
+                                    <li class="profile__container-menu-list">Адреса доставки</li>
+                                    <li class="profile__container-menu-list"></li>
+                                    <li class="profile__container-menu-list"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile__container-main-container">
+                        <div class="profile__container-main-wrapper">
 
-        <div class="main__container-bonuses">
-            <div class="main__container-bonuses-wrapper">
-                <div class="main__container-bonuses-wrapper-bonus">
-                    <div class="main__container-bonuses-title">Купуйте вигідно</div>
-                    <div class="main__container-bonuses-subtitle">При оплаті карткою онлайн ви отримаєте до 5% на наступну купівлю</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="main__container-bonuses-wrapper">
-                    <div class="main__container-bonuses-wrapper-current-bonus-title">На вашому бонусному рахунку:<span class="main__container-bonuses-wrapper-current-bonus">100 балів</span></div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </main>
+
     <footer>
         <div class="footer__container">
             <div class="footer__container-blocks">
@@ -345,6 +434,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/imask"></script>
     <script src="../js/userProfile.js"></script>
 </body>
 </html>
