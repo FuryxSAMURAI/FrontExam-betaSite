@@ -124,11 +124,11 @@ window.onload = ()=>{
 }
 
     function openMenu() {
-      let open = document.querySelector('.header__menu-container-wrapper')
+      let open = document.querySelector('.header__container-menu-mobile-container')
     open.style.left = '0px'
   }
   function closeMenu() {
-    let open = document.querySelector('.header__menu-container-wrapper')
+    let open = document.querySelector('.header__container-menu-mobile-container')
   open.style.left = '-3000px'
 }
 function closeCallBackContainer() {
@@ -163,12 +163,14 @@ function openCallBackContainer() {
 let jsParsed = JSON.parse(card)
 
 //  ! ADD CARDS
-let outMainContainer = document.querySelector(".main__container");
-let outAds = document.querySelector(".main__container-discount-cards-wrapper");
+let cardsContainerTitle = document.createElement('div');
+cardsContainerTitle.innerHTML = 'Знижки до - 15% від Under Armour';
+cardsContainerTitle.classList.add('main__container-cards-underarmour-content-title')
+let outMainContainer = document.querySelector(".main__container-cards-underarmour-out");
+let outAds = document.querySelector(".main__container-cards-underarmour-content");
 let cardsContainer = document.createElement("div");
-cardsContainer.classList.add('main__container-discount-cards-container')
-let cardsWrapper = document.createElement("div");
-cardsWrapper.classList.add('main__container-discount-card-wrapper')
+cardsContainer.classList.add('main__container-cards-underarmour-content-container')
+outAds.appendChild(cardsContainerTitle);
 for (let i = 1; i <= 4; i++) {
   let cardContainer = document.createElement("div");
   
@@ -179,30 +181,27 @@ for (let i = 1; i <= 4; i++) {
   let price = jsParsed.cardDisc[i].price;
   
   // ! UNDER ARMOUR -15% 
-  cardContainer.classList.add('main__container-discount-card-container')
-  let cardsWrapperIMGCont = document.createElement("div");
-  cardsWrapperIMGCont.classList.add('main__container-discount-card-img')
-  let cardsWrapperIMG = document.createElement('img');
-  cardsWrapperIMG.src = img;
+  cardContainer.classList.add('main__container-cards-underarmour-content-card-container')
+  let cardsIMG = document.createElement('img');
+  cardsIMG.src = img;
+  cardsIMG.classList.add('main__container-cards-underarmour-content-card-img')
   let cardsInfo = document.createElement("div");
-      cardsInfo.classList.add('main__container-discount-card-info')
+      cardsInfo.classList.add('main__container-cards-underarmour-content-card-info')
       let cardsBrand = document.createElement("div");
       cardsBrand.innerHTML = brand
-      cardsBrand.classList.add('main__container-discount-card-brand-name')
+      cardsBrand.classList.add('main__container-cards-underarmour-content-card-brand-name')
       let cardsName = document.createElement("div");
       cardsName.innerHTML = name;
-      cardsName.classList.add('main__container-discount-card-name');
+      cardsName.classList.add('main__container-cards-underarmour-content-card-name');
       let cardsPriceWithDis = document.createElement("div");
-      cardsPriceWithDis.classList.add('main__container-discount-card-price-withDiscount')
+      cardsPriceWithDis.classList.add('main__container-cards-underarmour-content-card-price-withDiscount')
       cardsPriceWithDis.innerHTML = priceWithDiscount;
       let cardsPrice = document.createElement('span');
-      cardsPrice.classList.add('main__container-discount-card-price')
+      cardsPrice.classList.add('main__container-cards-underarmour-content-card-price')
       cardsPrice.innerHTML = price
       outAds.appendChild(cardsContainer)
-      cardsContainer.appendChild(cardsWrapper);
-      cardsWrapper.appendChild(cardContainer);
-      cardContainer.appendChild(cardsWrapperIMGCont)
-      cardsWrapperIMGCont.appendChild(cardsWrapperIMG)
+      cardsContainer.appendChild(cardContainer);
+      cardContainer.appendChild(cardsIMG)
       cardContainer.appendChild(cardsInfo)
       cardsInfo.appendChild(cardsBrand)
       cardsInfo.appendChild(cardsName)
@@ -214,7 +213,7 @@ for (let i = 1; i <= 4; i++) {
     discountCardBtnCont.classList.add('main__container-discount-wrapper')
     let discountCardBtn = document.createElement('button');
     discountCardBtn.innerHTML = jsParsed.btnDisсText;
-    outMainContainer.appendChild(discountCardBtnCont);
+    outAds.appendChild(discountCardBtnCont);
     discountCardBtnCont.appendChild(discountCardBtn)
 
     // ! ADS
@@ -226,9 +225,8 @@ for (let i = 1; i <= 4; i++) {
     adsFirstContainer.classList.add('main__container-ads-container')
     let adsFirstWrapper = document.createElement('div')
     adsFirstWrapper.classList.add('main__container-ads-wrapper')
-    let adsFirstImgWrapper = document.createElement('div')
-    adsFirstImgWrapper.classList.add('main__container-ads-img-wrapper')
     let adsFirstImgWrapperCont = document.createElement('img')
+    adsFirstImgWrapperCont.classList.add('main__container-ads-wrapper-img')
     adsFirstImgWrapperCont.src = adsFirstImg;
     let adsFirstInfoWrapper = document.createElement('div')
     adsFirstInfoWrapper.classList.add('main__container-ads-info-wrapper')
@@ -240,11 +238,10 @@ for (let i = 1; i <= 4; i++) {
     let adsFirstInfoBtn = document.createElement('button')
     adsFirstInfoBtn.innerHTML = adsFirstBtn;
     
-    
-    outMainContainer.append(adsFirstContainer)
+    let adsOut = document.querySelector('.main__container-ads')
+    adsOut.append(adsFirstContainer)
     adsFirstContainer.appendChild(adsFirstWrapper)
-    adsFirstWrapper.appendChild(adsFirstImgWrapper)
-    adsFirstImgWrapper.appendChild(adsFirstImgWrapperCont)
+    adsFirstWrapper.appendChild(adsFirstImgWrapperCont)
     adsFirstWrapper.appendChild(adsFirstInfoTitle)
     adsFirstInfoTitle.appendChild(adsFirstInfoSubBtn)
     adsFirstInfoSubBtn.appendChild(adsFirstInfoBtn)
@@ -255,22 +252,22 @@ for (let i = 1; i <= 4; i++) {
     let trends = document.createElement("div");
     trendsTitle.classList.add('main__container-trends-title')
     trendsTitle.innerHTML = jsParsed.trendsTitle;
-    outMainContainer.appendChild(trendsTitle) 
+    let trendsOut = document.querySelector('.main__container-cards-trends-out')
+    trendsOut.appendChild(trendsTitle) 
     
     let trendsCont = document.createElement("div");
     trendsCont.classList.add('main__container-trends-container')
     let trendsWrapper = document.createElement("div");
     trendsWrapper.classList.add('main__container-trends-wrapper')
-    outMainContainer.appendChild(trendsCont)
+    trendsOut.appendChild(trendsCont)
     trendsCont.appendChild(trendsWrapper)
     for (let i = 1; i <= 4; i++) {
       let trendsCards = document.createElement("div");
       trendsCards.classList.add('main__container-trends-container-cards')
       let trendsCard = document.createElement("div");
       trendsCard.classList.add('main__container-trends-container-card')
-      let trendsCardImg = document.createElement("div");
-      trendsCardImg.classList.add('main__container-trends-container-cards-img')
       let trendsImg = document.createElement("img");
+      trendsImg.classList.add('main__container-trends-container-cards-img')
       trendsImg.src = jsParsed.cardTrends[i].cardImg;
       let trendsCardTitle = document.createElement("div");
       trendsCardTitle.classList.add('main__container-trends-container-cards-title')
@@ -278,8 +275,7 @@ for (let i = 1; i <= 4; i++) {
       
       trendsWrapper.append(trendsCards)
       trendsCards.appendChild(trendsCard)
-      trendsCard.appendChild(trendsCardImg)
-      trendsCardImg.appendChild(trendsImg)
+      trendsCard.appendChild(trendsImg)
       trendsCard.appendChild(trendsCardTitle)
     }
     
@@ -292,9 +288,8 @@ for (let i = 1; i <= 4; i++) {
     adsContainer.classList.add('main__container-ads-container')
     let adsWrapper = document.createElement('div')
     adsWrapper.classList.add('main__container-ads-wrapper')
-    let adsImgWrapper = document.createElement('div')
-    adsImgWrapper.classList.add('main__container-ads-img-wrapper')
     let adsImgWrapperCont = document.createElement('img')
+    adsImgWrapperCont.classList.add('main__container-ads-img-wrapper')
     adsImgWrapperCont.src = adsSecondImg;
     let adsInfoWrapper = document.createElement('div')
     adsInfoWrapper.classList.add('main__container-ads-info-wrapper')
@@ -306,11 +301,10 @@ for (let i = 1; i <= 4; i++) {
     let adsInfoBtn = document.createElement('button')
     adsInfoBtn.innerHTML = adsSecondBtn;
     
-    
-    outMainContainer.append(adsContainer)
+    let adsOutSecond = document.querySelector('.main__container-ads-second')
+    adsOutSecond.append(adsContainer)
     adsContainer.appendChild(adsWrapper)
-    adsWrapper.appendChild(adsImgWrapper)
-    adsImgWrapper.appendChild(adsImgWrapperCont)
+    adsWrapper.appendChild(adsImgWrapperCont)
     adsWrapper.appendChild(adsInfoTitle)
     adsInfoTitle.appendChild(adsInfoSubBtn)
     adsInfoSubBtn.appendChild(adsInfoBtn)
@@ -321,16 +315,18 @@ for (let i = 1; i <= 4; i++) {
     popularCont.classList.add('main__container-ads-container-clothe')
     let popularWrapper = document.createElement('div');
     popularWrapper.classList.add('main__container-ads-wrapper-clothe')
-    
-    outMainContainer.appendChild(popularCont);
-    popularCont.appendChild(popularWrapper);
+    let popularCardTitle = document.createElement('div')
+    popularCardTitle.innerHTML = 'Зараз популярне'
+    popularCardTitle.classList.add('main__container-ads-wrapper-title')
+    let popularClothe = document.querySelector('.main__container-cards-popular-out')
+    popularClothe.appendChild(popularCardTitle)
+    popularClothe.appendChild(popularCont);
     popularCont.appendChild(popularWrapper);
     for (let i = 1; i <=4; i++) {
       let popularCards = document.createElement('div');
       popularCards.classList.add('main__container-ads-wrapper-clothe-card')
-      let popularCardImgCont = document.createElement('div');
-      popularCardImgCont.classList.add('main__container-ads-wrapper-clothe-img')
       let popularCardImg = document.createElement('img');
+      popularCardImg.classList.add('main__container-ads-wrapper-clothe-img')
       popularCardImg.src = jsParsed.popularCLothe[i].cardImg
       let popularCardBrand = document.createElement('div');
       popularCardBrand.innerHTML = jsParsed.popularCLothe[i].cardBrand;
@@ -345,8 +341,7 @@ for (let i = 1; i <= 4; i++) {
       popularCardPrice.innerHTML = jsParsed.popularCLothe[i].cardPrice;
       
       popularWrapper.appendChild(popularCards)
-      popularCards.appendChild(popularCardImgCont)
-      popularCardImgCont.appendChild(popularCardImg)
+      popularCards.appendChild(popularCardImg)
       popularCards.appendChild(popularCardBrand)
       popularCards.appendChild(popularCardName)
       popularCards.appendChild(popularCardPriceWithDiscount)
@@ -357,5 +352,5 @@ for (let i = 1; i <= 4; i++) {
     let btnShowPopular = document.createElement('button')
     btnShowPopular.innerHTML = jsParsed.btnPopularText;
 
-    outMainContainer.appendChild(btnShowMorePopularClothe)
+    popularClothe.appendChild(btnShowMorePopularClothe)
     btnShowMorePopularClothe.appendChild(btnShowPopular)

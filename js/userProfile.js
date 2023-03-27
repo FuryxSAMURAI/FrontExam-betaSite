@@ -26,7 +26,7 @@ window.onload = ()=>{
     preloader.style.display = 'none';
   }, 950);
 }
-
+// localStorage.clear();
 
 // let email = document.getElementById('userEmailRegistration');
 // let emailValHelp = document.querySelector('.profile__container-registration--user-name-correct-email');
