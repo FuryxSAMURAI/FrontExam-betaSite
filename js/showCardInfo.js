@@ -5,6 +5,14 @@ window.onload = ()=>{
     preloader.style.display = 'none';
   }, 950);
 }
+function openMenu() {
+  let open = document.querySelector('.header__container-menu-mobile-container')
+open.style.left = '0px'
+}
+function closeMenu() {
+let open = document.querySelector('.header__container-menu-mobile-container')
+open.style.left = '-3000px'
+}
 
 let outImg = document.querySelector('.main__container-side-card-images-get')
 
