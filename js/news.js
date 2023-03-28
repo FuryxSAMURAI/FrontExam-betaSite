@@ -324,7 +324,7 @@ open.style.left = '-3000px'
             }
           }
         }
-
+        // localStorage.clear();
     function showCardMoreInfo(event) {
       // console.log(event);
       // console.log(window.location);
@@ -339,7 +339,10 @@ open.style.left = '-3000px'
       localStorage.setItem('cardForMoreInfoSizes', event.target.offsetParent.lastElementChild.children[0].textContent)
       localStorage.setItem('cardForMoreInfoBrandName', event.target.offsetParent.lastElementChild.children[1].textContent)
       localStorage.setItem('cardForMoreInfoName', event.target.offsetParent.lastElementChild.children[2].textContent)
-      localStorage.setItem('cardForMoreInfoPrice', event.target.offsetParent.lastElementChild.children[3].textContent)
+      localStorage.setItem('cardForMoreInfoPriceNews', event.target.offsetParent.lastElementChild.children[3].textContent)
+
+      localStorage.removeItem('cardForMoreInfoPrice');
+      localStorage.removeItem('cardForMoreInfoPriceDisc');
     }
     // localStorage.clear()
     function addToBag(event) {

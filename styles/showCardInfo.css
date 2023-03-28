@@ -344,9 +344,23 @@ ul, li{
         font-size: 18px;
         font-weight: 300;
     }
-    .main__container-side-card-info-price{
+    .main__container-side-card-info-price-news{
         margin-top: 40px;
         font-size: 28px;
+        font-weight: 300;
+    }
+    .main__container-side-card-info-price-disc{
+      color: red;
+        margin-top: 40px;
+        font-size: 28px;
+        font-weight: 300;
+    }
+    .main__container-side-card-info-price-disc span{
+      color: gray;
+      text-decoration: line-through;
+        margin-top: 40px;
+        margin-left: 10px;
+        font-size: 20px;
         font-weight: 300;
     }
 

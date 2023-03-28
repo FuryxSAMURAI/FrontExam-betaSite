@@ -12,14 +12,14 @@ card = `{
     "cardImg":"assets/images/discount15per/card2/2e2c2205fdad5e5658d5d0eec9b4.webp",
     "brand":"under armour",
     "name":"Чоловіча чорна футболка UA TAC HG COMP T",
-    "priceWithDiscount":"1521 грн",
+    "priceWithDiscount":"1 521 грн",
     "price":"1 790 грн"
   },
   "3":{
     "cardImg": "assets/images/discount15per/card3/120b92a6eee1eeeb4fbc987c4e69.webp",
     "brand":"under armour",
     "name":"Чоловіча кепка Project Rock Trucker",
-    "priceWithDiscount":"1692 грн",
+    "priceWithDiscount":"1 692 грн",
     "price":"1 990 грн"
   },
   "4":{
@@ -58,26 +58,6 @@ card = `{
   "4":{
     "cardImg":"assets/images/trends/shoe/3c3a79027102bf7e10c5cf777bf5.webp",
     "cardText":"<a href='#'>Взуття</a>"
-  }
-},
-"brands":{
-  "1":{
-    "text":"MEXX"
-  },
-  "2":{
-    "text":"UNDER ARMOUR"
-  },
-  "3":{
-    "text":"TOMMY HILFIGER"
-  },
-  "4":{
-    "text":"DIESEL"
-  },
-  "5":{
-    "text":"CALVIN KLEIN"
-  },
-  "6":{
-    "text":"HELEN MARLEN"
   }
 },
 "popularCLotheTitle":"Зараз популярне",
@@ -125,10 +105,12 @@ window.onload = ()=>{
 
     function openMenu() {
       let open = document.querySelector('.header__container-menu-mobile-container')
+      open.style.position = 'fixed';
     open.style.left = '0px'
   }
   function closeMenu() {
     let open = document.querySelector('.header__container-menu-mobile-container')
+    open.style.position = 'fixed';
   open.style.left = '-3000px'
 }
 function closeCallBackContainer() {
@@ -183,6 +165,7 @@ for (let i = 1; i <= 4; i++) {
   // ! UNDER ARMOUR -15% 
   cardContainer.classList.add('main__container-cards-underarmour-content-card-container')
   let cardsIMG = document.createElement('img');
+  cardsIMG.setAttribute('onclick','showCardMoreInfo(event)')
   cardsIMG.src = img;
   cardsIMG.classList.add('main__container-cards-underarmour-content-card-img')
   let cardsInfo = document.createElement("div");
@@ -193,10 +176,12 @@ for (let i = 1; i <= 4; i++) {
       let cardsName = document.createElement("div");
       cardsName.innerHTML = name;
       cardsName.classList.add('main__container-cards-underarmour-content-card-name');
+      let cardsPriceInfo = document.createElement("div");
+      cardsPriceInfo.classList.add('main__container-cards-underarmour-content-card-price-info')
       let cardsPriceWithDis = document.createElement("div");
       cardsPriceWithDis.classList.add('main__container-cards-underarmour-content-card-price-withDiscount')
       cardsPriceWithDis.innerHTML = priceWithDiscount;
-      let cardsPrice = document.createElement('span');
+      let cardsPrice = document.createElement('div');
       cardsPrice.classList.add('main__container-cards-underarmour-content-card-price')
       cardsPrice.innerHTML = price
       outAds.appendChild(cardsContainer)
@@ -205,8 +190,9 @@ for (let i = 1; i <= 4; i++) {
       cardContainer.appendChild(cardsInfo)
       cardsInfo.appendChild(cardsBrand)
       cardsInfo.appendChild(cardsName)
-      cardsInfo.appendChild(cardsPriceWithDis)
-      cardsPriceWithDis.appendChild(cardsPrice)
+      cardsInfo.appendChild(cardsPriceInfo)
+      cardsPriceInfo.appendChild(cardsPriceWithDis)
+      cardsPriceInfo.appendChild(cardsPrice)
       
     }
     let discountCardBtnCont = document.createElement('div');
@@ -326,26 +312,35 @@ for (let i = 1; i <= 4; i++) {
       let popularCards = document.createElement('div');
       popularCards.classList.add('main__container-ads-wrapper-clothe-card')
       let popularCardImg = document.createElement('img');
+      popularCardImg.setAttribute('onclick','showCardMoreInfo(event)')
       popularCardImg.classList.add('main__container-ads-wrapper-clothe-img')
       popularCardImg.src = jsParsed.popularCLothe[i].cardImg
+      let popularCardInfo = document.createElement('div');
+      popularCardInfo.classList.add('main__container-ads-wrapper-clothe-info')
       let popularCardBrand = document.createElement('div');
       popularCardBrand.innerHTML = jsParsed.popularCLothe[i].cardBrand;
       popularCardBrand.classList.add('main__container-ads-wrapper-clothe-brand-title')
       let popularCardName = document.createElement('div');
       popularCardName.innerHTML = jsParsed.popularCLothe[i].cardName;
       popularCardName.classList.add('main__container-ads-wrapper-clothe-title')
+      let popularCardPriceInfo = document.createElement('div');
+      popularCardPriceInfo.classList.add('main__container-ads-wrapper-clothe-price-info')
       let popularCardPriceWithDiscount = document.createElement('div');
       popularCardPriceWithDiscount.innerHTML = jsParsed.popularCLothe[i].cardPriceWithDiscount;
       popularCardPriceWithDiscount.classList.add('main__container-ads-wrapper-clothe-price')
-      let popularCardPrice = document.createElement('span');
+      let popularCardPrice = document.createElement('div');
+      popularCardPrice.classList.add('main__container-ads-wrapper-clothe-price-withDiscount')
       popularCardPrice.innerHTML = jsParsed.popularCLothe[i].cardPrice;
       
       popularWrapper.appendChild(popularCards)
       popularCards.appendChild(popularCardImg)
-      popularCards.appendChild(popularCardBrand)
-      popularCards.appendChild(popularCardName)
-      popularCards.appendChild(popularCardPriceWithDiscount)
-      popularCardPriceWithDiscount.appendChild(popularCardPrice)
+      popularCards.appendChild(popularCardInfo)
+      popularCardInfo.appendChild(popularCardBrand)
+      popularCardInfo.appendChild(popularCardName)
+      popularCardInfo.appendChild(popularCardName)
+      popularCardInfo.appendChild(popularCardPriceInfo)
+      popularCardPriceInfo.appendChild(popularCardPriceWithDiscount)
+      popularCardPriceInfo.appendChild(popularCardPrice)
     }
     let btnShowMorePopularClothe = document.createElement('div');
     btnShowMorePopularClothe.classList.add('main__container-ads-wrapper-clothe-button')
@@ -354,3 +349,32 @@ for (let i = 1; i <= 4; i++) {
 
     popularClothe.appendChild(btnShowMorePopularClothe)
     btnShowMorePopularClothe.appendChild(btnShowPopular)
+
+    function showCardMoreInfo(event) {
+      console.log(event);
+      // console.log(window.location);
+      // console.log(event.target.currentSrc);
+      // console.log(event.target.nextSibling.children[0].textContent);
+      // console.log(event.target.nextSibling.children[1].textContent);
+      // console.log(event.target.nextSibling.children[2].textContent);
+      // console.log(event.target.nextSibling.children[2].children[0].textContent);
+      // console.log(event.target.nextSibling.children[2].children[1]);
+      // console.log(event.target.nextSibling.children[2].outerHTML);
+      // console.log(event.target.nextSibling.children[2])
+
+      window.location.href = '../pages/showCardInfo.html';
+      localStorage.setItem('cardForMoreInfoImg', event.target.currentSrc)
+      // localStorage.setItem('cardForMoreInfoSizes', event.target.nextSibling.children[0].textContent)
+      localStorage.setItem('cardForMoreInfoSizes', '')
+      localStorage.setItem('cardForMoreInfoBrandName', event.target.nextSibling.children[0].textContent)
+      localStorage.setItem('cardForMoreInfoName', event.target.nextSibling.children[1].textContent)
+      localStorage.setItem('cardForMoreInfoPriceDisc', event.target.nextSibling.children[2].children[0].textContent)
+      localStorage.setItem('cardForMoreInfoPrice', event.target.nextSibling.children[2].children[1].textContent)
+
+      // if (localStorage.getItem('cardForMoreInfoPriceNews')!== null) {
+      //   console.log(21);
+      // }else{
+      //   console.log(3);
+      // }
+      // localStorage.removeItem('cardForMoreInfoPriceNews');
+    }
