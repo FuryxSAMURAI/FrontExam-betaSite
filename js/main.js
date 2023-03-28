@@ -362,7 +362,7 @@ for (let i = 1; i <= 4; i++) {
       // console.log(event.target.nextSibling.children[2].outerHTML);
       // console.log(event.target.nextSibling.children[2])
 
-      window.location.href = '../pages/showCardInfo.html';
+      window.location.href = 'pages/showCardInfo.html';
       localStorage.setItem('cardForMoreInfoImg', event.target.currentSrc)
       // localStorage.setItem('cardForMoreInfoSizes', event.target.nextSibling.children[0].textContent)
       localStorage.setItem('cardForMoreInfoSizes', '')
@@ -371,10 +371,10 @@ for (let i = 1; i <= 4; i++) {
       localStorage.setItem('cardForMoreInfoPriceDisc', event.target.nextSibling.children[2].children[0].textContent)
       localStorage.setItem('cardForMoreInfoPrice', event.target.nextSibling.children[2].children[1].textContent)
 
-      // if (localStorage.getItem('cardForMoreInfoPriceNews')!== null) {
+      // if (localStorage.getItem('cardForMoreInfoPriceNews')!== null || localStorage.getItem('cardForMoreInfoPriceNews')) {
       //   console.log(21);
       // }else{
       //   console.log(3);
       // }
-      // localStorage.removeItem('cardForMoreInfoPriceNews');
+      localStorage.removeItem('cardForMoreInfoPriceNews');
     }
