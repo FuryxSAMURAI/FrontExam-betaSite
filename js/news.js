@@ -346,20 +346,23 @@ open.style.left = '-3000px'
     }
     // localStorage.clear()
     function addToBag(event) {
-      console.log(event);
-      let img = event.target.currentSrc;
+      // console.log(event);
+      let img = event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc;
       let size = event.target.offsetParent.offsetParent.children[0].textContent
       let brand = event.target.offsetParent.offsetParent.children[1].textContent
       let name = event.target.offsetParent.offsetParent.children[2].textContent
       let price = event.target.offsetParent.offsetParent.children[3].textContent
       
+      var imgs = '';
+      imgs += img;
+
       let obj = new Object();
       obj.img = img;
       obj.size = size;
       obj.brand = brand;
       obj.name = name;
       obj.price = price;
-      // console.log(brand);
+      console.log(imgs);
       console.log(JSON.stringify(obj));
       localStorage.setItem('bag', JSON.stringify(obj));
       let res = JSON.parse(localStorage.getItem('bag'));

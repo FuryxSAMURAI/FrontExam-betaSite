@@ -5,12 +5,52 @@ window.onload = ()=>{
     preloader.style.display = 'none';
   }, 950);
 }
+
+function openMenu() {
+    let open = document.querySelector('.header__container-menu-mobile-container')
+  open.style.left = '0px'
+  }
+  function closeMenu() {
+  let open = document.querySelector('.header__container-menu-mobile-container')
+  open.style.left = '-3000px'
+  }
+
+let parsedLocal = JSON.parse(localStorage.getItem('bag'))
+console.log(parsedLocal);
+
+let outLocal = document.getElementById('localStorageOut');
+
+let cardsContainer = document.createElement('div');
+cardsContainer.classList.add('main__container-cart-product-container');
+let cardsImg = document.createElement('img');
+cardsImg.classList.add('main__container-cart-product-img');
+cardsImg.src = parsedLocal.img;
+let cardsProductInfo = document.createElement('div');
+cardsProductInfo.classList.add('main__container-cart-product-info');
+let cardsBrandName = document.createElement('div');
+cardsBrandName.classList.add('main__container-cart-product-brand-name');
+cardsBrandName.innerHTML = 'Бренд:' + '<span>'+parsedLocal.brand+'</span';
+let cardsName = document.createElement('div');
+cardsName.classList.add('main__container-cart-product-name');
+cardsName.innerHTML = parsedLocal.name;
+let cardsPrice = document.createElement('div');
+cardsPrice.classList.add('main__container-cart-product-price');
+cardsPrice.innerHTML = 'Ціна:' + '<span>'+parsedLocal.price+'</span>';
+
+outLocal.appendChild(cardsContainer)
+cardsContainer.appendChild(cardsImg)
+cardsContainer.appendChild(cardsProductInfo)
+cardsProductInfo.appendChild(cardsBrandName)
+cardsProductInfo.appendChild(cardsName)
+cardsProductInfo.appendChild(cardsPrice)
+
+
 // API KEY - q6oRuLWfr4YeZBk3U9ZaBdvY42WrpTzq
 // API Site - https://apilayer.com/marketplace/order_complete?id=223&txn=free&e=Sign%20Up&l=Success;
 allSumForPayTranslated = document.getElementById('allSumForPayTranslated');
 sumForPayTranslatedCheck = document.getElementById('allSumForPayTranslatedCheck');
 sumForPayTranslated = document.getElementById('allSumForPay');
-sumForPay = document.getElementById('allSumForPay').textContent;
+// sumForPay = document.getElementById('allSumForPay').value;
 
 promocodes = ['NEWSITE','FORPEOPLE','5PERDISCOUNT'];
 promoInput = document.querySelector('.main__container-check-promocode-input input');
