@@ -1,9 +1,9 @@
 function openMenu() {
-    let open = document.querySelector('.header__menu-container-wrapper')
+    let open = document.querySelector('.header__container-menu-mobile-container')
   open.style.left = '0px'
 }
 function closeMenu() {
-  let open = document.querySelector('.header__menu-container-wrapper')
+  let open = document.querySelector('.header__container-menu-mobile-container')
 open.style.left = '-3000px'
 }
 function LogIn() {

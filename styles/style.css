@@ -1105,10 +1105,10 @@ ul, li{
         .main__container-ads-wrapper-clothe-button{
           display: flex;
           justify-content: center;
-          position: relative;
-          top: 80px;
         }
         .main__container-ads-wrapper-clothe-button button{
+          position: relative;
+          top: 0px;
           border-radius: 5px;
           border: none;
           background-color: black;
@@ -1220,8 +1220,8 @@ ul, li{
       }
       .header__container-menu-mobile-btn-close{
         position: relative;
-        top: 20px;
-        left: 45px;
+        top: 25px;
+        left: 80px;
         display: block;
       }
       .header__container-menu-mobile-btn-close img{
@@ -1253,7 +1253,7 @@ ul, li{
     .header__container-menu-mobile-items{
       position: relative;
       top: 60px;
-      left: 40px;
+      left: 80px;
     }
     .header__container-menu-mobile-list{
       margin-top: 20px;
@@ -1550,8 +1550,8 @@ ul, li{
       }
       .header__container-menu-mobile-btn-close{
         position: relative;
-        top: 20px;
-        left: 45px;
+        top: 25px;
+        left: 80px;
         display: block;
       }
       .header__container-menu-mobile-btn-close img{
@@ -1583,7 +1583,7 @@ ul, li{
     .header__container-menu-mobile-items{
       position: relative;
       top: 60px;
-      left: 40px;
+      left: 80px;
     }
     .header__container-menu-mobile-list{
       margin-top: 20px;
@@ -1763,10 +1763,10 @@ ul, li{
         .main__container-ads-wrapper-clothe-button{
           display: flex;
           justify-content: center;
-          position: relative;
-          top: 80px;
         }
         .main__container-ads-wrapper-clothe-button button{
+          position: relative;
+          top: -15px;
           border-radius: 5px;
           border: none;
           background-color: black;
@@ -1875,8 +1875,8 @@ ul, li{
       }
       .header__container-menu-mobile-btn-close{
         position: relative;
-        top: 20px;
-        left: 45px;
+        top: 25px;
+        left: 80px;
         display: block;
       }
       .header__container-menu-mobile-btn-close img{
@@ -1908,9 +1908,13 @@ ul, li{
     .header__container-menu-mobile-items{
       position: relative;
       top: 60px;
-      left: 40px;
+      left: 80px;
     }
     .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list a{
+      font-size: 22px;
       margin-top: 20px;
     }
     .header__container-menu-mobile-list:nth-child(3){
@@ -2428,8 +2432,6 @@ ul, li{
         .main__container-ads-wrapper-clothe-button{
           display: flex;
           justify-content: center;
-          position: relative;
-          top: 60px;
         }
         .main__container-ads-wrapper-clothe-button button{
           border-radius: 5px;
