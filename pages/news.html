@@ -41,7 +41,7 @@
                 </div>
                 <div class="header__container-menu-mobile-container">
                     <div class="header__container-menu-mobile-btn-close" onclick="closeMenu()">
-                        <img src="./assets/images/callBackImages/callBackClose/close.png" alt="">
+                        <img src="../assets/images/callBackImages/callBackClose/close.png" alt="">
                     </div>
                     <div class="header__container-menu-mobile-items">
                         <ul class="header__container-menu-mobile-lists">
@@ -373,17 +373,56 @@
                                     <div class="main__container-catalog-headerbar-wrapper-media-sort-close"><img src="../assets/images/callBackImages/callBackClose/close.png" alt="" onclick="closeFilterForSort()"></div>
                                     <div class="main__container-catalog-headerbar-wrapper-media-sort-container">
                                         <div class="main__container-catalog-headerbar-wrapper-media-sort-content">
-                                            <ul class="main__container-catalog-headerbar-wrapper-media-sort-content-items">
-                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
-                                                    Бренд
-                                                </li>
-                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
-                                                    Ціна
-                                                </li>
-                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
-                                                    Стать
-                                                </li>
-                                            </ul>
+                                            <div class="main__container-catalog-headerbar-wrapper-media-sort-content-items">
+                                                <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-title" id="media-sort" data-mediaSort="brand">
+                                                        Бренд
+                                                    </div>
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-brand">
+                                                        <input type="text" id="searchBrand" onkeyup="findMediaBrand()" placeholder="Пошук по брендах">
+                                                        <ul class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists">
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Asics</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Adidas</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> BOSS</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> brabrabra</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Bimba Y Lola</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Calvin Klein</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Diesel</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Nike</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Mexx</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> New balance</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Puma</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> PRPY</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Tommy Hilfiger</label></li>
+                                                                <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list brands"><input type="checkbox" id="brandsCheckbox"><label for="brandsCheckbox"> Helen Marlen</label></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-title" id="media-sort" data-mediaSort="price">
+                                                        Ціна
+                                                    </div>
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-price">
+                                                        <ul class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists">
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> За зростанням</li>
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> За спаданням</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item">
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-title" id="media-sort" data-mediaSort="gender">
+                                                        Стать
+                                                    </div>
+                                                    <div class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-gender">
+                                                        <ul class="main__container-catalog-headerbar-wrapper-media-sort-content-item-lists">
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> Дівчатам</li>
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> Жінкам</li>
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> Хлопчикам</li>
+                                                            <li class="main__container-catalog-headerbar-wrapper-media-sort-content-item-list"><input type="checkbox"> Чоловікам</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </d>
                                             <div class="main__container-catalog-headerbar-wrapper-media-sort-btn-apply">
                                                 <button>Застосувати</button>
                                             </div>
@@ -394,9 +433,9 @@
                         </div>
                     </div>
                     <div class="cards-out"></div>
-                    <div class="btn-out">
+                    <!-- <div class="btn-out">
                         <button onclick="addCard()">rdtgfdg</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- <div class="main__container-section">

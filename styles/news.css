@@ -1645,11 +1645,29 @@ footer{
   .header__container-menu-mobile-btn-open span:nth-child(3){
     transform: translateY(28px);
   }
+  .header__container-menu-mobile-btn-close{
+    display: block;
+  }
+  .header__container-menu-mobile-btn-close img{
+    position: relative;
+    top: 25px;
+    left: 80px;
+    height: 20px;
+    width: 20px;
+  }
   .header__container-menu-mobile{
     display: block;
   }
   .header__container-menu-mobile-container{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: -3000px;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: block;
+    z-index: 6;
+    transition: all .6s ease-in-out;
   }
   .header__container-title{
     font-size: 24px;
@@ -1658,6 +1676,20 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header__container-menu-mobile-list{
+  position: relative;
+  top: 60px;
+  left: 80px;
+  margin-top: 20px;
+}
+.header__container-menu-mobile-list a{
+  color: black;
+  text-decoration: none;
+}
+.header__container-menu-mobile-list a:nth-child(3){
+  color: red;
+  font-weight: 500;
 }
   .header__container-menu-items{
     display: none;
@@ -1768,6 +1800,43 @@ footer{
     right: 30px;
     height: 30px;
     height: 30px;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-content{
+    position: relative;
+    /* left: 60px; */
+    top: 120px;
+    padding: 0 40px;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-content-item{
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-top: 20px;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-btn-apply{
+    position: relative;
+    top: 40px;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-btn-apply button{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    transition: all .3s ease-in-out;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-btn-apply button:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  }
+  .main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-brand, .main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-price, .main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-gender{
+    display: none;
+    transition: all .3s ease-in-out;
+  }
+  .sort-media-opened{
+    display: block;
   }
   /* ! */
   
@@ -2027,11 +2096,31 @@ footer{
   .header__container-menu-mobile-btn-open span:nth-child(3){
     transform: translateY(28px);
   }
+  .header__container-menu-mobile-btn-close{
+    position: relative;
+    top: 20px;
+    /* left: 35px; */
+    display: block;
+  }
+  .header__container-menu-mobile-btn-close img{
+    position: relative;
+    left: 80px;
+    height: 20px;
+    width: 20px;
+  }
   .header__container-menu-mobile{
     display: block;
   }
   .header__container-menu-mobile-container{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: -3000px;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: block;
+    z-index: 6;
+    transition: all .6s ease-in-out;
   }
   .header__container-title{
     font-size: 24px;
@@ -2040,6 +2129,23 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header__container-menu-mobile-list{
+  position: relative;
+  top: 60px;
+  left: 80px;
+}
+.header__container-menu-mobile-list{
+  margin-top: 20px;
+}
+.header__container-menu-mobile-list a{
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+}
+.header__container-menu-mobile-list a:nth-child(3){
+  color: red;
+  font-weight: 500;
 }
   .header__container-menu-items{
     display: none;
@@ -2485,11 +2591,31 @@ footer{
   .header__container-menu-mobile-btn-open span:nth-child(3){
     transform: translateY(28px);
   }
+  .header__container-menu-mobile-btn-close{
+    position: relative;
+    top: 20px;
+    /* left: 45px; */
+    display: block;
+  }
+  .header__container-menu-mobile-btn-close img{
+    position: relative;
+    left: 80px;
+    height: 20px;
+    width: 20px;
+  }
   .header__container-menu-mobile{
     display: block;
   }
   .header__container-menu-mobile-container{
-    display: none;
+    position: absolute;
+    top: 0;
+    left: -3000px;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: block;
+    z-index: 6;
+    transition: all .6s ease-in-out;
   }
   .header__container-title{
     font-size: 24px;
@@ -2498,6 +2624,17 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.header__container-menu-mobile-list{
+  margin-top: 20px;
+}
+.header__container-menu-mobile-list a{
+  color: black;
+  text-decoration: none;
+}
+.header__container-menu-mobile-list a:nth-child(3){
+  color: red;
+  font-weight: 500;
 }
   .header__container-menu-items{
     display: none;
@@ -2559,7 +2696,45 @@ footer{
       padding: 15px 20px;
       user-select: none;
   }
-    
+  .main__container-catalog-cards-img{
+    height: 100%;
+    width: 100%;
+}
+.main__container-catalog-cards-content-info{
+    position: relative;
+}
+.main__container-catalog-cards-size{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 8px;
+}
+.main__container-catalog-cards-brand{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+}
+.main__container-catalog-cards-name{
+    height: 50px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.main__container-catalog-cards-price{
+    font-size: 16px;
+}
+.main__container-catalog-cards-btn-buy{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 70px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.main__container-catalog-cards-btn-buy-img{
+    height: 25px;
+    width: auto;
+}
     /* ! FOOTER */
     footer{
       display: flex;
@@ -2657,10 +2832,11 @@ footer{
   .header__container-menu-mobile-btn-close{
     position: relative;
     top: 20px;
-    left: 45px;
     display: block;
   }
   .header__container-menu-mobile-btn-close img{
+    position: relative;
+    left: 80px;
     height: 20px;
     width: 20px;
   }
@@ -2686,20 +2862,18 @@ footer{
     justify-content: center;
     align-items: center;
 }
-.header__container-menu-mobile-items{
-  position: relative;
-  top: 60px;
-  left: 40px;
-}
 .header__container-menu-mobile-list{
   margin-top: 20px;
 }
-.header__container-menu-mobile-list:nth-child(3){
+.header__container-menu-mobile-list a{
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+}
+.header__container-menu-mobile-list a:nth-child(3){
   color: red;
   font-weight: 500;
 }
-
-
   .header__container-menu-items{
     display: none;
   }
@@ -2903,13 +3077,13 @@ footer{
       top: 0;
       left: 0;
       background-color: #1d1d1d;
-      height: 50px;
-      width: 50px;
+      height: 35px;
+      width: 35px;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 14px;
+      font-size: 10px;
       border-radius: 0 0 5px 0;
   }
   .main__container-catalog-cards-img{
@@ -2921,22 +3095,21 @@ footer{
   }
   .main__container-catalog-cards-size{
       position: absolute;
-      right: 10px;
       top: 0;
-      font-size: 10px;
+      font-size: 6px;
   }
   .main__container-catalog-cards-brand{
       text-transform: uppercase;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 10px;
   }
   .main__container-catalog-cards-name{
       height: 50px;
       margin-top: 10px;
-      font-size: 14px;
+      font-size: 10px;
   }
   .main__container-catalog-cards-price{
-      font-size: 18px;
+      font-size: 14px;
   }
   .main__container-catalog-cards-btn-buy{
       cursor: pointer;
@@ -2948,7 +3121,7 @@ footer{
       border: 1px solid #ccc;
   }
   .main__container-catalog-cards-btn-buy-img{
-      height: 25px;
+      height: 20px;
       width: auto;
   }
 
@@ -3058,7 +3231,6 @@ footer{
       background-color: #f8f8f8;
       max-width: 100vw;
       position: relative;
-      top: 400px;
       padding: 40px 0;
     }
     .footer__container{

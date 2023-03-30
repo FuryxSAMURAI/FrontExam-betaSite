@@ -308,6 +308,24 @@ open.style.left = '-3000px'
         }
       }
     }
+    let sortMediaContents = document.querySelectorAll('#media-sort');
+    // console.log(sortContents);
+    for (sortMediaContent of sortMediaContents) {
+      sortMediaContent.onclick = (event) =>{
+        if (event.target.dataset.mediasort == 'brand') {
+          let sortMediaContentOpen = document.querySelector('.main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-brand')
+          sortMediaContentOpen.classList.toggle('sort-media-opened')
+        }
+        if (event.target.dataset.mediasort == 'price') {
+          let sortMediaContentOpen = document.querySelector('.main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-price')
+          sortMediaContentOpen.classList.toggle('sort-media-opened')
+        }
+        if (event.target.dataset.mediasort == 'gender') {
+          let sortMediaContentOpen = document.querySelector('.main__container-catalog-headerbar-wrapper-media-sort-content-item-lists-content-gender')
+          sortMediaContentOpen.classList.toggle('sort-media-opened')
+        }
+      }
+    }
 
     function findBrand() {
       let input = document.getElementById('searchBrand').value;
@@ -355,7 +373,7 @@ open.style.left = '-3000px'
       
       var imgs = '';
       imgs += img;
-
+      
       let obj = new Object();
       obj.img = img;
       obj.size = size;
@@ -367,6 +385,10 @@ open.style.left = '-3000px'
       localStorage.setItem('bag', JSON.stringify(obj));
       let res = JSON.parse(localStorage.getItem('bag'));
       console.log(res);
+
+      window.location.href = '../pages/shoppingCart.html';
+
+
       // console.log(price);
       // console.log(event);
       // console.log(event);
@@ -374,7 +396,7 @@ open.style.left = '-3000px'
       // console.log(event.target.offsetParent.offsetParent.children[1].textContent);
       // console.log(event.target.offsetParent.offsetParent.children[2].textContent);
       // console.log(event.target.offsetParent.offsetParent.children[3].textContent);
-
+      
       // console.log(event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc);
       // localStorage.setItem('bagCardSizes', event.target.offsetParent.offsetParent.children[0].textContent)
       // localStorage.setItem('bagCardBrand', event.target.offsetParent.offsetParent.children[1].textContent)
