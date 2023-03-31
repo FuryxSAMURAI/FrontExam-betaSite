@@ -342,6 +342,21 @@ open.style.left = '-3000px'
             }
           }
         }
+    function findMediaBrand() {
+      let input = document.getElementById('searchMediaBrand').value;
+      input=input.toLowerCase();
+      let brands = document.getElementsByClassName('brands');
+        console.log(brands);
+        console.log(brands.length);
+          for (i = 0; i < brands.length; i++) { 
+            if (!brands[i].innerHTML.toLowerCase().includes(input)) {
+              brands[i].style.display="none";
+            }
+            else {
+              brands[i].style.display="block";                 
+            }
+          }
+        }
         // localStorage.clear();
     function showCardMoreInfo(event) {
       // console.log(event);
