@@ -378,3 +378,57 @@ for (let i = 1; i <= 4; i++) {
       // }
       localStorage.removeItem('cardForMoreInfoPriceNews');
     }
+    function addToBag(event) {
+      // console.log(event);
+      let img = event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc;
+      let size = event.target.offsetParent.offsetParent.children[0].textContent
+      let brand = event.target.offsetParent.offsetParent.children[1].textContent
+      let name = event.target.offsetParent.offsetParent.children[2].textContent
+      let price = event.target.offsetParent.offsetParent.children[3].textContent
+      
+      var imgs = '';
+      imgs += img;
+      
+      let obj = new Object();
+      obj.img = img;
+      obj.size = size;
+      obj.brand = brand;
+      obj.name = name;
+      obj.price = price;
+      console.log(imgs);
+      console.log(JSON.stringify(obj));
+      localStorage.setItem('bag', JSON.stringify(obj));
+      let res = JSON.parse(localStorage.getItem('bag'));
+      console.log(res);
+
+      window.location.href = '../pages/shoppingCart.html';
+
+
+      // console.log(price);
+      // console.log(event);
+      // console.log(event);
+      // console.log(event.target.offsetParent.offsetParent.children[0].textContent);
+      // console.log(event.target.offsetParent.offsetParent.children[1].textContent);
+      // console.log(event.target.offsetParent.offsetParent.children[2].textContent);
+      // console.log(event.target.offsetParent.offsetParent.children[3].textContent);
+      
+      // console.log(event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc);
+      // localStorage.setItem('bagCardSizes', event.target.offsetParent.offsetParent.children[0].textContent)
+      // localStorage.setItem('bagCardBrand', event.target.offsetParent.offsetParent.children[1].textContent)
+      // localStorage.setItem('bagCardName', event.target.offsetParent.offsetParent.children[2].textContent)
+      // localStorage.setItem('bagCardPrice', event.target.offsetParent.offsetParent.children[3].textContent)
+      // localStorage.setItem('bagCardImg', event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc)
+
+      // let bagCardBrand = localStorage.getItem('bagCardBrand');
+      // let bagCardName = localStorage.getItem('bagCardName');
+      // if (bagCardBrand == null || bagCardName == null) {
+      //   localStorage.setItem('bagCardBrand', event.target.offsetParent.offsetParent.children[1].textContent);
+      //   localStorage.setItem('bagCardName', event.target.offsetParent.offsetParent.children[2].textContent);
+      // }else{
+      //   bagCardBrand += ' ' + event.target.offsetParent.offsetParent.children[1].textContent, event.target.offsetParent.offsetParent.children[2].textContent
+      //   bagCardName += ' ' + event.target.offsetParent.offsetParent.children[2].textContent, event.target.offsetParent.offsetParent.children[2].textContent
+      //   localStorage.setItem('bagCardBrand', bagCardBrand);
+      //   localStorage.setItem('bagCardName', bagCardName);
+      //   // console.log(localStorage.getItem('bagCardName').join(' '));
+      // }
+    }

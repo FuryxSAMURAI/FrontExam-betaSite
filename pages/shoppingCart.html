@@ -290,6 +290,50 @@
                 </div>
             </div>
         </div>
+
+        <div class="main__container-check-send-gmail">
+            <div class="main__container-check-send-gmail-content">
+                <div class="main__container-check-send-gmail-close"><img src="../assets/images/callBackImages/callBackClose/close.png" alt=""></div>
+                <div class="main__container-check-send-gmail-content-title">Подробиці про доставку</div>
+                <div class="main__container-check-send-gmail-content-inputs">
+                    <form id="formCheck" action="../mail.php" method="POST">
+                        <div class="main__container-check-send-gmail-content-input-name">
+                            <label for="userName">Ім'я</label>
+                            <input type="text" name="user_name" id="userName">
+                            <span class="span-error-name">Ім'я повинно містити тільки літери</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-phone">
+                            <label for="userPhone">Телефон</label>
+                            <input type="text" name="user_phone" id="userPhone">
+                            <span class="span-error-phone">Телефон повинен починатися з +380, та не більше 9 цифр</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-street">
+                            <label for="">Вулиця</label>
+                            <input type="text" name="user_street" id="userStreet">
+                            <span class="span-error-street">Тільки літери</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-home">
+                            <label for="">Будинок</label>
+                            <input type="text" name="user_home" id="userHomeNum">
+                            <span class="span-error-home">Тільки цифра або цифра з літерою</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-plate">
+                            <label for="">Поверх</label>
+                            <input type="text" name="user_plate" id="userFlatPlate">
+                            <span class="span-error-plate">Тільки цифра</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-homeNum">
+                            <label for="">Номер кв.</label>
+                            <input type="text" name="user_homeNum" id="userFlatNum">
+                            <span class="span-error-home-num">Тільки цифра або цифра з літерою</span>
+                        </div>
+                        <div class="main__container-check-send-gmail-content-input-btn">
+                            <input type="submit" value="Підтвердити">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer__container">

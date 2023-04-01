@@ -67,7 +67,67 @@ let outBtn = document.querySelector('.main__container-side-card-info-btn')
 let btnCont = document.createElement('div')
 btnCont.classList.add('main__container-side-card-info-btn-container')
 let btnBuy = document.createElement('button');
+btnBuy.setAttribute('onclick', 'addToBag(event)')
 btnBuy.innerHTML = 'Додати до кошика';
 
 outBtn.appendChild(btnCont)
 btnCont.appendChild(btnBuy)
+
+function addToBag(event) {
+  // console.log(event);
+  let img = document.querySelector('.main__container-side-card-images-get img').currentSrc
+  let size = false;
+  let brand = document.querySelector('.main__container-side-card-info-brand-name').textContent
+  let name = document.querySelector('.main__container-side-card-info-name').textContent
+  let price = document.getElementsByClassName('main__container-side-card-info-price main__container-side-card-info-price-disc')[0].outerText
+  
+  if (price == '') {
+    price = document.querySelector('.main__container-side-card-info-price-news').textContent
+  }else[
+    price = document.getElementsByClassName('main__container-side-card-info-price main__container-side-card-info-price-disc')[0].outerText
+  ]
+  console.log(price);
+
+  let obj = new Object();
+  obj.img = img;
+  obj.size = size;
+  obj.brand = brand;
+  obj.name = name;
+  obj.price = price;
+  console.log(JSON.stringify(obj));
+  localStorage.setItem('bag', JSON.stringify(obj));
+  let res = JSON.parse(localStorage.getItem('bag'));
+  // console.log(res);
+  // console.log(price);
+  
+  window.location.href = '../pages/shoppingCart.html';
+
+
+  // console.log(price);
+  // console.log(event);
+  // console.log(event);
+  // console.log(event.target.offsetParent.offsetParent.children[0].textContent);
+  // console.log(event.target.offsetParent.offsetParent.children[1].textContent);
+  // console.log(event.target.offsetParent.offsetParent.children[2].textContent);
+  // console.log(event.target.offsetParent.offsetParent.children[3].textContent);
+  
+  // console.log(event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc);
+  // localStorage.setItem('bagCardSizes', event.target.offsetParent.offsetParent.children[0].textContent)
+  // localStorage.setItem('bagCardBrand', event.target.offsetParent.offsetParent.children[1].textContent)
+  // localStorage.setItem('bagCardName', event.target.offsetParent.offsetParent.children[2].textContent)
+  // localStorage.setItem('bagCardPrice', event.target.offsetParent.offsetParent.children[3].textContent)
+  // localStorage.setItem('bagCardImg', event.target.offsetParent.offsetParent.offsetParent.children[1].children[0].currentSrc)
+
+  // let bagCardBrand = localStorage.getItem('bagCardBrand');
+  // let bagCardName = localStorage.getItem('bagCardName');
+  // if (bagCardBrand == null || bagCardName == null) {
+  //   localStorage.setItem('bagCardBrand', event.target.offsetParent.offsetParent.children[1].textContent);
+  //   localStorage.setItem('bagCardName', event.target.offsetParent.offsetParent.children[2].textContent);
+  // }else{
+  //   bagCardBrand += ' ' + event.target.offsetParent.offsetParent.children[1].textContent, event.target.offsetParent.offsetParent.children[2].textContent
+  //   bagCardName += ' ' + event.target.offsetParent.offsetParent.children[2].textContent, event.target.offsetParent.offsetParent.children[2].textContent
+  //   localStorage.setItem('bagCardBrand', bagCardBrand);
+  //   localStorage.setItem('bagCardName', bagCardName);
+  //   // console.log(localStorage.getItem('bagCardName').join(' '));
+  // }
+}

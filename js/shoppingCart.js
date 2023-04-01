@@ -168,3 +168,115 @@ function usdToUah(){
     }
     requestToUAH.send();
 }
+
+let formOpen = document.querySelector('.main__container-check-btn-pay button');
+formOpen.onclick = ()=>{
+    let content = document.querySelector('.main__container-check-send-gmail');
+    content.style.cssText = 'opacity: 1; display: flex';
+}
+
+let formClose = document.querySelector('.main__container-check-send-gmail-close');
+formClose.onclick = ()=>{
+    let content = document.querySelector('.main__container-check-send-gmail');
+    content.style.cssText = 'opacity: 0; display: none';
+}
+
+formCheck = document.getElementById('formCheck');
+formCheck.onsubmit = ()=>{
+    let userName = document.getElementById('userName')
+    let userPhone = document.getElementById('userPhone')
+    let userStreet = document.getElementById('userStreet')
+    let userHome = document.getElementById('userHomeNum')
+    let userPlate = document.getElementById('userFlatPlate')
+    let userHomeNumber = document.getElementById('userFlatNum')
+
+    let userNameVal = document.getElementById('userName').value
+    let userPhoneVal = document.getElementById('userPhone').value
+    let userStreetVal = document.getElementById('userStreet').value
+    let userHomeVal = document.getElementById('userHomeNum').value
+    let userPlateVal = document.getElementById('userFlatPlate').value
+    let userHomeNumberVal = document.getElementById('userFlatNum').value
+
+    let userNameTest = /[А-Яа-я]/i
+    let userPhoneTest = /^\+[3][8][0]\d{9}/i;
+    let userStreetTest = /[А-Яа-я]/;
+    let userHomeTest = /[0-9А-Яа-я]/;
+    let userPlateTest = /[0-9]/;
+    let userHomeNumberTest = /[0-9А-Яа-я]/;
+
+    let userNameError = document.querySelector('.span-error-name');
+    let userPhoneError = document.querySelector('.span-error-phone');
+    let userStreetError = document.querySelector('.span-error-street');
+    let userHomeError = document.querySelector('.span-error-home');
+    let userPlateError = document.querySelector('.span-error-plate');
+    let userHomeNumberError = document.querySelector('.span-error-home-num');
+
+    let userNameFlag = false;
+    let userPhoneFlag = false;
+    let userStreetFlag = false;
+    let userHomeFlag = false;
+    let userPlateFlag = false;
+    let userHomeNumberFlag = false;
+
+    if (!userNameTest.test(userNameVal) || userName.length == '' || userName.length == 0 || userName.length>20) {
+        userName.style.cssText = "color:red;border:1px solid red;"
+        userNameError.style.display = 'block';
+        return userNameFlag
+    }else{
+        userName.style.cssText = "color:black;border:1px solid black;"
+        userNameError.style.display = 'none';
+        userNameFlag = true;
+    }
+    
+    if (!userPhoneTest.test(userPhoneVal)) {
+        userPhone.style.cssText = "color:red;border:1px solid red;"
+        userPhoneError.style.display = 'block';
+        return userPhoneFlag
+    }else{
+        userPhone.style.cssText = "color:black;border:1px solid black;"
+        userPhoneError.style.display = 'none';
+        userPhoneFlag = true;
+    }
+    
+    if (!userStreetTest.test(userStreetVal) || userStreet.length == '' || userStreet.length == 0 || userStreet.length>20) {
+        userStreet.style.cssText = "color:red;border:1px solid red;"
+        userStreetError.style.display = 'block';
+        return userStreetFlag
+    }else{
+        userStreet.style.cssText = "color:black;border:1px solid black;"
+        userStreetError.style.display = 'none';
+        userStreetFlag = true;
+    }
+
+    if (!userHomeTest.test(userHomeVal) || userHome.length == '' || userHome.length == 0 || userHome.length>20) {
+        userHome.style.cssText = "color:red;border:1px solid red;"
+        userHomeError.style.display = 'block';
+        return userHomeFlag
+    }else{
+        userHome.style.cssText = "color:black;border:1px solid black;"
+        userHomeError.style.display = 'none';
+        userHomeFlag = true;
+    }
+
+    if (!userPlateTest.test(userPlateVal) || userPlate.length == '' || userPlate.length == 0 || userPlate.length>20) {
+        userPlate.style.cssText = "color:red;border:1px solid red;"
+        userPlateError.style.display = 'block';
+        return userPlateFlag
+    }else{
+        userPlate.style.cssText = "color:black;border:1px solid black;"
+        userPlateError.style.display = 'none';
+        userPlateFlag = true;
+    }
+
+    if (!userHomeNumberTest.test(userHomeNumberVal) || userHomeNumber.length == '' || userHomeNumber.length == 0 || userHomeNumber.length>20) {
+        userHomeNumber.style.cssText = "color:red;border:1px solid red;"
+        userHomeNumberError.style.display = 'block';
+        return userHomeNumberFlag
+    }else{
+        userHomeNumber.style.cssText = "color:black;border:1px solid black;"
+        userHomeNumberError.style.display = 'none';
+        userHomeNumberFlag = true;
+    }
+
+    if (userNameFlag == true && userPhoneFlag == true && userStreetFlag == true && userHomeFlag == true && userPlateFlag == true && userHomeNumberFlag == true) {return true;}else{return false;}
+}

@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique</title>
+    <style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+ul, li{
+    list-style: none;
+}
+.preloader__wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    animation: preloaderHide 1s;
+}
+.preloader{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preloader-site-name{
+    font-size: 32px;
+    color: #1d1d1d;
+    font-weight: bolder;
+    margin-bottom: 120px;
+    position: absolute;
+    text-align: center;
+}
+.blobs {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 70px;
+    transform-style: preserve-3d;
+  }
+  
+  .blobs .blob-center {
+    transform-style: preserve-3d;
+    position: absolute;
+    background: #1d1d1d;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    transform-origin: left top;
+    transform: scale(0.9) translate(-50%, -50%);
+    animation: blob-grow_2 linear 3.4s infinite;
+    border-radius: 50%;
+    box-shadow: 0 -10px 40px -5px #1d1d1d;
+  }
+  
+  .blob {
+    position: absolute;
+    background: #1d1d1d;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    animation: blobs_2 ease-out 3.4s infinite;
+    transform: scale(0.9) translate(-50%, -50%);
+    transform-origin: center top;
+    opacity: 0;
+  }
+  
+  .blob:nth-child(1) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+  }
+  
+  .blob:nth-child(2) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+  }
+  
+  .blob:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+  }
+  
+  .blob:nth-child(4) {
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+  }
+  
+  .blob:nth-child(5) {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  @keyframes preloaderHide {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+  }
+  @keyframes blobs_2 {
+    0% {
+      opacity: 0;
+      transform: scale(0) translate(calc(-330px - 50%), -50%);
+    }
+  
+    1% {
+      opacity: 1;
+    }
+  
+    35%, 65% {
+      opacity: 1;
+      transform: scale(0.9) translate(-50%, -50%);
+    }
+  
+    99% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: scale(0) translate(calc(330px - 50%), -50%);
+    }
+  }
+  
+  @keyframes blob-grow_2 {
+    0%, 39% {
+      transform: scale(0) translate(-50%, -50%);
+    }
+  
+    40%, 42% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+  
+    43%, 44% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+  
+    45%, 46% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+  
+    47%, 48% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+  
+    52% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+  
+    54% {
+      transform: scale(1.7, 1.6) translate(-50%, -50%);
+    }
+  
+    58% {
+      transform: scale(1.8, 1.7) translate(-50%, -50%);
+    }
+  
+    68%, 70% {
+      transform: scale(1.7, 1.5) translate(-50%, -50%);
+    }
+  
+    78% {
+      transform: scale(1.6, 1.4) translate(-50%, -50%);
+    }
+  
+    80%, 81% {
+      transform: scale(1.5, 1.4) translate(-50%, -50%);
+    }
+  
+    82%, 83% {
+      transform: scale(1.4, 1.3) translate(-50%, -50%);
+    }
+  
+    84%, 85% {
+      transform: scale(1.3, 1.2) translate(-50%, -50%);
+    }
+  
+    86%, 87% {
+      transform: scale(1.2, 1.1) translate(-50%, -50%);
+    }
+  
+    90%, 91% {
+      transform: scale(1, 0.9) translate(-50%, -50%);
+    }
+  
+    92%, 100% {
+      transform: scale(0) translate(-50%, -50%);
+    }
+  }
+
+  header{
+    height: 70px;
+    background-color: white;
+    max-width: 100vw;
+    box-shadow: 0 0 5px #ccc;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  .header__container{
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  .header__container-menu-mobile{
+    display: none;
+  }
+  .header__container-title{
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+    justify-content: left;
+}
+  .header__container-menu-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__container-menu-item{
+    padding: 25px 20px;
+  }
+  .header__container-menu-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    /* margin-left: 40px; */
+    font-size: 20px;
+  }
+  .header__container-menu-item .header__container-menu-item-red{
+    color: red;
+    font-weight: 600;
+  }
+  .header__container-menu-item-links{
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: rgb(255, 255, 255);
+      z-index: 5;
+      height: 350px;
+      width: 100vw;
+   }
+   .header__container-menu-item:hover .header__container-menu-item-links{
+    display: block;
+    }
+   .header__container-menu-item-links-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    justify-items: center;
+   }
+   .header__container-menu-item-links-lists{
+    position: relative;
+    top: 40px;
+    }
+   .header__container-menu-item-links-list:first-child{
+    margin-bottom: 15px;
+    }
+   .header__container-menu-item-links-list{
+    margin-top: 10px;
+    width: 200px;
+    }
+   .header__container-menu-item-links-list a{
+    font-size: 14px;
+    transition: all .3s ease-in-out;
+    }
+   .header__container-menu-item-links-list a:hover{
+    cursor: pointer;
+    color: rgb(87, 87, 87);
+    }
+    .header__container-user-content{
+        display: flex;
+        justify-content: right;
+        gap: 20px;
+    }
+    .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+        height: 25px;
+        width: auto;
+    }
+
+    main{
+      position: relative;
+      top: 200px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      height: 190px;
+    }
+    .main__container-btn, .main__container-gmail{
+      position: relative;
+      top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main__container-btn{
+      position: relative;
+      top: 60px;
+    }
+    .main__container-gmail button{
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 60%;
+      color: black;
+      background-color: white;
+      border: 1px solid black;
+      transition: all .3s ease-in-out;
+    }
+    .main__container-btn button{
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 60%;
+      color: black;
+      background-color: white;
+      border: 1px solid black;
+      transition: all .4s ease-in-out;
+    }
+    .main__container-gmail button:hover, .main__container-btn button:hover{
+      cursor: pointer;
+      color: white;
+      background-color: black;
+    }
+    .main__container-title{
+      font-size: 32px;
+    }
+    .main__container-subtitle{
+      margin-top: 10px;
+      font-size: 22px;
+    }
+    /* ! FOOTER */
+    footer{
+      display: flex;
+      justify-content: center;
+      background-color: #f8f8f8;
+      max-width: 100vw;
+      position: relative;
+      top: 400px;
+      padding: 40px 0;
+    }
+    .footer__container{
+      width: 80vw;
+    }
+    .footer__container-blocks-contacts{
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer__container-block-contact-social{
+      display: flex;
+      padding: 20px 0;
+      gap: 20px;
+    }
+    .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+      height: 40px;
+      width: 40px;
+      transition: all .3s ease-in-out;
+    }
+    .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+      cursor: pointer;
+      background-color: #ccc;
+      border-radius: 5px;
+    }
+    .footer__container-block-contact-apps{
+      cursor: pointer;
+      padding: 20px 0;
+      display: flex;
+      gap: 20px;
+    }
+    .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+      height: auto;
+      width: 120px;
+    } 
+    .footer__container-block-contact{
+      font-size: 18px;
+      margin-top: 10px;
+    } 
+    .footer__container-block-contact a{
+      color: black;
+      text-decoration: none;
+      transition: all .3s ease-in-out;
+    } 
+    .footer__container-block-contact a:hover{
+      color: #1d1d1d;
+    } 
+
+    /* ! MEDIA */
+    @media screen and (max-width:1500px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+      }
+      .header__container-title{
+        font-size: 24px;
+        font-weight: 800;
+        display: flex;
+        justify-content: left;
+    }
+      .header__container-menu-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header__container-menu-item{
+        padding: 25px 20px;
+      }
+      .header__container-menu-item a{
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        /* margin-left: 40px; */
+        font-size: 18px;
+      }
+      .header__container-menu-item .header__container-menu-item-red{
+        color: red;
+        font-weight: 600;
+      }
+      .header__container-menu-item-links{
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          background-color: rgb(255, 255, 255);
+          z-index: 5;
+          height: 350px;
+          width: 100vw;
+       }
+       .header__container-menu-item:hover .header__container-menu-item-links{
+        display: block;
+        }
+       .header__container-menu-item-links-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+        justify-items: center;
+       }
+       .header__container-menu-item-links-lists{
+        position: relative;
+        top: 40px;
+        }
+       .header__container-menu-item-links-list:first-child{
+        margin-bottom: 15px;
+        }
+       .header__container-menu-item-links-list{
+        margin-top: 5px;
+        width: 200px;
+        }
+       .header__container-menu-item-links-list a{
+        font-size: 12px;
+        transition: all .3s ease-in-out;
+        }
+       .header__container-menu-item-links-list a:hover{
+        cursor: pointer;
+        color: rgb(87, 87, 87);
+        }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 20px;
+            width: auto;
+        }
+
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 450px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: flex;
+          justify-content: space-between;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 30px;
+          width: 30px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 100px;
+        } 
+        .footer__container-block-contact{
+          font-size: 14px;
+          margin-top: 10px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 1200px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 40px;
+      }
+      .header__container-title{
+        font-size: 24px;
+        font-weight: 800;
+        display: flex;
+        justify-content: left;
+    }
+      .header__container-menu-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .header__container-menu-item{
+        padding: 25px 15px;
+      }
+      .header__container-menu-item a{
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        /* margin-left: 40px; */
+        font-size: 14px;
+      }
+      .header__container-menu-item .header__container-menu-item-red{
+        color: red;
+        font-weight: 600;
+      }
+      .header__container-menu-item-links{
+          display: none;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          background-color: rgb(255, 255, 255);
+          z-index: 5;
+          height: 350px;
+          width: 100vw;
+       }
+       .header__container-menu-item:hover .header__container-menu-item-links{
+        display: block;
+        }
+       .header__container-menu-item-links-content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+        justify-items: center;
+       }
+       .header__container-menu-item-links-lists{
+        position: relative;
+        top: 40px;
+        }
+       .header__container-menu-item-links-list:first-child{
+        margin-bottom: 15px;
+        }
+       .header__container-menu-item-links-list{
+        margin-top: 5px;
+        width: 200px;
+        }
+       .header__container-menu-item-links-list a{
+        font-size: 12px;
+        transition: all .3s ease-in-out;
+        }
+       .header__container-menu-item-links-list a:hover{
+        cursor: pointer;
+        color: rgb(87, 87, 87);
+        }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 20px;
+            width: auto;
+        }
+
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 400px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: flex;
+          justify-content: space-between;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 30px;
+          width: 30px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 100px;
+        } 
+        .footer__container-block-contact{
+          font-size: 14px;
+          margin-top: 10px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 1024px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        /* justify-content: center; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .header__container-menu-mobile-btn-open{
+        height: 50px;
+        width: 50px;
+      }
+      .header__container-menu-mobile-btn-open span{
+        display: block;
+        height: 3px;
+        width: 40px;
+        background-color: black;
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(1){
+        transform: translateY(12px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(2){
+        transform: translateY(20px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(3){
+        transform: translateY(28px);
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close{
+        position: relative;
+        top: 25px;
+        left: 80px;
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close img{
+        height: 20px;
+        width: 20px;
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-container{
+        position: absolute;
+        top: 0;
+        left: -3000px;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        display: block;
+        z-index: 6;
+        transition: all .6s ease-in-out;
+      }
+      .header__container-title{
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container-menu-mobile-items{
+      position: relative;
+      top: 60px;
+      left: 80px;
+    }
+    .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list a{
+      color: black;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list a:nth-child(3){
+      color: red;
+      font-weight: 500;
+    }
+
+
+      .header__container-menu-items{
+        display: none;
+      }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 20px;
+            width: auto;
+        }
+    
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 400px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: flex;
+          justify-content: space-between;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 30px;
+          width: 30px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 100px;
+        } 
+        .footer__container-block-contact{
+          font-size: 14px;
+          margin-top: 10px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 898px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        /* justify-content: center; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .header__container-menu-mobile-btn-open{
+        height: 50px;
+        width: 50px;
+      }
+      .header__container-menu-mobile-btn-open span{
+        display: block;
+        height: 3px;
+        width: 40px;
+        background-color: black;
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(1){
+        transform: translateY(12px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(2){
+        transform: translateY(20px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(3){
+        transform: translateY(28px);
+      }
+      .header__container-menu-mobile-btn-close{
+        position: relative;
+        top: 25px;
+        left: 80px;
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close img{
+        height: 20px;
+        width: 20px;
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-container{
+        position: absolute;
+        top: 0;
+        left: -3000px;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        display: block;
+        z-index: 6;
+        transition: all .6s ease-in-out;
+      }
+      .header__container-title{
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container-menu-mobile-items{
+      position: relative;
+      top: 60px;
+      left: 80px;
+    }
+    .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list:nth-child(3){
+      color: red;
+      font-weight: 500;
+    }
+
+
+      .header__container-menu-items{
+        display: none;
+      }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 20px;
+            width: auto;
+        }
+
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 400px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: flex;
+          justify-content: space-between;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 20px;
+          width: 20px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 80px;
+        } 
+        .footer__container-block-contact{
+          font-size: 10px;
+          margin-top: 10px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 768px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        /* justify-content: center; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .header__container-menu-mobile-btn-open{
+        height: 50px;
+        width: 50px;
+      }
+      .header__container-menu-mobile-btn-open span{
+        display: block;
+        height: 3px;
+        width: 40px;
+        background-color: black;
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(1){
+        transform: translateY(12px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(2){
+        transform: translateY(20px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(3){
+        transform: translateY(28px);
+      }
+      .header__container-menu-mobile-btn-close{
+        position: relative;
+        top: 25px;
+        left: 80px;
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close img{
+        height: 20px;
+        width: 20px;
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-container{
+        position: absolute;
+        top: 0;
+        left: -3000px;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        display: block;
+        z-index: 6;
+        transition: all .6s ease-in-out;
+      }
+      .header__container-title{
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container-menu-mobile-items{
+      position: relative;
+      top: 60px;
+      left: 80px;
+    }
+    .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list a{
+      font-size: 22px;
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list:nth-child(3){
+      color: red;
+      font-weight: 500;
+    }
+
+
+      .header__container-menu-items{
+        display: none;
+      }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 20px;
+            width: auto;
+        }
+        
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 350px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          justify-content: center;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 20px;
+          width: 20px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 80px;
+        } 
+        .footer__container-block-contact{
+          font-size: 10px;
+          margin-top: 10px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 540px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        /* justify-content: center; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .header__container-menu-mobile-btn-open{
+        height: 50px;
+        width: 50px;
+      }
+      .header__container-menu-mobile-btn-open span{
+        display: block;
+        height: 3px;
+        width: 30px;
+        background-color: black;
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(1){
+        transform: translateY(10px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(2){
+        transform: translateY(18px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(3){
+        transform: translateY(25px);
+      }
+      .header__container-menu-mobile-btn-close{
+        position: relative;
+        top: 20px;
+        left: 45px;
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close img{
+        height: 20px;
+        width: 20px;
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-container{
+        position: absolute;
+        top: 0;
+        left: -3000px;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        display: block;
+        z-index: 6;
+        transition: all .6s ease-in-out;
+      }
+      .header__container-title{
+        font-size: 20px;
+        font-weight: 800;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container-menu-mobile-items{
+      position: relative;
+      top: 60px;
+      left: 40px;
+    }
+    .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list:nth-child(3){
+      color: red;
+      font-weight: 500;
+    }
+
+
+      .header__container-menu-items{
+        display: none;
+      }
+        .header__container-user-content{
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 15px;
+            width: auto;
+        }
+        
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 400px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-content: center;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+        }
+        .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 20px;
+          width: 20px;
+          transition: all .3s ease-in-out;
+        }
+        .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+        }
+        .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+        }
+        .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 80px;
+        } 
+        .footer__container-block-contact:first-child{
+          font-size: 14px;
+          margin-top: 15px;
+        } 
+        .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    @media screen and (max-width: 300px){
+      header{
+        height: 70px;
+        background-color: white;
+        max-width: 100vw;
+        box-shadow: 0 0 5px #ccc;
+        display: flex;
+        /* justify-content: center; */
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+      .header__container{
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .header__container-menu-mobile-btn-open{
+        height: 50px;
+        width: 50px;
+      }
+      .header__container-menu-mobile-btn-open span{
+        display: block;
+        height: 3px;
+        width: 30px;
+        background-color: black;
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(1){
+        transform: translateY(10px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(2){
+        transform: translateY(18px);
+      }
+      .header__container-menu-mobile-btn-open span:nth-child(3){
+        transform: translateY(25px);
+      }
+      .header__container-menu-mobile-btn-close{
+        position: relative;
+        top: 20px;
+        left: 45px;
+        display: block;
+      }
+      .header__container-menu-mobile-btn-close img{
+        height: 20px;
+        width: 20px;
+      }
+      .header__container-menu-mobile{
+        display: block;
+      }
+      .header__container-menu-mobile-container{
+        position: absolute;
+        top: 0;
+        left: -3000px;
+        height: 100vh;
+        width: 100vw;
+        background-color: white;
+        display: block;
+        z-index: 6;
+        transition: all .6s ease-in-out;
+      }
+      .header__container-title{
+        position: relative;
+        right: 30px;
+        font-size: 18px;
+        font-weight: 800;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header__container-menu-mobile-items{
+      position: relative;
+      top: 60px;
+      left: 40px;
+    }
+    .header__container-menu-mobile-list{
+      margin-top: 20px;
+    }
+    .header__container-menu-mobile-list:nth-child(3){
+      color: red;
+      font-weight: 500;
+    }
+
+
+      .header__container-menu-items{
+        display: none;
+      }
+        .header__container-user-content{
+          position: relative;
+          right: 50px;
+            display: flex;
+            justify-content: right;
+            gap: 20px;
+        }
+        .header__container-user-content-search img, .header__container-user-content-bag img, .header__container-user-content-profile img{
+            height: 10px;
+            width: auto;
+        }
+    
+        /* ! FOOTER */
+        footer{
+          display: flex;
+          justify-content: center;
+          background-color: #f8f8f8;
+          max-width: 100vw;
+          position: relative;
+          top: 350px;
+          padding: 40px 0;
+        }
+        .footer__container{
+          width: 80vw;
+        }
+        .footer__container-blocks-contacts{
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-content: center;
+        }
+        .footer__container-block-contact-social{
+          display: flex;
+          padding: 20px 0;
+          gap: 20px;
+      }
+      .footer__container-block-contact-social-facebook img , .footer__container-block-contact-social-instagram img{
+          height: 20px;
+          width: 20px;
+          transition: all .3s ease-in-out;
+      }
+      .footer__container-block-contact-social-facebook img:hover , .footer__container-block-contact-social-instagram img:hover{
+          cursor: pointer;
+          background-color: #ccc;
+          border-radius: 5px;
+      }
+      .footer__container-block-contact-apps{
+          cursor: pointer;
+          padding: 20px 0;
+          display: flex;
+          gap: 20px;
+      }
+      .footer__container-block-contact-app-appStore img, .footer__container-block-contact-app-playMarket img{
+          height: auto;
+          width: 80px;
+      } 
+      .footer__container-block-contact:first-child{
+          font-size: 14px;
+          margin-top: 15px;
+      } 
+      .footer__container-block-contact{
+            font-size: 12px;
+        } 
+      .footer__container-block-contact a{
+          color: black;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+        } 
+        .footer__container-block-contact a:hover{
+          color: #1d1d1d;
+        } 
+    }
+    </style>
+</head>
+<body>
+    <div class="preloader__wrapper">
+        <div class="preloader">
+            <div class="preloader-site-name">Boutique</div>
+            <div class="blobs">
+            <div class="blob-center"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                <feBlend in="SourceGraphic" in2="goo"></feBlend>
+            </filter>
+        </defs>
+    </svg>
+        </div>
+    </div>
+    <header>
+        <div class="header__container">
+            <div class="header__container-menu-mobile">
+                <div class="header__container-menu-mobile-btn-open" onclick="openMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="header__container-menu-mobile-container">
+                    <div class="header__container-menu-mobile-btn-close" onclick="closeMenu()">
+                        <img src="../assets/images/callBackImages/callBackClose/close.png" alt="">
+                    </div>
+                    <div class="header__container-menu-mobile-items">
+                        <ul class="header__container-menu-mobile-lists">
+                            <li class="header__container-menu-mobile-list"><a href="../index.html">Головна</a> </li>
+                            <li class="header__container-menu-mobile-list"><a href="news.html">Новинки</a> </li>
+                            <li class="header__container-menu-mobile-list"><a href="sale.html">SALE</a> </li>
+                            <li class="header__container-menu-mobile-list"><a href="">Білизна</a> </li>
+                            <li class="header__container-menu-mobile-list"><a href="">Взуття</a> </li>
+                            <li class="header__container-menu-mobile-list"><a href="">Аксесуари</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__container-title">Boutique</div>
+            <nav class="header__container-menu-items">
+                <div class="header__container-menu-item"><a href="./pages/news.html">Новинки</a></div>
+                <div class="header__container-menu-item"><a href="#" class="header__container-menu-item-red">SALE</a></div>
+                <div class="header__container-menu-item">
+                    <a href="#">Одяг</a> 
+                    <div class="header__container-menu-item-links">
+                        <div class="header__container-menu-item-links-content">
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Жінкам</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Верхній одяг</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Трикотажні кофти</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Джинси</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Штани</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Сукні</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Весь одяг</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Чоловікам</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Верхній одяг</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Трикотажні кофти</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Джинси</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Штани</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Спортивний одяг</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Рубашки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Весь одяг</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Дітям</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Верхній одяг</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Трикотажні кофти</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Джинси</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Штани</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Комплектний одяг</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Платья та сарафани</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Весь одяг</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Бренди</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Nike</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">New balance</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Puma</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Mexx</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Calvin Klein</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Tommy Hilfiger</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Всі бренди</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header__container-menu-item">
+                   <a href="#">Білизна</a> 
+                <div class="header__container-menu-item-links">
+                    <div class="header__container-menu-item-links-content">
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Жінкам</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Нижня білизна</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Одяг для дому та сну</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Вся білизна</a></li>
+                        </ul>
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Чоловікам</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Нижня білизна</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Одяг для дому та сну</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Вся білизна</a></li>
+                        </ul>
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Дітям</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Нижня білизна</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Одяг для дому та сну</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Вся білизна</a></li>
+                        </ul>
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Бренди</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Diesel</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Helen Marlen</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">PRPY</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Tommy Hilfiger</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Всі бренди</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__container-menu-item">
+                <a href="#">Взуття</a> 
+                <div class="header__container-menu-item-links">
+                    <div class="header__container-menu-item-links-content">
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Жінкам</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Кросівки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Ботинки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Туфлі</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Домашні тапці</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Всі взуття</a></li>
+                        </ul>
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Чоловікам</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Кросівки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Ботинки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Туфлі</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Домашні тапці</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Всі взуття</a></li>
+                        </ul>
+                        <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Дітям</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Кросівки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Ботинки</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Туфлі</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Домашні тапці</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Всі взуття</a></li>
+                        </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                            <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Бренди</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Diesel</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Helen Marlen</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">PRPY</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Tommy Hilfiger</a></li>
+                            <li class="header__container-menu-item-links-list"><a href="#">Всі бренди</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__container-menu-item">
+                <a href="#">Аксесуари</a> 
+                <div class="header__container-menu-item-links">
+                        <div class="header__container-menu-item-links-content">
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Жінкам</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Сумки та рюкзаки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Головні убори</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Ремені та підтяжки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шкарпетки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Колготки та панчохи</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Інші аксесуари</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шарфи та рукавички</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Всі аксесуари</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Чоловікам</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Сумки та рюкзаки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Головні убори</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Ремені та підтяжки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шкарпетки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Інші аксесуари</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шарфи та рукавички</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Всі аксесуари</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Дітям</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Сумки та рюкзаки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Головні убори</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Ремені та підтяжки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шкарпетки</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Інші аксесуари</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Шарфи та рукавички</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Всі аксесуари</a></li>
+                            </ul>
+                            <ul class="header__container-menu-item-links-lists">
+                                <li class="header__container-menu-item-links-list"><a href="#" class="header__container-menu-item-links-lists-title">Бренди</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Guess</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Tommy Hilfiger</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Calvin Klein</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Bimba Y Lola</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Diesel</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Trussardi</a></li>
+                                <li class="header__container-menu-item-links-list"><a href="#">Всі бренди</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="header__container-user-content">
+                <div class="header__container-user-content-search">
+                    <img src="../assets/images/searchImg/free-icon-magnifier-9638122.png" alt="">
+                    <!-- <input type="text"> -->
+                </div>
+                <div class="header__container-user-content-bag">
+                    <a href="shoppingCart.html">
+                        <img src="../assets/images/headerBag/free-icon-shopping-bag-3661173.png" alt="">
+                    </a>
+                </div>
+                <div class="header__container-user-content-profile">
+                    <a href="userProfile.html">
+                        <img src="../assets/images/userProfile/free-icon-user-9630178.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main__container">
+            <div class="main__container-title">Дякуємо за покупку!</div>
+            <div class="main__container-subtitle">Чекайте, на дзвінок від нашого кур'єра</div>
+            <div class="main__container-gmail">  
+              <button>Перейти до пошти </button>
+            </div>
+            <div class="main__container-btn">  
+              <button>Повернутися до покупок</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__container">
+            <div class="footer__container-blocks">
+                <div class="footer__container-blocks-contacts">
+                    <ul class="footer__container-block-contacts">
+                        <li class="footer__container-block-contact">Контакт-центр</li>
+                        <li class="footer__container-block-contact"><a href="#">044 594 34 39</a></li>
+                        <li class="footer__container-block-contact">Пн-Пт 9:00 - 21:00</li>
+                        <li class="footer__container-block-contact">Сб-Нд 9:00 - 18:00</li>
+                        <li class="footer__container-block-contact-social">
+                            <div class="footer__container-block-contact-social-facebook"><img src="../assets/images/foorterImg/facebook/icons8-facebook-f.svg" alt="Oops, something went wrong :("></div>
+                            <div class="footer__container-block-contact-social-instagram"><img src="../assets/images/foorterImg/instagram/icons8-instagram.svg" alt="Oops, something went wrong :("></div>
+                        </li>
+                    </ul>
+                    <ul class="footer__container-block-contacts">
+                        <li class="footer__container-block-contact">Особистий кабінет</li>
+                        <li class="footer__container-block-contact"><a href="#">Історія звмовлень</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Мої данні</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Адреси доставки</a></li>
+                    </ul>
+                    <ul class="footer__container-block-contacts">
+                        <li class="footer__container-block-contact">Покупцям</li>
+                        <li class="footer__container-block-contact"><a href="#">Оплата та доставка</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Повернення</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Питання та відповіді</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Гарантія</a></li>
+                    </ul>
+                    <ul class="footer__container-block-contacts">
+                        <li class="footer__container-block-contact">Про компанію</li>
+                        <li class="footer__container-block-contact"><a href="#">Про нас</a></li>
+                        <li class="footer__container-block-contact"><a href="#">Угода користувача</a></li>
+                        <li class="footer__container-block-contact-apps">
+                            <div class="footer__container-block-contact-app-appStore"><img src="../assets/images/foorterImg/appStore/Download_on_the_App_Store_Badge.svg.png" alt=""></div>
+                            <div class="footer__container-block-contact-app-playMarket"><img src="../assets/images/foorterImg/googlePlay/Google_Play_Store_badge_EN.svg.png" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let preloader = document.querySelector('.preloader__wrapper');
+        let body = document.querySelector('body');
+        window.onload = ()=>{
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 2000);
+        }
+        function openMenu() {
+        let open = document.querySelector('.header__container-menu-mobile-container')
+        open.style.left = '0px'
+        }
+        function closeMenu() {
+        let open = document.querySelector('.header__container-menu-mobile-container')
+        open.style.left = '-3000px'
+        }
+
+        email = document.querySelector('.main__container-gmail')
+        email.onclick = ()=>{
+          window.location.href ='https://mail.google.com/mail/u/0/?pli=1#inbox';
+        }
+        continuePurch = document.querySelector('.main__container-btn')
+        continuePurch.onclick = ()=>{
+          window.location.href ='news.html';
+        }
+    </script>
+</body>
+</html>

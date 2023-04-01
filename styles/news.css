@@ -3151,6 +3151,34 @@ footer{
 .call-back__container{
   z-index: 1;
 }
+.call-back--img{
+  height: 60px;
+  width: 60px;
+}
+.call-back---hover{
+  font-size: 10px;
+  position: absolute;
+  top: 24px;
+  left: 7px;
+}
+.call-back---hover-title{
+  font-size: 10px;
+  position: absolute;
+  top: -53px;
+}
+.call-back---hover-title-arrow{
+  position: absolute;
+  top: -15px;
+  left: 25px;
+}
+.main__container-call--back-container img{
+  height: 35px;
+  width: 35px;
+}
+.main__container-call--back-container{
+  position: fixed;
+  left: 30px;
+}
 .call-back__container:not(:first-child){
   /* display: none; */
   justify-content: center;
