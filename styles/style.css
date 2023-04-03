@@ -2492,10 +2492,11 @@ ul, li{
           width: 80px;
         } 
         .footer__container-block-contact:first-child{
-          font-size: 14px;
+          font-size: 16px;
           margin-top: 15px;
         } 
         .footer__container-block-contact a{
+          font-size: 14px;
           color: black;
           text-decoration: none;
           transition: all .3s ease-in-out;

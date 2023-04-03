@@ -28,9 +28,8 @@ let outBrandName = localStorage.getItem('cardForMoreInfoBrandName');
 let outName = localStorage.getItem('cardForMoreInfoName');
 let outPriceForNews = localStorage.getItem('cardForMoreInfoPriceNews');
 let outPrice = localStorage.getItem('cardForMoreInfoPrice');
-let outPriceDisc = localStorage.getItem('cardForMoreInfoPriceDisc');
+var outPriceDisc = localStorage.getItem('cardForMoreInfoPriceDisc');
 let outPriceSpan = document.createElement('span');
-
 
 let cardInfoBlockSize = document.createElement('div');
 cardInfoBlockSize.classList.add('main__container-side-card-info-size')
@@ -79,21 +78,22 @@ function addToBag(event) {
   let size = false;
   let brand = document.querySelector('.main__container-side-card-info-brand-name').textContent
   let name = document.querySelector('.main__container-side-card-info-name').textContent
-  let price = document.getElementsByClassName('main__container-side-card-info-price main__container-side-card-info-price-disc')[0].outerText
-  
-  if (price == '') {
-    price = document.querySelector('.main__container-side-card-info-price-news').textContent
-  }else[
-    price = document.getElementsByClassName('main__container-side-card-info-price main__container-side-card-info-price-disc')[0].outerText
-  ]
-  console.log(price);
+  let price = document.querySelector('.main__container-side-card-info-price-news')
+  let price2 = outPriceDisc
+  var q = '';
+  if (price == null) {
+    q = price2
+  }else{
+    q = price.textContent
+    // console.log(q);
+  }
 
   let obj = new Object();
   obj.img = img;
   obj.size = size;
   obj.brand = brand;
   obj.name = name;
-  obj.price = price;
+  obj.price = q;
   console.log(JSON.stringify(obj));
   localStorage.setItem('bag', JSON.stringify(obj));
   let res = JSON.parse(localStorage.getItem('bag'));

@@ -60,34 +60,41 @@ sumOutSecond.innerHTML = sumOut.textContent;
 
 // promocodes = ['NEWSITE','FORPEOPLE','5PERDISCOUNT'];
 let promocode = 'NEWSITE';
+let promoFlag = false;
 let promoInput = document.querySelector('.main__container-check-promocode-input input');
+let promoInputLabel = document.querySelector('.main__container-check-promocode-input label');
+let promoTest = /[A-Z]/;
 // Submit = document.querySelector('.main__container-check-promocode-input input[type="submit"]');
 let formSubmit = document.querySelector('.main__container-check-promocode-input form');
-formSubmit.onsubmit = ()=>{
-            let promoTest = /\d/i;
-            let promoFlag = false;
+formSubmit.onsubmit = (e)=>{
             // console.log(promocode);
             // console.log(promoInput.value);
-            if (!promoTest.test(promoInput) || promoInput.value === '') {
+            if (!promoTest.test(promoInput.value) || promoInput.value == '') {
                 promoInput.style.border = '1px solid red';
+                promoInputLabel.style.color = 'red';
                 promoInput.style.color = 'red';
-                return promoFlag;
-            }else{
+                promoFlag = false;
+            }else if(promoInput.value!=promocode){
+                promoInput.style.border = '1px solid red';
+                promoInputLabel.style.color = 'red';
+                promoInput.style.color = 'red';
+                promoFlag = false;
+            }else if(promoInput.value==promocode){
+                promoInput.value='';
                 promoInput.style.border = '1px solid black';
+                promoInputLabel.style.color = 'black';
+                promoInput.style.color = 'black';
                 promoFlag = true;
-            }
-            if (promoInput.value===promocode) {
-                console.log(1);
-                promoInput.style.border = '1px solid black';
-                promoFlag = true;
-                // promoInput.style.border = '1px solid red';
             }
             if (promoFlag == true) {
-                sumOut.innerHTML = '';
-                return true;
-            }else{
+                e.preventDefault();
+                var a = parsedLocal.price.replace(' грн', '')
+                var sum = document.getElementById('sumFromLocalStorageTranslated');
+                var discountPrice = (a.replace(' ', '') * 10)/100;
+                // console.log(a);
+                sum.innerHTML = (a.replace(' ', '') - discountPrice)+ ' грн';
                 return false;
-            }
+            }else{return false;}
     // for (promocode of promocodes) {
     //     let promoTest = /\d/i;
     //     let promoFlag = false;
@@ -124,19 +131,21 @@ formSubmit.onsubmit = ()=>{
 // console.log(newSum);
 // console.log(newSum);
 // console.log(sumForPay);
-let a = sumOut.innerHTML.replace(' грн','')
+var sum = document.getElementById('sumFromLocalStorageTranslated');
+var b = sum.outerText.replace(' грн', '')
+var res = b.replace(' ', '')
 // console.log(a.replace(' ',''));
-function uahToUsd(){
+function usd(){
     let requestToUSD;
     if (window.XMLHttpRequest) {
         requestToUSD = new XMLHttpRequest();
     }else{
         requestToUSD = ActiveXObject("Microsoft.XMLHTTP");
     }
-    requestToUSD.open("GET", "https://api.apilayer.com/currency_data/convert?base=UAH&symbols=USD&amount=5"+a.replace(' ','')+"&apikey=q6oRuLWfr4YeZBk3U9ZaBdvY42WrpTzq");
+    requestToUSD.open("GET", "https://api.apilayer.com/exchangerates_data/convert?to=USD&from=UAH&amount="+res+"&apikey=q6oRuLWfr4YeZBk3U9ZaBdvY42WrpTzq");
     
     requestToUSD.onload = () => {
-        let currency = JSON.parse(requestToUSD.response);
+        var currency = JSON.parse(requestToUSD.response);
         console.log(currency);
         if(requestToUSD.status == 200){
             sumOut.innerHTML = Math.round(currency.result) + ' $';
@@ -147,26 +156,32 @@ function uahToUsd(){
     }
     requestToUSD.send();
 }
-function usdToUah(){
-    let requestToUAH;
-    if (window.XMLHttpRequest) {
-        requestToUAH = new XMLHttpRequest();
-    }else{
-        requestToUAH = ActiveXObject("Microsoft.XMLHTTP");
-    }
-    requestToUAH.open("GET", "https://api.apilayer.com/currency_data/convert?base=USD&symbols=UAH&amount=5"+a.replace(' ','')+"&apikey=q6oRuLWfr4YeZBk3U9ZaBdvY42WrpTzq");
+// let e = currency.result;
+// var r = e.outerText.replace(' $','');
+// console.log(e);
+function uah(){
+            sumOut.innerHTML =res + ' грн';
+            sumOutSecond.innerHTML = res+ ' грн';
+
+    // let requestUAH;
+    // if (window.XMLHttpRequest) {
+    //     requestUAH = new XMLHttpRequest();
+    // }else{
+    //     requestUAH = ActiveXObject("Microsoft.XMLHTTP");
+    // }
+    // requestUAH.open("GET", "https://api.apilayer.com/exchangerates_data/convert?to=UAH&from=USD&amount="+e+"&apikey=q6oRuLWfr4YeZBk3U9ZaBdvY42WrpTzq");
     
-    requestToUAH.onload = () => {
-        let currency = JSON.parse(requestToUAH.response);
-        console.log(currency);
-        if(requestToUAH.status == 200){
-            sumOut.innerHTML = Math.round(currency.result) + ' ₴';
-            sumOutSecond.innerHTML = Math.round(currency.result) + ' ₴';
-        }else if(requestToUAH.status == 404){
-            console.log(false);
-        }
-    }
-    requestToUAH.send();
+    // requestUAH.onload = () => {
+    //     let currency = JSON.parse(requestUAH.response);
+    //     console.log(currency);
+    //     if(requestUAH.status == 200){
+    //         sumOut.innerHTML = Math.round(currency.result) + ' грн';
+    //         sumOutSecond.innerHTML = Math.round(currency.result) + ' грн';
+    //     }else if(requestUAH.status == 404){
+    //         console.log(false);
+    //     }
+    // }
+    // requestUAH.send();
 }
 
 let formOpen = document.querySelector('.main__container-check-btn-pay button');

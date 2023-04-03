@@ -217,7 +217,9 @@ ul, li{
   .header__container-menu-mobile{
     display: none;
   }
-  .header__container-title{
+  .header__container-title a{
+    color: black;
+    text-decoration: none;
     font-size: 24px;
     font-weight: 800;
     display: flex;
@@ -948,6 +950,53 @@ ul, li{
         justify-content: center;
         align-items: center;
     }
+    .header__container-menu-mobile-btn-close{
+      position: relative;
+      top: 20px;
+      left: 40px;
+    }
+    .header__container-menu-mobile-btn-close img{
+      height: 20px;
+      width: 20px;
+    }
+    .header__container-menu-mobile{
+      display: block;
+    }
+    .header__container-menu-mobile-container{
+      position: absolute;
+      top: 0;
+      left: -3000px;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      display: block;
+      z-index: 6;
+      transition: all .6s ease-in-out;
+    }
+    .header__container-title{
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .header__container-menu-mobile-items{
+    position: relative;
+    top: 60px;
+    left: 40px;
+  }
+  .header__container-menu-mobile-list{
+    margin-top: 20px;
+  }
+  .header__container-menu-mobile-list:nth-child(3){
+    color: red;
+    font-weight: 500;
+  }
+  .header__container-menu-mobile-list a{ 
+    color: black;
+    text-decoration: none;
+  }
       .header__container-menu-items{
         display: none;
       }
@@ -1069,6 +1118,53 @@ ul, li{
         justify-content: center;
         align-items: center;
     }
+    .header__container-menu-mobile-btn-close{
+      position: relative;
+      top: 20px;
+      left: 40px;
+    }
+    .header__container-menu-mobile-btn-close img{
+      height: 20px;
+      width: 20px;
+    }
+    .header__container-menu-mobile{
+      display: block;
+    }
+    .header__container-menu-mobile-container{
+      position: absolute;
+      top: 0;
+      left: -3000px;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      display: block;
+      z-index: 6;
+      transition: all .6s ease-in-out;
+    }
+    .header__container-title{
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .header__container-menu-mobile-items{
+    position: relative;
+    top: 60px;
+    left: 40px;
+  }
+  .header__container-menu-mobile-list{
+    margin-top: 20px;
+  }
+  .header__container-menu-mobile-list:nth-child(3){
+    color: red;
+    font-weight: 500;
+  }
+  .header__container-menu-mobile-list a{ 
+    color: black;
+    text-decoration: none;
+  }
       .header__container-menu-items{
         display: none;
       }
@@ -1271,6 +1367,54 @@ ul, li{
         justify-content: center;
         align-items: center;
     }
+    .header__container-menu-mobile-btn-close{
+      position: relative;
+      top: 20px;
+      left: 40px;
+    }
+    .header__container-menu-mobile-btn-close img{
+      height: 20px;
+      width: 20px;
+    }
+    .header__container-menu-mobile{
+      display: block;
+    }
+    .header__container-menu-mobile-container{
+      position: absolute;
+      top: 0;
+      left: -3000px;
+      height: 100vh;
+      width: 100vw;
+      background-color: white;
+      display: block;
+      z-index: 6;
+      transition: all .6s ease-in-out;
+    }
+    .header__container-title{
+      font-size: 20px;
+      font-weight: 800;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .header__container-menu-mobile-items{
+    position: relative;
+    top: 60px;
+    left: 40px;
+  }
+  .header__container-menu-mobile-list{
+    margin-top: 20px;
+  }
+  .header__container-menu-mobile-list:nth-child(3){
+    color: red;
+    font-weight: 500;
+  }
+  .header__container-menu-mobile-list a{ 
+    color: black;
+    text-decoration: none;
+  }
+
       .header__container-menu-items{
         display: none;
       }

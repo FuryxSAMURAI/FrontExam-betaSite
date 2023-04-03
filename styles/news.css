@@ -3381,7 +3381,7 @@ footer{
     .header__container-menu-mobile-btn-close{
       position: relative;
       top: 20px;
-      left: 45px;
+      /* left: 45px; */
       display: block;
     }
     .header__container-menu-mobile-btn-close img{
@@ -3415,7 +3415,7 @@ footer{
   .header__container-menu-mobile-items{
     position: relative;
     top: 60px;
-    left: 40px;
+    /* left: 40px; */
   }
   .header__container-menu-mobile-list{
     margin-top: 20px;

@@ -276,10 +276,10 @@
                     </div>
                     <div class="main__container-check-btns-wrapper">
                         <div class="main__container-check-btn-wrapper">
-                            <select class="main__container-check-btn-currency">
-                                <option value="UAH" onclick="usdToUah()">₴ UAH</option>
-                                <option value="USD" onclick="uahToUsd()">$ USD</option>
-                            </select>
+                            <div class="main__container-check-btn-currency">
+                                <input value="UAH" type="radio" name="currency" onclick="uah()"> UAH</input>
+                                <input value="USD" type="radio" name="currency" onclick="usd()"> USD</input>
+                            </div>
                             <div class="main__container-check-btn-pay"><button>Оформити замовлення</button></div>
                         </div>
                         <div class="main__container-check-btn-googlePay"><button><img src="../assets/images/googlePay/official-Google-Logo-PNG-Image.png" alt="">Pay</button></div>
